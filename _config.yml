@@ -1,4 +1,24 @@
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 title: Dropshipment API
-#description: Bookmark this to keep an eye on my project updates!
+description: Dropshipment API Documentation
 showMiniToc: true
+
+# GitHub Pages settings
+markdown: kramdown
+kramdown:
+  toc_levels: 1..3
+  auto_ids: true
+
+# Navigation and sidebar
+nav_enabled: true
+search_enabled: true
+
+# Build settings
+plugins:
+  - jekyll-toc
+
+# Table of Contents settings
+toc:
+  min_level: 1
+  max_level: 3
+  ordered: false
