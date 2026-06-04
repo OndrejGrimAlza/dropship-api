@@ -1,9 +1,15 @@
-theme: jekyll-theme-minimal
+theme: just-the-docs
 title: Dropshipment API
 description: Dropshipment API Documentation
-showMiniToc: true
 
-# GitHub Pages settings
+# Just the docs theme settings
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+aux_links:
+  "GitHub": https://github.com/OndrejGrimAlza/dropship-api
+
+# Jekyll settings
 markdown: kramdown
 kramdown:
   toc_levels: 1..3
