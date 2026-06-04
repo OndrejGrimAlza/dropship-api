@@ -1,3 +1,7 @@
+> [!CAUTION]
+> Under construction!
+
+# Header
 
 This documentation describes the features and capabilities of the **Dropshipment API**, which is intended for suppliers who want to
 implement delivery of goods from the supplier directly to the end customer in its own information system.
@@ -28,6 +32,7 @@ No further implementation on the supplier side  is necessary. Just use of third 
 ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
 
 ## Upcoming features
+
   - ??.2026 - **GLN**
     - *[Insert order][insert-order]*, *[Extend order][extend-order]*, *[Cancel order][cancel-order]* and *[Confirm order][confirm-order]* : 
         data length of `vatNo` changed from `100` to `30`
@@ -46,6 +51,7 @@ No further implementation on the supplier side  is necessary. Just use of third 
     
 
 ## Versions
+
   - **1.183** 29.05.2026
     - *[Shipping carrier][ds-shipping-carrier-code]* :  Added `DPDSK` for DPD Slovakia.
     - *[Shipping carrier delivery type][ds-shipping-carrier-delivery-type]* : 
