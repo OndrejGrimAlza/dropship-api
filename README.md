@@ -1,7 +1,7 @@
 > [!CAUTION]
 > Under construction!
 
-# Header
+## Header
 
 This documentation describes the features and capabilities of the **Dropshipment API**, which is intended for suppliers who want to
 implement delivery of goods from the supplier directly to the end customer in its own information system.
@@ -27,7 +27,7 @@ API provides specific test scenarios to detect API implementation errors. Both p
 No further implementation on the supplier side  is necessary. Just use of third party tools like Postman.
 
 
-#### Simplified communication scheme
+### Simplified communication scheme
 
 ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
 
