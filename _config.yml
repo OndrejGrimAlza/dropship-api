@@ -6,6 +6,8 @@ title: Dropshipment API
 color_scheme: light
 search_enabled: false
 heading_anchors: true
+nav_enabled: true
+nav_sort: case_insensitive
 #aux_links:
 #  "GitHub": https://github.com/OndrejGrimAlza/dropship-api
 
@@ -14,6 +16,9 @@ markdown: kramdown
 kramdown:
   toc_levels: 1..3
   auto_ids: true
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false  
 
 # Generate table of contents
 toc:
@@ -23,3 +28,18 @@ toc:
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+  - jekyll-sitemap  
+
+mermaid:  
+  version: "9.1.6"
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false  
