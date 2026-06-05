@@ -42,6 +42,88 @@ No further implementation on the supplier side  is necessary. Just use of third 
 
 ## Simplified communication scheme {#introduction--simplified-communication-scheme}
 
+```mermaid
+sequenceDiagram
+participant C as End customer
+participant A as Buyer
+participant S as Supplier
+
+Note over C,S: Store Availability
+Activate S
+S->>A: API Availability
+Deactivate S
+Activate A
+A->>C: Update Web
+Deactivate A
+
+
+Note over C,S: Order Processing
+
+Note over C: Create order
+Activate C
+C->>A: New Order
+Activate A
+A->>S: API Order Insert
+Deactivate A
+Activate S
+Note over S: Product Reservation
+Deactivate S
+
+Note over C: Cancel Order
+C-->>A: Cancel
+Activate A
+A-->>S: API Order Cancel
+Deactivate A
+Activate S
+Note over S: Order Canceled
+Deactivate S
+
+Note over A:Extend reservation
+Activate A
+A-->>S: API Order Extend
+Deactivate A
+Activate S
+Note over S: Order Extended
+Deactivate S
+
+Note over C: Payment <br/> Cash on delivery
+C->>A: Payment
+Deactivate C
+Activate A
+A->>S: API Order Confirm
+Activate S
+A-->>C: Info
+Deactivate A
+Note over S: Dispatch order
+
+
+Note over C,S: Order Shipping
+
+Note over S: Dispatch issue
+S-->>A: API Delivery Result Cancel
+
+Note over S: Create shipment
+S-->>A: API Create Shipment
+
+Note over S: Delete shipment
+S-->>A: API Delete Shipment
+
+
+Note over S: Shipment Dispatch
+S->>A: API Shipment Departure
+Activate A
+A->>C: Info
+Deactivate A
+S-->>A: API Track and Trace
+
+Note over C,S: Customer reject shipment
+S-->>A: API Delivery Result Rejected
+
+Note over C,S: Customer accept shipment
+S->>A: API Delivery Result Delivered
+Deactivate S
+```
+
 ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
 
 ## Upcoming features {#introduction--upcoming-features}
