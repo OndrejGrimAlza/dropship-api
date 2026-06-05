@@ -3,7 +3,7 @@ title: Dropshipment API
 #description: Dropshipment API Documentation
 
 # Just the docs theme settings
-color_scheme: dark
+color_scheme: light
 search_enabled: false
 heading_anchors: true
 #aux_links:
