@@ -4546,14 +4546,14 @@ Examples
 + `DPDSK` - DPD Slovakia
 + `DPDHU` - DPD Hungary
 + `FOFR` - RSC Logistics
-+ `GebruderWeiss` - GebrĂĽder Weiss
++ `GebruderWeiss` - Gebruder Weiss
 + `GEISPARCEL` - Geis Parcel
 + `GEISCARGO` - Geis Cargo
 + `GLS` - GLS
 + `GO` - GO!
 + `HELICAR` - HELICAR
 + `MagyarPOST` - Magyar Posta 
-+ `Najbert` - KurĂ˝r Najbert
++ `Najbert` - Courier Najbert
 + `PPL` - PPL
 + `RHENUS` - Rhenus HD
 + `SKPOST` - Slovakia Post
@@ -4562,7 +4562,7 @@ Examples
 + `UPS` - UPS
 + `WEDO` - WE DO
 + `ZASILKOVNA` - Packeta
-+ `ZavolejSiKuryra` - ZavolejsikurĂ˝ra.cz
++ `ZavolejSiKuryra` - Zavolejsikuryra.cz
 
 ### ShippingCarrierDeliveryType (enum[string]) {#data-structures--shipping-carrier-delivery-type}
 + `Supplier`
