@@ -1,11 +1,8 @@
 
-# Introduction (H1)
-## Introduction
+# Introduction
+{: .no_toc }
 
-## Introduction 2
-## Introduction 3
-
-# Introduction 2 (H1)
+{:toc}
 
 This documentation describes the features and capabilities of the **Dropshipment API**, which is intended for suppliers who want to
 implement delivery of goods from the supplier directly to the end customer in its own information system.
