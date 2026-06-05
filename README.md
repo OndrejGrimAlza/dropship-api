@@ -29,11 +29,11 @@ API provides specific test scenarios to detect API implementation errors. Both p
 No further implementation on the supplier side  is necessary. Just use of third party tools like Postman.
 
 
-### Simplified communication scheme
+## Simplified communication scheme
 
 ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
 
-### Upcoming features
+## Upcoming features
 
   - ??.2026 - **GLN**
     - *[Insert order][insert-order]*, *[Extend order][extend-order]*, *[Cancel order][cancel-order]* and *[Confirm order][confirm-order]* : 
@@ -52,7 +52,7 @@ No further implementation on the supplier side  is necessary. Just use of third 
         New object contains three services. `oldApplianceRemoval`, `carryIn` and `basicInstallation`
     
 
-### Versions
+## Versions
 
   - **1.183** 29.05.2026
     - *[Shipping carrier][ds-shipping-carrier-code]* :  Added `DPDSK` for DPD Slovakia.
@@ -450,7 +450,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
  -->
  
 
-### Communication basics
+## Communication basics
 
   - Commonly trusted `HTTPS` authentication *certificate* is required.
   
@@ -461,7 +461,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
   - A 1-hour maintenance window has to be between 22:00 and 03:00.
 
 
-### API basics
+## API basics
 
   - All *requests* have to use `Content-Type` `application/json` header with `UTF-8` charset
     ([RFC 7231, section 3.1.1.5: Content-Type](https://datatracker.ietf.org/doc/html/rfc7231#section-3.1.1.5)).
@@ -476,7 +476,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
   - The JSON `timestamp` and `timestampUtc` attribute must always be up-to-date even in cases of repeated sending of the API message.
   
 
-### Maintenance-free design
+## Maintenance-free design
 
 Emphasis is placed on automation and maintenance-free communication.
 Any process that can prevent user intervention is preferred.
@@ -513,7 +513,7 @@ The following points outline this concept.
  and must wait for each other if they are run in parallel. The current recommended maximum number of requests of the same type 
  from one supplier running in parallel is **5**. For more info follow to *[Rate limits][rate-limits]*
 
-### Authentication token
+## Authentication token
 
  - Standard *[HMAC token][hmac]* is used for basic authentication. Token is *[Base64][base64]* encoded
  and you have to *[URL Encode][percent-encoding]* it again for usage in URI. 
@@ -575,11 +575,11 @@ POST https://services.server.cz/rest/api/v1/order/DD12345678/delivery?token=jDGA
 ```
 
 
-### Data types
+## Data types
 
 Data types are simple types and its part of *[Data Structures][data-structures]*.
 
-#### Basic data types
+### Basic data types
 
 Basic types are based on `string` and `number`.
 
@@ -614,17 +614,17 @@ Specific types
 
 
 
-#### Enumerated data types
+### Enumerated data types
 
 Enumerated types are based on `enum`.
 
-##### Country code
+#### Country code
 See *[Country][ds-country]* data structrure for more information.
 
-##### Currency code
+#### Currency code
 See *[Currency][ds-currency]* data structrure for more information.
 
-##### Country vs Currency
+#### Country vs Currency
 We always accept the national currency of the country. Examples in table.
 
 | Country | Currency |
@@ -636,23 +636,23 @@ We always accept the national currency of the country. Examples in table.
 | `DE`    | `EUR`    |
 | `PL`    | `PLN`    |
 
-##### Error code
+#### Error code
 For all possible error codes see *[ErrorCode][ds-error-code]*. Their subsets *[SuccessErrorCode][ds-success-error-code]* 
 and *[FailErrorCode][ds-fail-error-code]* are applied accordingly.
 
-##### Import type
+#### Import type
 Used only in *[Availability][availability]* API message. 
 See *[ImportType][ds-import-type]* data structrure for full list.
 
-##### Track and Trace status 
+#### Track and Trace status 
 Used only in *[Track and Trace][track-and-trace]* API message. 
 See *[TrackAndTrace status][ds-track-and-trace-status]* data structrure for full list.
 
-##### Delivery result status
+#### Delivery result status
 Used only in *[Delivery result][delivery-result]* API message.
 See *[DeliveryResultStatus][ds-delivery-result-status]* data structrure for full list.
 
-##### Shipment delivery type
+#### Shipment delivery type
 Used only in *[Confirm order][confirm-order]* API message.
 See *[ShipmentDeliveryType][ds-shipment-delivery-type]* data structrure for full list.
 
@@ -665,12 +665,12 @@ See *[ShipmentDeliveryType][ds-shipment-delivery-type]* data structrure for full
 | `Branch`             | Yes     | Yes      |
 | `ParcelShop`         | No      | No       |
 
-##### Shipment shipping mode
+#### Shipment shipping mode
 See *[Shipping modes][shipping-modes]* for a full explanation.
 Used only in *[Confirm order][confirm-order]* API message.
 See *[ShipmentShippingMode][ds-shipment-shipping-mode]* data structrure for full list.
 
-##### Shipping carrier code
+#### Shipping carrier code
 
 Identification of shipping carrier. 
 
@@ -680,7 +680,7 @@ Identification is used in *[Confirm order][confirm-order]*,
 See *[ShippingCarrierCode][ds-shipping-carrier-code]* data structrure for full list.
 
 
-##### Shipping carrier delivery type
+#### Shipping carrier delivery type
 
 Identification of delivery type. Mostly shipping carrier specific.
 
@@ -700,7 +700,7 @@ special value **`Supplier`**  means that the supplier takes care of the delivery
 See *[ShippingCarrierDeliveryCode][ds-shipping-carrier-delivery-type]* data structrure for full list.
 
 
-##### Parcel shop identification
+#### Parcel shop identification
 
 Identification is used in *[Confirm order][confirm-order]*, *[Create shipment][create-shipment]* 
 and in *[Shipment departure][shipment-departure]*.
@@ -710,7 +710,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
 
 
 
-### Error handling
+## Error handling
 
 ***Required behavior.***
 
@@ -720,7 +720,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
  - Resent messages has to be send in specified intervals. See *[Resend intervals][resend-intervals]*
 
 
-#### Common error codes
+### Common error codes
 
 ***Required behavior.***
 
@@ -740,7 +740,7 @@ If message data is not accepted, message have to be resend until the problem is 
 Error code `-3` and `-5` is accepted in specific methods.
 
 
-#### Resend intervals
+### Resend intervals
 
 ***Required behavior.***
 
@@ -779,7 +779,7 @@ Interval units are in minutes.
 Increasing the interval to prevent massive API overload is desirable.
 
 
-#### Timeout settings
+### Timeout settings
 
 ***Required behavior.***
 
@@ -799,7 +799,7 @@ Timeout should be set higher on sender side
 | *[Delivery result][delivery-result]*                 | 60                | 80                   |
 
 
-#### Rate limits
+### Rate limits
 
 Rate limits set rules for how an API should behave when processing a large number of parallel incoming requests from a single supplier.
 
@@ -813,7 +813,7 @@ Specific limits are intentionally not specifically stated here. The settings wil
 
 
 
-### Shipping modes
+## Shipping modes
 
 Shipping mode defines who handles **shipment number**, **package numbers**, **shipping list**, **shipping stickers** 
 and **carrier data** which are necessary for shipment delivery for specific shipping carrier.
@@ -824,7 +824,7 @@ The identification of which mode is used for the current order is defined in the
 attribute in the *[Confirm order][confirm-order]*.
 
 
-#### Supplier shipping mode
+### Supplier shipping mode
 
 For suppliers who have already implemented or want to implement specific shipping carriers.
 
@@ -835,7 +835,7 @@ This mode is also known as **DSM**. More specificly :
 * **DSMD** when supplier's transport contract is used.
 
 
-#### Buyer shipping mode
+### Buyer shipping mode
 
 For suppliers who do not have implemented or are not able to implement specific shipping carriers.
 
@@ -852,13 +852,13 @@ In situations where an invalid shipment is generated, it can be deleted using *[
 
 
 
-### Product pricing
+## Product pricing
 
 Product pricing defines who can affect the final price for the end customer.
 The following product pricing variants cannot be combined with each other.
 
 
-#### Supplier product pricing
+### Supplier product pricing
 
 Supplier product pricing allows the supplier to potentially influence the price at which the end customer buys the product.
 The purchase price of the product is calculated according to the commission level of the product category provided by the buyer.
@@ -873,7 +873,7 @@ of **Latest price mode** of *[Availability][availability]* API message .
 For more information see *[Availability][availability]* API message.
 
 
-#### Buyer product pricing
+### Buyer product pricing
 
 Buyer product pricing does not allow influence the price at which the end customer buys the product.
 
@@ -888,7 +888,7 @@ For more information see *[Availability][availability]* API message.
 
 
 
-### FAQ
+## FAQ
 
 **1. How to work with `Supplier` shippingCarrierDeliveryType ?**
 
@@ -1090,12 +1090,14 @@ would look like this:
 
 
 
-## Group Buyer API
+# Buyer API
 
 API on buyer side.
 
 
-### Availability [/dropship-validator/v1/availability?token={token}]
+## Availability 
+
+[/dropship-validator/v1/availability?token={token}]
 
 ***Required method.***
 
@@ -1106,7 +1108,7 @@ It mainly updates *store* **availability** and *product* **price**.
  - Values older that approx `36 hours` are considered as unavailable.
  - **Limitation:** The current limit is 30 MB per API message.
 
-##### Rules for Update `importType`
+#### Rules for Update `importType`
  - It is recommended to **not** send *name* attribute.
  - It is required to **not** send *dimensions* and *weight* attribute. They will be removed in the future.
  - It is required to send only products where is a change in attributes from previous successfully delivered product attributes.
@@ -1117,7 +1119,7 @@ It mainly updates *store* **availability** and *product* **price**.
    Resend could lead to another error.
  - Unwanted limits are dynamic, they can change according to system load and cannot be expressed by a simple constant.
 
-##### Rules for PartialFull `importType`
+#### Rules for PartialFull `importType`
  - Replaces Full `importType`.
  - Maximum number of products in one message is `10,000`.
  - If more than 10,000 products need to be send, please follow the *[resend intervals][resend-intervals]* for next message.
@@ -1127,7 +1129,7 @@ It mainly updates *store* **availability** and *product* **price**.
  - It is not allowed to repeat products in individual successfully delivered messages during one night.
  - At least one message must be sent per night to avoid branch cleanup. If `Full` import is not send.
 
-##### Rules for Full `importType` Deprecated
+#### Rules for Full `importType` Deprecated
  - **This `importType` is deprecated. Use PartialFull instead.**
  - Products that are missing in `Full` import are considered as unavailable.
  - It is required to **not** send *dimensions* and *weight* attribute. They will be removed in the future.
@@ -1135,7 +1137,7 @@ It mainly updates *store* **availability** and *product* **price**.
 
 [resend-intervals]: #introduction/error-handling/resend-intervals
 
-##### Product price modes
+#### Product price modes
 
 Due to the development and the need for backward compatibility, two modes have emerged. 
 **Legacy price mode** and **Latest price mode**.  
@@ -1149,7 +1151,7 @@ Each mode uses own set of attributes and these attributes are not compatible. Co
  - **Latest price mode** attributes **(Recommended)**
     - `productList[].countryPrices`
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -1158,7 +1160,7 @@ Each mode uses own set of attributes and these attributes are not compatible. Co
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
 
-#### Availability request [POST]
+### Availability request [POST]
 
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -1427,7 +1429,9 @@ Response ([GeneralResponse][ds-general-response])
                  "errorMessage": "productList[0].code missing"
             }
 
-### Create shipment [/dropship-validator/v1/shipment?token={token}]
+## Create shipment 
+
+[/dropship-validator/v1/shipment?token={token}]
 
 ***Buyer shipping mode method***
 
@@ -1449,7 +1453,7 @@ Method may be provided in the case of limited capabilities of the supplier.
 | `Branch`             | Yes     | Yes      |
 | `ParcelShop`         | No      | No       |
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **201** - Created status code. Message successfully processed and shipment created. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -1457,7 +1461,7 @@ Method may be provided in the case of limited capabilities of the supplier.
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Create shipment request [POST]
+### Create shipment request [POST]
 
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
@@ -1602,7 +1606,9 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 
 
-### Delete shipment [/dropship-validator/v1/shipment/{shipment}?token={token}]
+## Delete shipment 
+
+[/dropship-validator/v1/shipment/{shipment}?token={token}]
 
 ***Buyer shipping mode method***
 
@@ -1611,7 +1617,7 @@ Deletes shipment created by *[Create shipment][create-shipment]* API message bef
 [create-shipment]: #reference/buyer-api/create-shipment
 [shipment-departure]: #reference/buyer-api/shipment-departure
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -1620,7 +1626,7 @@ Deletes shipment created by *[Create shipment][create-shipment]* API message bef
     + shipment: SHIP123456789 (String50, required) - Shipment Number to delete
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Delete shipment request [DELETE]
+### Delete shipment request [DELETE]
 
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -1667,7 +1673,7 @@ Response ([GeneralResponse][ds-general-response])
                 "errorMessage": "Unknown shipment!"
             }
 
-### Shipment departure [/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
+## Shipment departure [/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
 
 ***Required method***
 
@@ -1685,7 +1691,7 @@ It is also required to send the entire order in one shipment.
 | `Branch`             | Yes     | Yes      |
 | `ParcelShop`         | No      | No       |
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -1694,7 +1700,7 @@ It is also required to send the entire order in one shipment.
     + shipment: SHIP12345678 (String50, required) - Shipment Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Shipment departure request [POST]
+### Shipment departure request [POST]
 
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])   
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
@@ -1897,7 +1903,9 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
             }
 
 
-### Track and Trace [/dropship-validator/v1/track?token={token}]
+## Track and Trace 
+
+[/dropship-validator/v1/track?token={token}]
 
 ***Conditionally optional method.***
 
@@ -1914,7 +1922,7 @@ Method is required in case of the supplier's own transport contract.
   
 For shipments with `shipmentDeliveryType` ParcelShop sent in *[Confirm order][confirm-order]* is required to send Stored `status` before Delivered `status`.
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -1924,7 +1932,7 @@ For shipments with `shipmentDeliveryType` ParcelShop sent in *[Confirm order][co
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     
-#### Track and Trace request [POST]
+### Track and Trace request [POST]
 
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2071,7 +2079,9 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-### Delivery result [/dropship-validator/v1/order/{order}/delivery?token={token}]
+## Delivery result 
+
+[/dropship-validator/v1/order/{order}/delivery?token={token}]
 
 ***Required method.***
 
@@ -2083,7 +2093,7 @@ Method is used in case of these situations:
  - the package was returned back to supplier's branch as a return shipment
  - supplier uses own carriage and report delivery result
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
@@ -2092,7 +2102,7 @@ Method is used in case of these situations:
     + order: DD12345678 (OrderNumber, required) - Order Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Delivery result request [POST]
+### Delivery result request [POST]
 
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2202,13 +2212,15 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-## Group Supplier API
+# Supplier API
 
 API on supplier side.
 
 
 
-### Insert order [/dropship-validator/v1/order/{order}?token={token}]
+## Insert order 
+
+[/dropship-validator/v1/order/{order}?token={token}]
 
 ***Required method.***
 
@@ -2228,7 +2240,7 @@ Currency of `purchasePriceWithoutFees` is in `itemsPriceCurrency`. This price is
 
 [availability]: #reference/buyer-api/availability
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **201** - Created status code. Response successfully processed with `errorCode` `0`.
     It is invalid with status code `-3` but response is accepted and processed.
  - **200** - OK status code. Response successfully processed with `errorCode` `-3`.
@@ -2242,7 +2254,7 @@ Currency of `purchasePriceWithoutFees` is in `itemsPriceCurrency`. This price is
     + order: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Insert order request [POST]
+### Insert order request [POST]
 
 Request ([OrderInsertRequest][ds-order-insert-request])  
 Response ([OrderInsertResponse][ds-order-insert-response])
@@ -2456,7 +2468,9 @@ Response ([OrderInsertResponse][ds-order-insert-response])
             }
 
 
-### Cancel order [/dropship-validator/v1/order/{cancelOrder}?token={token}]
+## Cancel order 
+
+[/dropship-validator/v1/order/{cancelOrder}?token={token}]
 
 ***Required method.***
 
@@ -2478,7 +2492,7 @@ After **[Shipment departure][shipment-departure]** is not possible to cancel ord
 + The supplier doesn't expect order cancel after **[Confirm order][confirm-order]**. The supplier will respond with `errorCode` `-1`. 
   The buyer's API gives a few tries and if still gets `-1` then the order won't be canceled.
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0` or accepted `-5`.
  - **201** - Created status code. It is invalid status code but response is accepted and processed. `errorCode` must be also `0` or accepted `-5`.
  - **400** - Bad request status code. It is invalid status code with accepted `errorCode` `-5` but response is accepted and processed. 
@@ -2494,7 +2508,7 @@ After **[Shipment departure][shipment-departure]** is not possible to cancel ord
     + cancelOrder: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Cancel order request [DELETE]
+### Cancel order request [DELETE]
 
 Request ([OrderCancelRequest][ds-order-cancel-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2571,7 +2585,9 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-### Confirm order [/dropship-validator/v1/order/{order}/confirm?token={token}]
+## Confirm order 
+
+[/dropship-validator/v1/order/{order}/confirm?token={token}]
 
 ***Required method.***
 
@@ -2580,7 +2596,7 @@ Response ([GeneralResponse][ds-general-response])
 `demandedExpeditionDate` and `shipmentDepartureTime` are demanded date and time for shipment departure. 
 It is not allowed to send the shipment earlier or later. The shipment is planned according to the customer's requirements.
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Response successfully processed. `errorCode` must be also `0`.
  - **201** - Created status code. It is invalid status code but response is accepted and processed. `errorCode` must be also `0`.
  - **400** - Bad request status code. An error ocured on application layer. See `errorCode` and `errorMessage` for more. 
@@ -2591,7 +2607,7 @@ It is not allowed to send the shipment earlier or later. The shipment is planned
     + order: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Confirm order request [POST]
+### Confirm order request [POST]
 
 Request ([OrderConfirmRequest][ds-order-confirm-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2906,7 +2922,9 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-### Extend order [/dropship-validator/v1/order/{order}/extend?token={token}]
+## Extend order 
+
+[/dropship-validator/v1/order/{order}/extend?token={token}]
 
 ***Required method.***
 
@@ -2917,7 +2935,7 @@ This method accepts this error code.
 
 In case of refusal to extend the reservation of the order, a [Order Cancel][cancel-order] will be sent.
 
-##### Rules for HTTP response status codes
+#### Rules for HTTP response status codes
  - **200** - OK status code. Response successfully processed. `errorCode` must be also `0` or `-5`.
  - **201** - Created status code. It is invalid status code but response is accepted and processed. `errorCode` must be also `0` or `-5`.
  - **400** - Bad request status code. It is invalid status code with `errorCode` `-5` but response is accepted and processed. 
@@ -2931,7 +2949,7 @@ In case of refusal to extend the reservation of the order, a [Order Cancel][canc
     + order: DD12345678 (OrderNumber, required) - Order Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Extend order request [POST]
+### Extend order request [POST]
 
 Request ([OrderExtendRequest][ds-order-extend-request])  
 Response ([OrderExtendResponse][ds-order-extend-response])
@@ -3012,14 +3030,16 @@ Response ([OrderExtendResponse][ds-order-extend-response])
 
 
 
-## Group Testing Buyer API
+# Testing Buyer API
 
 The Testing Buyer API has the same structure as *[production Buyer API][buyer-api]* but `test` variable is added to the URL. 
 API is implemented on buyer side.
 
 [buyer-api]: #reference/buyer-api
 
-### Availability [/dropship-test/v2/availability?token={token}&test={test}]
+## Availability 
+
+[/dropship-test/v2/availability?token={token}&test={test}]
 
 A testing endpoint for buyer *[Availability][availability]* method. See *[Availability][availability]* for more details.
 
@@ -3031,7 +3051,7 @@ A testing endpoint accepts a maximum of 100 products.
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Availability request [POST]
+### Test Availability request [POST]
 
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -3265,7 +3285,9 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-### Create shipment [/dropship-test/v2/shipment?token={token}&test={test}]
+## Create shipment 
+
+[/dropship-test/v2/shipment?token={token}&test={test}]
 
 A testing endpoint for buyer *[Create shipment][create-shipment]* method. See *[Create shipment][create-shipment]* for more details.
 
@@ -3275,7 +3297,7 @@ A testing endpoint for buyer *[Create shipment][create-shipment]* method. See *[
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Create shipment request [POST]
+### Test Create shipment request [POST]
 
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
@@ -3420,7 +3442,9 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 
 
-### Delete shipment [/dropship-test/v2/shipment/{shipment}?token={token}&test={test}]
+## Delete shipment 
+
+[/dropship-test/v2/shipment/{shipment}?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delete shipment][delete-shipment]* method. See *[Delete shipment][delete-shipment]* for more details.
 
@@ -3431,7 +3455,7 @@ A testing endpoint for buyer *[Delete shipment][delete-shipment]* method. See *[
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Delete shipment request [DELETE]
+### Test Delete shipment request [DELETE]
 
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response]) 
@@ -3478,7 +3502,9 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-### Shipment departure [/dropship-test/v2/shipment/{shipment}/departure?token={token}&test={test}]
+## Shipment departure 
+
+[/dropship-test/v2/shipment/{shipment}/departure?token={token}&test={test}]
 
 A testing endpoint for buyer *[Shipment departure][shipment-departure]* method. 
 See *[Shipment departure][shipment-departure]* for more details.
@@ -3490,7 +3516,7 @@ See *[Shipment departure][shipment-departure]* for more details.
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Shipment departure request [POST]
+### Test Shipment departure request [POST]
 
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])  
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
@@ -3693,7 +3719,9 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
 
 
-### Track and Trace [/dropship-test/v2/track?token={token}&test={test}]
+## Track and Trace 
+
+[/dropship-test/v2/track?token={token}&test={test}]
 
 A testing endpoint for buyer *[Track and Trace][track-and-trace]* method. 
 See *[Track and Trace][track-and-trace]* for more details.
@@ -3704,7 +3732,7 @@ See *[Track and Trace][track-and-trace]* for more details.
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Track and Trace request [POST]
+### Test Track and Trace request [POST]
 
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response]) 
@@ -3851,7 +3879,9 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-### Delivery result [/dropship-test/v2/order/{order}/delivery?token={token}&test={test}]
+## Delivery result 
+
+[/dropship-test/v2/order/{order}/delivery?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delivery result][delivery-result]* method. 
 See *[Delivery result][delivery-result]* for more details.
@@ -3863,7 +3893,7 @@ See *[Delivery result][delivery-result]* for more details.
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-#### Test Delivery result request [POST]
+### Test Delivery result request [POST]
 
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -3972,7 +4002,7 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-## Group Testing Supplier API
+# Testing Supplier API
 
 The Testing Supplier API is consists of endpoints that invokes requests to *[Supplier API][supplier-api]*.
 API is implemented on buyer side.
@@ -3983,7 +4013,9 @@ API is implemented on buyer side.
 
 
 
-### Insert order [/dropship-test/v2/order/insert/{test}?token={token}]
+## Insert order 
+
+[/dropship-test/v2/order/insert/{test}?token={token}]
 
 A testing endpoint to invoke *[Insert order][insert-order]* request to Supplier API
 
@@ -3995,7 +4027,7 @@ Also initiate new test and deactivate previous one.
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Invoke Insert order request [POST]
+### Invoke Insert order request [POST]
 
 Request ([InvokerOrderInsertRequest][ds-invoker-order-insert-request])  
 Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])  
@@ -4131,7 +4163,9 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
 
 
 
-### Extend order [/dropship-test/v2/order/extend/{test}?token={token}]
+## Extend order 
+
+[/dropship-test/v2/order/extend/{test}?token={token}]
 
 A testing endpoint to invoke *[Extend order][extend-order]* request to Supplier API
 
@@ -4141,7 +4175,7 @@ A testing endpoint to invoke *[Extend order][extend-order]* request to Supplier 
     + test: T001 (String30, required) - Test number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Invoke Extend order request [POST]
+### Invoke Extend order request [POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])  
@@ -4221,7 +4255,9 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
 
 
 
-### Cancel order [/dropship-test/v2/order/cancel/{test}?token={token}]
+## Cancel order 
+
+[/dropship-test/v2/order/cancel/{test}?token={token}]
 
 A testing endpoint to invoke *[Cancel order][cancel-order]* request to Supplier API
 
@@ -4231,7 +4267,7 @@ A testing endpoint to invoke *[Cancel order][cancel-order]* request to Supplier 
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Invoke Cancel order request [POST]
+### Invoke Cancel order request [POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])  
@@ -4287,7 +4323,9 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
 
 
 
-### Confirm order [/dropship-test/v2/order/confirm/{test}?token={token}]
+## Confirm order 
+
+[/dropship-test/v2/order/confirm/{test}?token={token}]
 
 Provides ability to invoke *[Confirm order][confirm-order]* request to Supplier API
 
@@ -4297,7 +4335,7 @@ Provides ability to invoke *[Confirm order][confirm-order]* request to Supplier 
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-#### Invoke Confirm order request [POST]
+### Invoke Confirm order request [POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])  
@@ -4353,7 +4391,7 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
 
 
 
-## Data Structures
+# Data Structures
 
 ### Timestamp (string)
 Date + time format in [CET (Central European Time)](https://time.is/cs/CET) (`YYYY-MM-DDThh:mm:ss.nnn`).
