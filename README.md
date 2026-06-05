@@ -4,13 +4,7 @@ nav_order: 1
 title: Dropshipment API
 permalink: /
 mermaid:
-  theme: dark
-  themeVariables:
-    primaryTextColor: '#fff'
-    primaryBorderColor: '#fff'
-    lineColor: '#fff'
-    secondBkgColor: '#1e1e1e'
-    tertiaryTextColor: '#fff'
+  theme: light
 ---
 
 # Dropshipment API
