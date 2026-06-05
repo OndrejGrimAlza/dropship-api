@@ -6,7 +6,7 @@ title: Dropshipment API
 color_scheme: light
 search_enabled: false
 heading_anchors: true
-nav_enabled: true
+nav_enabled: false
 nav_sort: case_insensitive
 #aux_links:
 #  "GitHub": https://github.com/OndrejGrimAlza/dropship-api
