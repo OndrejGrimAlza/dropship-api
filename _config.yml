@@ -19,17 +19,17 @@ kramdown:
   auto_ids: true
   input: GFM
   hard_wrap: false
-  syntax_highlighter: rouge
+  #syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
       line_numbers: true
       start_line: 1
 
 # Generate table of contents
-toc:
-  min_level: 1
-  max_level: 2
-  ordered: false
+#toc:
+#  min_level: 1
+#  max_level: 2
+#  ordered: false
 
 plugins:
   - jekyll-remote-theme
