@@ -18,7 +18,7 @@ kramdown:
   toc_levels: 1..2
   auto_ids: true
   input: GFM
-  hard_wrap: false
+  #hard_wrap: false
   #syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
