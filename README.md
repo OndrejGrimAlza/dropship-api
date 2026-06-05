@@ -4515,61 +4515,61 @@ Examples
 + `-6` - Bad response.  
 
 ### ImportType (enum[string]) {#data-structures--import-type}
-+ PartialFull - Update only provided items. Used for nightly batch import.
-+ Update - Update only provided items
-+ Full - Missing items in Full import are considered as unavailable. **Deprecated**
++ `PartialFull` - Update only provided items. Used for nightly batch import.
++ `Update` - Update only provided items
++ `Full` - Missing items in Full import are considered as unavailable. **Deprecated**
 
 ### TrackAndTraceStatus (enum[string]) {#data-structures--track-and-trace-status}
-+ Depot - The shipment was delivered to carrier depot.
-+ Delivery - The shipment is being delivered to the recipient from depot.
-+ Stored - The shipment was stored at parcel shop for pickup by the end customer.
-+ Delivered - The shipment was delivered to the end customer or buyer branch.
-+ Rejected - The shipment was rejected.
++ `Depot` - The shipment was delivered to carrier depot.
++ `Delivery` - The shipment is being delivered to the recipient from depot.
++ `Stored` - The shipment was stored at parcel shop for pickup by the end customer.
++ `Delivered` - The shipment was delivered to the end customer or buyer branch.
++ `Rejected` - The shipment was rejected.
 
 ### DeliveryResultStatus (enum[string]) {#data-structures--delivery-result-status}
-+ Canceled - Canceled by supplier (issues with goods)
-+ Delivered - Sucessfully delivered to the end customer or buyer branch
-+ Rejected - Rejected by the end customer or buyer, returned back to supplier
++ `Canceled` - Canceled by supplier (issues with goods)
++ `Delivered` - Sucessfully delivered to the end customer or buyer branch
++ `Rejected` - Rejected by the end customer or buyer, returned back to supplier
 
 ### ShipmentDeliveryType (enum[string]) {#data-structures--shipment-delivery-type}
-+ B2C - End customer client (carrier will contact customer)
-+ B2B - Business client
-+ Branch - Delivery to branch
-+ ParcelShop - Delivery to parcel shop
++ `B2C` - End customer client (carrier will contact customer)
++ `B2B` - Business client
++ `Branch` - Delivery to branch
++ `ParcelShop` - Delivery to parcel shop
 
 ### ShipmentShippingMode (enum[string]) {#data-structures--shipment-shipping-mode}
-+ Buyer - Buyer handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
-+ Supplier - Supplier handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
++ `Buyer` - Buyer handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
++ `Supplier` - Supplier handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
 
 ### ShipmentTrackingMode (enum[string]) {#data-structures--shipment-tracking-mode}
-+ Buyer - Buyer handles *shipment track and trace*
-+ Supplier - Supplier handles *shipment track and trace*
++ `Buyer` - Buyer handles *shipment track and trace*
++ `Supplier` - Supplier handles *shipment track and trace*
 
 ### ShippingCarrierCode (enum[string]) {#data-structures--shipping-carrier-code}
-+ ALZA - Alza
-+ CZPOST - Czech Post
-+ DHL - DHL
-+ DPD - DPD Czechia
-+ DPDSK - DPD Slovakia
-+ DPDHU - DPD Hungary
-+ FOFR - RSC Logistics
-+ GebruderWeiss - GebrĂĽder Weiss
-+ GEISPARCEL - Geis Parcel
-+ GEISCARGO - Geis Cargo
-+ GLS - GLS
-+ GO - GO!
-+ HELICAR - HELICAR
-+ MagyarPOST - Magyar Posta 
-+ Najbert - KurĂ˝r Najbert
-+ PPL - PPL
-+ RHENUS - Rhenus HD
-+ SKPOST - Slovakia Post
-+ SKYNET - SKYNET
-+ TOPTRANS - TOPTRANS
-+ UPS - UPS
-+ WEDO - WE|DO
-+ ZASILKOVNA - Packeta
-+ ZavolejSiKuryra - ZavolejsikurĂ˝ra.cz
++ `ALZA` - Alza
++ `CZPOST` - Czech Post
++ `DHL` - DHL
++ `DPD` - DPD Czechia
++ `DPDSK` - DPD Slovakia
++ `DPDHU` - DPD Hungary
++ `FOFR` - RSC Logistics
++ `GebruderWeiss` - GebrĂĽder Weiss
++ `GEISPARCEL` - Geis Parcel
++ `GEISCARGO` - Geis Cargo
++ `GLS` - GLS
++ `GO` - GO!
++ `HELICAR` - HELICAR
++ `MagyarPOST` - Magyar Posta 
++ `Najbert` - KurĂ˝r Najbert
++ `PPL` - PPL
++ `RHENUS` - Rhenus HD
++ `SKPOST` - Slovakia Post
++ `SKYNET` - SKYNET
++ `TOPTRANS` - TOPTRANS
++ `UPS` - UPS
++ `WEDO` - WE DO
++ `ZASILKOVNA` - Packeta
++ `ZavolejSiKuryra` - ZavolejsikurĂ˝ra.cz
 
 ### ShippingCarrierDeliveryType (enum[string]) {#data-structures--shipping-carrier-delivery-type}
 + Supplier
