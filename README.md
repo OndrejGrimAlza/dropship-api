@@ -5,7 +5,7 @@
 1. TOC
 {:toc}
 
-# Introduction
+# Introduction {#introduction}
 
 This documentation describes the features and capabilities of the **Dropshipment API**, which is intended for suppliers who want to
 implement delivery of goods from the supplier directly to the end customer in its own information system.
@@ -31,11 +31,11 @@ API provides specific test scenarios to detect API implementation errors. Both p
 No further implementation on the supplier side  is necessary. Just use of third party tools like Postman.
 
 
-## Simplified communication scheme
+## Simplified communication scheme {#introduction-simplified-communication-scheme}
 
 ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
 
-## Upcoming features
+## Upcoming features {#introduction-upcoming-features}
 
   - ??.2026 - **GLN**
     - *[Insert order][insert-order]*, *[Extend order][extend-order]*, *[Cancel order][cancel-order]* and *[Confirm order][confirm-order]* : 
@@ -54,7 +54,7 @@ No further implementation on the supplier side  is necessary. Just use of third 
         New object contains three services. `oldApplianceRemoval`, `carryIn` and `basicInstallation`
     
 
-## Versions
+## Versions {#introduction-versions}
 
   - **1.183** 29.05.2026
     - *[Shipping carrier][ds-shipping-carrier-code]* :  Added `DPDSK` for DPD Slovakia.
@@ -452,7 +452,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
  -->
  
 
-## Communication basics
+## Communication basics {#introduction-communication-basics}
 
   - Commonly trusted `HTTPS` authentication *certificate* is required.
   
@@ -463,7 +463,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
   - A 1-hour maintenance window has to be between 22:00 and 03:00.
 
 
-## API basics
+## API basics {#introduction-api-basics}
 
   - All *requests* have to use `Content-Type` `application/json` header with `UTF-8` charset
     ([RFC 7231, section 3.1.1.5: Content-Type](https://datatracker.ietf.org/doc/html/rfc7231#section-3.1.1.5)).
@@ -478,7 +478,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
   - The JSON `timestamp` and `timestampUtc` attribute must always be up-to-date even in cases of repeated sending of the API message.
   
 
-## Maintenance-free design
+## Maintenance-free design {#introduction-maintenance-free-design}
 
 Emphasis is placed on automation and maintenance-free communication.
 Any process that can prevent user intervention is preferred.
@@ -515,7 +515,7 @@ The following points outline this concept.
  and must wait for each other if they are run in parallel. The current recommended maximum number of requests of the same type 
  from one supplier running in parallel is **5**. For more info follow to *[Rate limits][rate-limits]*
 
-## Authentication token
+## Authentication token {#introduction-authentication-token}
 
  - Standard *[HMAC token][hmac]* is used for basic authentication. Token is *[Base64][base64]* encoded
  and you have to *[URL Encode][percent-encoding]* it again for usage in URI. 
@@ -577,11 +577,11 @@ POST https://services.server.cz/rest/api/v1/order/DD12345678/delivery?token=jDGA
 ```
 
 
-## Data types
+## Data types {#introduction-data-types}
 
-Data types are simple types and its part of *[Data Structures][data-structures]*.
+Data types are simple types and are part of *[Data Structures][data-structures]*.
 
-### Basic data types
+### Basic data types {#introduction-data-types-basic-data-types}
 
 Basic types are based on `string` and `number`.
 
@@ -616,7 +616,7 @@ Specific types
 
 
 
-### Enumerated data types
+### Enumerated data types {#introduction-data-types-enumerated-data-types}
 
 Enumerated types are based on `enum`.
 
@@ -712,7 +712,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
 
 
 
-## Error handling
+## Error handling {#introduction-error-handling}
 
 ***Required behavior.***
 
@@ -722,7 +722,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
  - Resent messages has to be send in specified intervals. See *[Resend intervals][resend-intervals]*
 
 
-### Common error codes
+### Common error codes {#introduction-error-handling-common-error-codes}
 
 ***Required behavior.***
 
@@ -742,7 +742,7 @@ If message data is not accepted, message have to be resend until the problem is 
 Error code `-3` and `-5` is accepted in specific methods.
 
 
-### Resend intervals
+### Resend intervals {#introduction-error-handling-Resend-intervals}
 
 ***Required behavior.***
 
@@ -781,7 +781,7 @@ Interval units are in minutes.
 Increasing the interval to prevent massive API overload is desirable.
 
 
-### Timeout settings
+### Timeout settings {#introduction-error-handling-timeout-settings}
 
 ***Required behavior.***
 
@@ -801,7 +801,7 @@ Timeout should be set higher on sender side
 | *[Delivery result][delivery-result]*                 | 60                | 80                   |
 
 
-### Rate limits
+### Rate limits {#introduction-error-handling-rate-limits}
 
 Rate limits set rules for how an API should behave when processing a large number of parallel incoming requests from a single supplier.
 
@@ -815,7 +815,7 @@ Specific limits are intentionally not specifically stated here. The settings wil
 
 
 
-## Shipping modes
+## Shipping modes {#introduction-shipping-modes}
 
 Shipping mode defines who handles **shipment number**, **package numbers**, **shipping list**, **shipping stickers** 
 and **carrier data** which are necessary for shipment delivery for specific shipping carrier.
@@ -826,7 +826,7 @@ The identification of which mode is used for the current order is defined in the
 attribute in the *[Confirm order][confirm-order]*.
 
 
-### Supplier shipping mode
+### Supplier shipping mode {#introduction-shipping-modes-supplier-shipping-mode}
 
 For suppliers who have already implemented or want to implement specific shipping carriers.
 
@@ -837,7 +837,7 @@ This mode is also known as **DSM**. More specificly :
 * **DSMD** when supplier's transport contract is used.
 
 
-### Buyer shipping mode
+### Buyer shipping mode {#introduction-shipping-modes-buyer-shipping-mode}
 
 For suppliers who do not have implemented or are not able to implement specific shipping carriers.
 
@@ -854,13 +854,13 @@ In situations where an invalid shipment is generated, it can be deleted using *[
 
 
 
-## Product pricing
+## Product pricing {#introduction-product-pricing}
 
 Product pricing defines who can affect the final price for the end customer.
 The following product pricing variants cannot be combined with each other.
 
 
-### Supplier product pricing
+### Supplier product pricing {#introduction-product-pricing-supplier-product-pricing}
 
 Supplier product pricing allows the supplier to potentially influence the price at which the end customer buys the product.
 The purchase price of the product is calculated according to the commission level of the product category provided by the buyer.
@@ -875,7 +875,7 @@ of **Latest price mode** of *[Availability][availability]* API message .
 For more information see *[Availability][availability]* API message.
 
 
-### Buyer product pricing
+### Buyer product pricing {#introduction-product-pricing-buyer-product-pricing}
 
 Buyer product pricing does not allow influence the price at which the end customer buys the product.
 
@@ -890,7 +890,7 @@ For more information see *[Availability][availability]* API message.
 
 
 
-## FAQ
+## FAQ {#introduction-faq}
 
 **1. How to work with `Supplier` shippingCarrierDeliveryType ?**
 
@@ -987,23 +987,23 @@ would look like this:
 
 
 
-[introduction]:                     #introduction/introduction
-[communication-basics]:             #introduction/communication-basics
-[api-basics]:                       #introduction/api-basics
-[maintenance-free-design]:          #introduction/maintenance-free-design
-[authentication-token]:             #introduction/authentication-token
-[data-types]:                       #introduction/data-types
-[enumerated-data-types]:            #introduction/data-types/enumerated-data-types
-[error-handling]:                   #introduction/error-handling
-[common-error-codes]:               #introduction/error-handling/common-error-codes
-[resend-intervals]:                 #introduction/error-handling/resend-intervals
-[timeout-settings]:                 #introduction/error-handling/timeout-settings
-[rate-limits]:                      #introduction/error-handling/rate-limits
-[shipping-modes]:                   #introduction/shipping-modes
-[product-pricing]:                  #introduction/product-pricing
-[supplier-product-pricing]:         #introduction/product-pricing/supplier-product-pricing
-[buyer-product-pricing]:            #introduction/product-pricing/buyer-product-pricing
-[faq]:                              #introduction/faq
+[introduction]:                     #introduction-introduction
+[communication-basics]:             #introduction-communication-basics
+[api-basics]:                       #introduction-api-basics
+[maintenance-free-design]:          #introduction-maintenance-free-design
+[authentication-token]:             #introduction-authentication-token
+[data-types]:                       #introduction-data-types
+[enumerated-data-types]:            #introduction-data-types-enumerated-data-types
+[error-handling]:                   #introduction-error-handling
+[common-error-codes]:               #introduction-error-handling-common-error-codes
+[resend-intervals]:                 #introduction-error-handling-resend-intervals
+[timeout-settings]:                 #introduction-error-handling-timeout-settings
+[rate-limits]:                      #introduction-error-handling-rate-limits
+[shipping-modes]:                   #introduction-shipping-modes
+[product-pricing]:                  #introduction-product-pricing
+[supplier-product-pricing]:         #introduction-product-pricing-supplier-product-pricing
+[buyer-product-pricing]:            #introduction-product-pricing-buyer-product-pricing
+[faq]:                              #introduction-faq
 
 [supplier-api]:                     #reference/supplier-api
 [insert-order]:                     #reference/supplier-api/insert-order
