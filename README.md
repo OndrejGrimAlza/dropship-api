@@ -713,13 +713,13 @@ Specific types
 
 Enumerated types are based on `enum`.
 
-#### Country code
+#### Country code {#introduction--data-types--enumerated-data-types--country-code}
 See *[Country][ds-country]* data structrure for more information.
 
-#### Currency code
+#### Currency code {#introduction--data-types--enumerated-data-types--currency-code}
 See *[Currency][ds-currency]* data structrure for more information.
 
-#### Country vs Currency
+#### Country vs Currency {#introduction--data-types--enumerated-data-types--country-vs-currency}
 We always accept the national currency of the country. Examples in table.
 
 | Country | Currency |
@@ -731,23 +731,23 @@ We always accept the national currency of the country. Examples in table.
 | `DE`    | `EUR`    |
 | `PL`    | `PLN`    |
 
-#### Error code
+#### Error code {#introduction--data-types--enumerated-data-types--error-code}
 For all possible error codes see *[ErrorCode][ds-error-code]*. Their subsets *[SuccessErrorCode][ds-success-error-code]* 
 and *[FailErrorCode][ds-fail-error-code]* are applied accordingly.
 
-#### Import type
+#### Import type {#introduction--data-types--enumerated-data-types--import-type}
 Used only in *[Availability][availability]* API message. 
 See *[ImportType][ds-import-type]* data structrure for full list.
 
-#### Track and Trace status 
+#### Track and Trace status {#introduction--data-types--enumerated-data-types--track-and-Trace-status}
 Used only in *[Track and Trace][track-and-trace]* API message. 
 See *[TrackAndTrace status][ds-track-and-trace-status]* data structrure for full list.
 
-#### Delivery result status
+#### Delivery result status {#introduction--data-types--enumerated-data-types--Delivery-result-status}
 Used only in *[Delivery result][delivery-result]* API message.
 See *[DeliveryResultStatus][ds-delivery-result-status]* data structrure for full list.
 
-#### Shipment delivery type
+#### Shipment delivery type {#introduction--data-types--enumerated-data-types}
 Used only in *[Confirm order][confirm-order]* API message.
 See *[ShipmentDeliveryType][ds-shipment-delivery-type]* data structrure for full list.
 
@@ -760,12 +760,12 @@ See *[ShipmentDeliveryType][ds-shipment-delivery-type]* data structrure for full
 | `Branch`             | Yes     | Yes      |
 | `ParcelShop`         | No      | No       |
 
-#### Shipment shipping mode
+#### Shipment shipping mode {#introduction--data-types--enumerated-data-types--shipment-shipping-mode}
 See *[Shipping modes][shipping-modes]* for a full explanation.
 Used only in *[Confirm order][confirm-order]* API message.
 See *[ShipmentShippingMode][ds-shipment-shipping-mode]* data structrure for full list.
 
-#### Shipping carrier code
+#### Shipping carrier code {#introduction--data-types--enumerated-data-types--shipping-carrier-code}
 
 Identification of shipping carrier. 
 
@@ -775,7 +775,7 @@ Identification is used in *[Confirm order][confirm-order]*,
 See *[ShippingCarrierCode][ds-shipping-carrier-code]* data structrure for full list.
 
 
-#### Shipping carrier delivery type
+#### Shipping carrier delivery type {#introduction--data-types--enumerated-data-types--shipping-carrier-delivery-type}
 
 Identification of delivery type. Mostly shipping carrier specific.
 
@@ -795,7 +795,7 @@ special value **`Supplier`**  means that the supplier takes care of the delivery
 See *[ShippingCarrierDeliveryCode][ds-shipping-carrier-delivery-type]* data structrure for full list.
 
 
-#### Parcel shop identification
+#### Parcel shop identification {#introduction--data-types--enumerated-data-types--parcel-shop-identification}
 
 Identification is used in *[Confirm order][confirm-order]*, *[Create shipment][create-shipment]* 
 and in *[Shipment departure][shipment-departure]*.
@@ -805,7 +805,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
 
 
 
-## Error handling {#introduction--error-handling}
+## Error handling {#introduction--error-handling--error-handling}
 
 ***Required behavior.***
 
@@ -815,7 +815,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
  - Resent messages has to be send in specified intervals. See *[Resend intervals][resend-intervals]*
 
 
-### Common error codes {#introduction--error-handling--common-error-codes}
+### Common error codes {#introduction--error-handling--common-error-codes--common-error-codes}
 
 ***Required behavior.***
 
