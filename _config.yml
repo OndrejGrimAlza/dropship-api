@@ -56,5 +56,5 @@ search:
   preview_words_after: 10
   tokenizer_separator: /[\s/]+/
   rel_url: false
-  button: true
+  button: false
 
