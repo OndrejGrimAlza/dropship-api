@@ -4389,7 +4389,7 @@ A string with a maximum length of 500 characters.
 
 It can be set for each branch of the supplier separately or it can be the same for all branches.
 
-### OrderNumber (String30) {#data-structures--order-number}
+### OrderNumber ([String30][ds-string-30]) {#data-structures--order-number}
 A string with a maximum length of 30 characters. 
 Currently, two formats are possible.
 The old one has about 10 digits.
@@ -4418,28 +4418,28 @@ A character ruleset:
 • Allows special characters: `_` `-` `:` `/` `.` `#` `,` `(` `)` `+` `*` 
 • Whitespace at the beginning and end of the string is ignored.
 
-### Weight (number) {#data-structures--weight}
+### Weight ([Float][ds-float]) {#data-structures--weight}
 Decimal numeric with precision 9 and scale 4.
 
 Min value: `0.0` Max value: `99999.9999`
 
 Example: `5.2468`
 
-### Volume (number) {#data-structures--volume}
+### Volume ([Float][ds-float]) {#data-structures--volume}
 Decimal numeric with precision 15 and scale 4.
 
 Min value: `0.0` Max value: `9999999999.9999`
 
 Example: `100000`
 
-### Money (number) {#data-structures--money}
+### Money ([Float][ds-float]) {#data-structures--money}
 Decimal numeric with precision 15 and scale 2.
 
 Min value: `0.0` Max value: `9999999999.99`
 
 Example: `149.99`
 
-### VAT (number) {#data-structures--vat}
+### VAT ([Float][ds-float]) {#data-structures--vat}
 Decimal numeric with precision 9 and scale 2.
 
 Min value: `0.0` Max value: `99.99`
@@ -4624,7 +4624,7 @@ Examples
 + `CrossLC` - CrossLC group
 
 ### ParcelShop (object) {#data-structures--parcel-shop}
-+ **parcelShopIdentification** (ParcelShopIdentification, required) - Parcel shop identification
++ **parcelShopIdentification** ([ParcelShopIdentification][ds-parcel-shop-identification], required) - Parcel shop identification
 + **parcelShopBranchCode** ([String50][ds-string-50], required) - Parcel shop branch identification
 
 ### ShippingCarrierConfirm (object) {#data-structures--shipping-carrier-confirm}
