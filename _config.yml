@@ -13,12 +13,17 @@ nav_sort: case_insensitive
 
 # Jekyll settings
 markdown: kramdown
+highlighter: rouge
 kramdown:
   toc_levels: 1..2
   auto_ids: true
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: false  
+      line_numbers: true
+      start_line: 1
 
 # Generate table of contents
 toc:
@@ -31,7 +36,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-github-metadata
   - jekyll-include-cache
-  - jekyll-sitemap  
+  - jekyll-sitemap
 
 mermaid:  
   version: "9.1.6"
@@ -42,4 +47,4 @@ compress_html:
   endings: all
   startings: []
   blanklines: false
-  profile: false  
+  profile: false
