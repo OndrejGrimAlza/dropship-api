@@ -204,7 +204,7 @@ Deactivate S
     - *[CustomerId][ds-customer-id]* : Clarification of the use of the `customerId` attribute. 
         The attribute can be set for supplierBranchId and can be the same for all supplier branches. It is up to the supplier.
     - Relevant endpoints: *[Insert order][insert-order]*, *[Confirm order][confirm-order]*, *[Extend order][extend-order]*, *[Cancel order][cancel-order]* and 
-        *[Invoke Insert order][testing-insert-order-request]*
+        *[Invoke Insert order][testing-insert-order]*
   - **1.166** 12.12.2023    
     - *[Parcel shop identification][ds-parcel-shop-identification]* : Added `CZPOSTP`Post office delivery for shipping carrier code `CZPOST`.
   - **1.165** 16.08.2023
@@ -335,10 +335,10 @@ Deactivate S
         Attribute `customerId` marked as required.
     - *[Authentication][authentication-token]* : Clarification of the term `client`
   - **1.142** 11.06.2021
-    - *[Shipping carrier][ds-shipping-carrier-code]* : New shipping carrier Gebrüder Weiss introduced. With code `GebruderWeiss` 
+    - *[Shipping carrier][ds-shipping-carrier-code]* : New shipping carrier GebrĂĽder Weiss introduced. With code `GebruderWeiss` 
         and delivery type `GebruderWeissStandard`
   - **1.141** 01.06.2021
-    - *[Invoke Insert order][testing-insert-order-request]* : Adds custom `customerId` for communication with Supplier API.
+    - *[Invoke Insert order][testing-insert-order]* : Adds custom `customerId` for communication with Supplier API.
   - **1.140** 19.05.2021
     - Changes effective from **September 2021**
     - *Generate order packages* : API message won't be accepted. 
@@ -363,9 +363,9 @@ Deactivate S
   - **1.136** 27.11.2020
     - *[Availability][availability]* : Added new rules for Update importType.
   - **1.135** 06.11.2020
-    - *Shipping carrier identification* : Added `CZPOSTB` Česká pošta, Balíkovna.
-    - *[Shipping carrier delivery type][ds-shipping-carrier-delivery-type]* : Added `CZPOSTB` Balíkovna delivery type to Česká pošta.
-    - *[Parcel shop identification][ds-parcel-shop-identification]* : Added `CZPOSTB` Česká pošta Balíkovna.
+    - *Shipping carrier identification* : Added `CZPOSTB` ÄŚeskĂˇ poĹˇta, BalĂ­kovna.
+    - *[Shipping carrier delivery type][ds-shipping-carrier-delivery-type]* : Added `CZPOSTB` BalĂ­kovna delivery type to ÄŚeskĂˇ poĹˇta.
+    - *[Parcel shop identification][ds-parcel-shop-identification]* : Added `CZPOSTB` ÄŚeskĂˇ poĹˇta BalĂ­kovna.
   - **1.134** 15.09.2020
     - *[Availability][availability]* : A new optional `serialNumbers` attribute.
     - *[Insert order][insert-order]* : A new optional `serialNumbersRequired` attribute.
@@ -509,7 +509,7 @@ All older release messages for version **0.xxx** have been hidden due to the len
     - *[Insert order][insert-order]* : New optional `errorProducts`
   - **0.9** 31.8.2017
     - Trailing slashes removed from URLs
-    - Supplier API: New attributes: `regNo` (IČO) and `vatNo` (DIČ) in all methods
+    - Supplier API: New attributes: `regNo` (IÄŚO) and `vatNo` (DIÄŚ) in all methods
     - *[Availability Import][availability]* :
       - `price` is without *recycling/copyright fee*
       - Added optional attributes `fee`, `priceWithFee`, `limited`
@@ -2622,13 +2622,13 @@ Response ([GeneralResponse][ds-general-response])
                 "deliveryAddress": {
                     "companyName": "",
                     "addressName": "Franta Veverka",
-                    "streetWithNumber": "Horní 147/4",
+                    "streetWithNumber": "HornĂ­ 147/4",
                     "city": "Praha 4",
                     "country": "CZ",
                     "zip": "14000",
                     "phone": "+420777666555",
                     "email": "franta@veverka.cz",
-                    "note": "Pozor na Barbara (kocour), kouše"
+                    "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
 
@@ -2674,13 +2674,13 @@ Response ([GeneralResponse][ds-general-response])
                 "deliveryAddress": {
                     "companyName": "",
                     "addressName": "Franta Veverka",
-                    "streetWithNumber": "Horní 147/4",
+                    "streetWithNumber": "HornĂ­ 147/4",
                     "city": "Praha 4",
                     "country": "CZ",
                     "zip": "14000",
                     "phone": "+420777666555",
                     "email": "franta@veverka.cz",
-                    "note": "Pozor na Barbara (kocour), kouše"
+                    "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
 
@@ -2714,7 +2714,7 @@ Response ([GeneralResponse][ds-general-response])
                     "parcelShopBranchCode": "123"
                 },
                 "route": {    
-                    "routeName": "DS MP00001 -> CZLC4 -> CZLC3 -> Počernice",
+                    "routeName": "DS MP00001 -> CZLC4 -> CZLC3 -> PoÄŤernice",
                     "routeStops": [
                         {
                             "branchName": "CZLC4",
@@ -2742,13 +2742,13 @@ Response ([GeneralResponse][ds-general-response])
                 "deliveryAddress": {
                     "companyName": "",
                     "addressName": "Franta Veverka",
-                    "streetWithNumber": "Horní 147/4",
+                    "streetWithNumber": "HornĂ­ 147/4",
                     "city": "Praha 4",
                     "country": "CZ",
                     "zip": "14000",
                     "phone": "+420777666555",
                     "email": "franta@veverka.cz",
-                    "note": "Pozor na Barbara (kocour), kouše"
+                    "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
 
@@ -2799,8 +2799,8 @@ Response ([GeneralResponse][ds-general-response])
                 "paymentVS": "123456781",
                 "deliveryAddress": {
                     "companyName": "",
-                    "addressName": "Andrea Nováková",
-                    "streetWithNumber": "Vinohradská 105",
+                    "addressName": "Andrea NovĂˇkovĂˇ",
+                    "streetWithNumber": "VinohradskĂˇ 105",
                     "city": "Praha",
                     "phone": "+420777666555",
                     "email": "novakova@gmail.com",
@@ -2816,15 +2816,15 @@ Response ([GeneralResponse][ds-general-response])
                     "shipmentDeliveryGln": "8532165490011"
                 },
                 "shipmentDeliveryAddress": {
-                    "companyName": "AlzaBox 19 Benešov",
-                    "streetWithNumber": "Nádražní 2105",
-                    "city": "Benešov",
+                    "companyName": "AlzaBox 19 BeneĹˇov",
+                    "streetWithNumber": "NĂˇdraĹľnĂ­ 2105",
+                    "city": "BeneĹˇov",
                     "country": "CZ",
                     "zip": "25601"
                 },
                 "buyerAddress": {
                     "companyName": "Buyer.cz a.s.",
-                    "streetWithNumber": "Náměstí míru 1/1",
+                    "streetWithNumber": "NĂˇmÄ›stĂ­ mĂ­ru 1/1",
                     "city": "Praha 1",
                     "country": "CZ",
                     "zip": "10000"
@@ -2872,7 +2872,7 @@ Response ([GeneralResponse][ds-general-response])
                 "shipmentExternalOrderNumber":"A2026010901",
                 "deliveryAddress": {
                     "addressName": "Franta Veverka",
-                    "streetWithNumber": "Horní 147/4",
+                    "streetWithNumber": "HornĂ­ 147/4",
                     "city": "Praha 4",
                     "country": "CZ",
                     "zip": "14000",
@@ -4415,11 +4415,11 @@ A case insensitive string with a maximum length of 50.
 
 A character ruleset:
 
-• Allows alphanumeric characters and diacritics.
+â€˘ Allows alphanumeric characters and diacritics.
 
-• Allows special characters: `_` `-` `:` `/` `.` `#` `,` `(` `)` `+` `*` 
+â€˘ Allows special characters: `_` `-` `:` `/` `.` `#` `,` `(` `)` `+` `*` 
 
-• Whitespace at the beginning and end of the string is ignored.
+â€˘ Whitespace at the beginning and end of the string is ignored.
 
 ### Weight (number) {#data-structures--weight}
 Decimal numeric with precision 9 and scale 4.
@@ -4553,14 +4553,14 @@ Examples
 + DPDSK - DPD Slovakia
 + DPDHU - DPD Hungary
 + FOFR - RSC Logistics
-+ GebruderWeiss - Gebrüder Weiss
++ GebruderWeiss - GebrĂĽder Weiss
 + GEISPARCEL - Geis Parcel
 + GEISCARGO - Geis Cargo
 + GLS - GLS
 + GO - GO!
 + HELICAR - HELICAR
 + MagyarPOST - Magyar Posta 
-+ Najbert - Kurýr Najbert
++ Najbert - KurĂ˝r Najbert
 + PPL - PPL
 + RHENUS - Rhenus HD
 + SKPOST - Slovakia Post
@@ -4569,7 +4569,7 @@ Examples
 + UPS - UPS
 + WEDO - WE|DO
 + ZASILKOVNA - Packeta
-+ ZavolejSiKuryra - Zavolejsikurýra.cz
++ ZavolejSiKuryra - ZavolejsikurĂ˝ra.cz
 
 ### ShippingCarrierDeliveryType (enum[string]) {#data-structures--shipping-carrier-delivery-type}
 + Supplier
@@ -4581,7 +4581,7 @@ Examples
 + ALZABOX - AlzaBox delivery for shipping carrier code `ALZA`
 + CZPOSTD - Address delivery for shipping carrier code `CZPOST`
 + CZPOSTP - Post office delivery for shipping carrier code `CZPOST`
-+ CZPOSTB - Balíkovna delivery for shipping carrier code `CZPOST`
++ CZPOSTB - BalĂ­kovna delivery for shipping carrier code `CZPOST`
 + DHL - For shipping carrier code `DHL`
 + DPD - Address delivery for shipping carrier code `DPD`
 + DPDSK - Address delivery for shipping carrier code `DPDSK`
@@ -4616,7 +4616,7 @@ Examples
 
 ### ParcelShopIdentification (enum[string]) {#data-structures--parcel-shop-identification}
 + ALZABOX - AlzaBox delivery for shipping carrier code `ALZA`
-+ CZPOSTB - Balíkovna for shipping carrier code `CZPOST`
++ CZPOSTB - BalĂ­kovna for shipping carrier code `CZPOST`
 + CZPOSTP - Post office delivery for shipping carrier code `CZPOST`
 + DPDALZABOX - AlzaBox delivery for shipping carrier code `DPD`
 + DPDBOX - DPDBox delivery for shipping carrier code `DPD`
@@ -5127,42 +5127,70 @@ Examples
 + responseObject (GeneralResponse, optional) - Filled with Supplier API response when it's valid
 
 
-[introduction]:                     #introduction--introduction
-[communication-basics]:             #introduction--communication-basics
-[api-basics]:                       #introduction--api-basics
-[maintenance-free-design]:          #introduction--maintenance-free-design
-[authentication-token]:             #introduction--authentication-token
-[data-types]:                       #introduction--data-types
-[enumerated-data-types]:            #introduction--data-types--enumerated-data-types
-[error-handling]:                   #introduction--error-handling
-[common-error-codes]:               #introduction--error-handling--common-error-codes
-[resend-intervals]:                 #introduction--error-handling--resend-intervals
-[timeout-settings]:                 #introduction--error-handling--timeout-settings
-[rate-limits]:                      #introduction--error-handling--rate-limits
-[shipping-modes]:                   #introduction--shipping-modes
-[product-pricing]:                  #introduction--product-pricing
-[supplier-product-pricing]:         #introduction--product-pricing--supplier-product-pricing
-[buyer-product-pricing]:            #introduction--product-pricing--buyer-product-pricing
-[faq]:                              #introduction--faq
+[introduction]:                         #introduction
+[upcoming-features]:                    #introduction--upcoming-features
+[versions]:                             #introduction--versions
+[simplified-communication-scheme]:      #introduction--simplified-communication-scheme
+[communication-basics]:                 #introduction--communication-basics
+[api-basics]:                           #introduction--api-basics
+[maintenance-free-design]:              #introduction--maintenance-free-design
+[authentication-token]:                 #introduction--authentication-token
 
-[supplier-api]:                     #reference-supplier-api
-[insert-order]:                     #reference-supplier-api--insert-order
-[cancel-order]:                     #reference-supplier-api--cancel-order
-[extend-order]:                     #reference-supplier-api--extend-order
-[confirm-order]:                    #reference-supplier-api--confirm-order
+[data-types]:                           #introduction--data-types
+[basic-data-types]:                     #introduction--data-types--basic-data-types
+[enumerated-data-types]:                #introduction--data-types--enumerated-data-types
+[country-code]:                         #introduction--data-types--enumerated-data-types--country-code
+[country-vs-currency]:                  #introduction--data-types--enumerated-data-types--country-vs-currency
+[currency-code]:                        #introduction--data-types--enumerated-data-types--currency-code
+[delivery-result-status]:               #introduction--data-types--enumerated-data-types--delivery-result-status
+[error-code]:                           #introduction--data-types--enumerated-data-types--error-code
+[import-type]:                          #introduction--data-types--enumerated-data-types--import-type
+[parcel-shop-identification]:           #introduction--data-types--enumerated-data-types--parcel-shop-identification
+[shipment-shipping-mode]:               #introduction--data-types--enumerated-data-types--shipment-shipping-mode
+[shipping-carrier-code]:                #introduction--data-types--enumerated-data-types--shipping-carrier-code
+[shipping-carrier-delivery-type]:       #introduction--data-types--enumerated-data-types--shipping-carrier-delivery-type
+[track-and-trace-status]:               #introduction--data-types--enumerated-data-types--track-and-trace-status
 
-[buyer-api]:                        #reference-buyer-api
-[availability]:                     #reference-buyer-api--availability
-[create-shipment]:                  #reference-buyer-api--create-shipment
-[delete-shipment]:                  #reference-buyer-api--delete-shipment
-[shipment-departure]:               #reference-buyer-api--shipment-departure
-[track-and-trace]:                  #reference-buyer-api--track-and-trace
-[delivery-result]:                  #reference-buyer-api--delivery-result
-    
-[testing-supplier-api]:             #reference-testing-supplier-api
-[testing-insert-order-request]:     #reference-testing-supplier-api--insert-order--invoke-insert-order-request
-[testing-buyer-api]:                #reference-testing-buyer-api
-[testing-availability]:             #reference-testing-buyer-api--availability
+[error-handling]:                       #introduction--error-handling--error-handling
+[common-error-codes]:                   #introduction--error-handling--common-error-codes--common-error-codes
+[resend-intervals]:                     #introduction--error-handling--resend-intervals
+[timeout-settings]:                     #introduction--error-handling--timeout-settings
+[rate-limits]:                          #introduction--error-handling--rate-limits
+[shipping-modes]:                       #introduction--shipping-modes
+[buyer-shipping-mode]:                  #introduction--shipping-modes--buyer-shipping-mode
+[supplier-shipping-mode]:               #introduction--shipping-modes--supplier-shipping-mode
+[product-pricing]:                      #introduction--product-pricing
+[supplier-product-pricing]:             #introduction--product-pricing--supplier-product-pricing
+[buyer-product-pricing]:                #introduction--product-pricing--buyer-product-pricing
+[faq]:                                  #introduction--faq
+
+[supplier-api]:                         #reference-supplier-api
+[insert-order]:                         #reference-supplier-api--insert-order
+[cancel-order]:                         #reference-supplier-api--cancel-order
+[extend-order]:                         #reference-supplier-api--extend-order
+[confirm-order]:                        #reference-supplier-api--confirm-order
+
+[buyer-api]:                            #reference-buyer-api
+[availability]:                         #reference-buyer-api--availability
+[create-shipment]:                      #reference-buyer-api--create-shipment
+[delete-shipment]:                      #reference-buyer-api--delete-shipment
+[shipment-departure]:                   #reference-buyer-api--shipment-departure
+[track-and-trace]:                      #reference-buyer-api--track-and-trace
+[delivery-result]:                      #reference-buyer-api--delivery-result
+
+[testing-supplier-api]:                 #reference-testing-supplier-api
+[testing-insert-order]:                 #reference-testing-supplier-api--insert-order
+[testing-cancel-order]:                 #reference-testing-supplier-api--cancel-order
+[testing-confirm-order]:                #reference-testing-supplier-api--confirm-order
+[testing-extend-order]:                 #reference-testing-supplier-api--extend-order
+
+[testing-buyer-api]:                    #reference-testing-buyer-api
+[testing-availability]:                 #reference-testing-buyer-api--availability
+[testing-create-shipment]:              #reference-testing-buyer-api--create-shipment
+[testing-delete-shipment]:              #reference-testing-buyer-api--delete-shipment
+[testing-delivery-result]:              #reference-testing-buyer-api--delivery-result
+[testing-shipment-departure]:           #reference-testing-buyer-api--shipment-departure
+[testing-track-and-trace]:              #reference-testing-buyer-api--track-and-trace
 
 [data-structures]:                      #data-structures
 [ds-timestamp]:                         #data-structures--timestamp
@@ -5188,6 +5216,8 @@ Examples
 [ds-country]:                           #data-structures--country
 [ds-currency]:                          #data-structures--currency
 [ds-guid]:                              #data-structures--guid
+[ds-gln-list]:                          #data-structures--gln-list
+[ds-gln]:                               #data-structures--gln
 [ds-number]:                            #data-structures--number
 [ds-order-number]:                      #data-structures--order-number
 [ds-id]:                                #data-structures--id
@@ -5202,6 +5232,7 @@ Examples
 [ds-shipment-delivery-type]:            #data-structures--shipment-delivery-type
 [ds-shipment-shipping-mode]:            #data-structures--shipment-shipping-mode
 [ds-shipment-delivery-services]:        #data-structures--shipment-delivery-services
+[ds-shipment-tracking-mode]:            #data-structures--shipment-tracking-mode
 [ds-shipping-carrier-code]:             #data-structures--shipping-carrier-code
 [ds-shipping-carrier-delivery-type]:    #data-structures--shipping-carrier-delivery-type
 [ds-parcel-shop-identification]:        #data-structures--parcel-shop-identification
@@ -5212,15 +5243,25 @@ Examples
 [ds-shipment-address]:                  #data-structures--shipment-address
 [ds-package-sorting-group]:             #data-structures--package-sorting-group
 
+[ds-shipping-list]:                     #data-structures--shipping-list
 [ds-shipping-list-group]:               #data-structures--shipping-list-group
 [ds-departured-shipment]:               #data-structures--departured-shipment
+[ds-product]:                           #data-structures--product
 [ds-error-product]:                     #data-structures--error-product
+[ds-parcel-shop]:                       #data-structures--parcel-shop
+[ds-shipping-carrier-confirm]:          #data-structures--shipping-carrier-confirm
+[ds-shipping-carrier]:                  #data-structures--shipping-carrier
+[ds-shipping-carrier-strict]:           #data-structures--shipping-carrier-strict
 [ds-country-price]:                     #data-structures--country-price
 [ds-country-price-fees]:                #data-structures--country-price-fees
+[ds-created-shipment]:                  #data-structures--created-shipment
 [ds-created-package]:                   #data-structures--created-package
 [ds-shipment-create-item]:              #data-structures--shipment-create-item
 [ds-shipment-create-package]:           #data-structures--shipment-create-package
+[ds-shipment-departure-package]:        #data-structures--shipment-departure-package
+[ds-shipment-departure-item]:           #data-structures--shipment-departure-item
 [ds-order-item]:                        #data-structures--order-item
+[ds-package-sorting]:                   #data-structures--package-sorting
 
 [ds-availability-request]:              #data-structures--availability-request
 [ds-order-insert-request]:              #data-structures--order-insert-request
@@ -5244,7 +5285,6 @@ Examples
 [ds-invoker-order-extend-response]:     #data-structures--invoker-order-extend-response
 [ds-invoker-order-confirm-response]:    #data-structures--invoker-order-confirm-response
 [ds-invoker-order-cancel-response]:     #data-structures--invoker-order-cancel-response
-
 
 [hmac]:                 https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
 [base64]:               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
