@@ -4636,491 +4636,490 @@ Examples
 + **shippingCarrierDeliveryType** (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
 ### ShippingCarrier (object) {#data-structures--shipping-carrier}
-+ shippingCarrierCode (ShippingCarrierCode, optional) - Required same Shipping carrier code as sent in Confirm order.
-+ shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
++ **shippingCarrierCode** (ShippingCarrierCode, optional) - Required same Shipping carrier code as sent in Confirm order.
++ **shippingCarrierDeliveryType** (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
 ### ShippingCarrierStrict (object) {#data-structures--shipping-carrier-strict}
-+ shippingCarrierCode (ShippingCarrierCode, required) - Shipping carrier code.
-+ shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
++ **shippingCarrierCode** (ShippingCarrierCode, required) - Shipping carrier code.
++ **shippingCarrierDeliveryType** (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
 ### CountryPrice (object) {#data-structures--country-price}
-+ country (Country)
++ **country** (Country)
     Optional if the country is the same as the branch country. Otherwise required.  
     Target country.
-+ currency (Currency)
++ **currency** (Currency)
     Optional if the currency is the same as the import 'currency'. Otherwise required.  
     National currency of the `country`.
-+ vat (VAT, required)
++ **vat** (VAT, required)
     Value added tax in percentage (10, 15, 21, ...).
-+ purchasePriceWithoutFees (Money)
++ **purchasePriceWithoutFees** (Money)
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee).
     Optional for **Latest price mode**. Required if attribute `sellingPriceWithoutVat` is empty.   
     Incompatible with `sellingPriceWithoutVat`, `price`, `priceWithFee` and `fee`.
-+ sellingPriceWithoutVat (Money)
++ **sellingPriceWithoutVat** (Money)
     Unit selling price for the end customer (excl. VAT, incl. fees).   
     Optional for **Latest price mode**. Required if attribute `purchasePriceWithoutFees` is empty.
     Incompatible with `purchasePriceWithoutFees`.
-+ fees (CountryPriceFees, optional)
++ **fees** (CountryPriceFees, optional)
     Recycling and copyright unit fees. If it is not filled in, it means that the fees are 0.
 
 ### CountryPriceFees (object) {#data-structures--country-price-fees}
-+ copyright (Money, optional) 
++ **copyright** (Money, optional) 
     Copyright unit fee. If it is not filled in, it means that the fee is 0.
-+ recycling (Money, optional) 
++ **recycling** (Money, optional) 
     Recycling unit fee. If it is not filled in, it means that the fee is 0.
 
 ### Product (object) {#data-structures--product}
-+ code (SupplierProductCode, required) - Supplier product code
-+ name (String500, optional) - Product name
-+ ean (String20, required) - Product EAN code
-+ quantity (Number, required) - Amount available in stock. 
-+ limited (boolean, optional)
++ **code** (SupplierProductCode, required) - Supplier product code
++ **name** (String500, optional) - Product name
++ **ean** (String20, required) - Product EAN code
++ **quantity** (Number, required) - Amount available in stock. 
++ **limited** (boolean, optional)
     Amount in data is limited. We can try send an order that exceeds the reported quantity.   
     Example: Real availability 450, reported 50 ("50+").   
     Default value is `false`.
-+ serialNumbers (boolean, optional)
++ **serialNumbers** (boolean, optional)
     Serial numbers will be provided. If `true` then serial numbers will be expected 
     in `items[].serials` in *Shipment departure* API message.   
     Default value is `false`.  
-+ countryPrices (array[CountryPrice])
++ **countryPrices** (array[CountryPrice])
     Required for **Latest price mode**.   
     Forbidden for **Legacy price mode**.   
     Price setting for target countries.
-+ availability (String100, optional)
++ **availability** (String100, optional)
     Alternative delivery text information (`"7 days"`, `"3 weeks"`) (max 120 chars)
-+ expectedAvailability (Date, optional)
++ **expectedAvailability** (Date, optional)
     Expected availability date.
-+ size1 (Number)
++ **size1** (Number)
     **Deprecated - will be removed in the future.**
     
     Product size, smallest dimension (in mm).   
-+ size2 (Number)
++ **size2** (Number)
     **Deprecated - will be removed in the future.**
     
     Product size (in mm).   
-+ size3 (Number)
++ **size3** (Number)
     **Deprecated - will be removed in the future.**
     
     Product size, largest dimension (in mm).   
-+ weight (Weight)
++ **weight** (Weight)
     **Deprecated - will be removed in the future.**
     
     Product weight (in kg).   
-+ price (Money)
++ **price** (Money)
     **Deprecated - replaced by attribute `countryPrices[].purchasePriceWithoutFees`**   
     Required for **Legacy price mode**.  
     Forbidden for **Latest price mode**.   
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee).
-+ priceWithFee (Money) 
++ **priceWithFee** (Money) 
     **Deprecated - without replacement**   
     Optional for **Legacy price mode**.   
     Forbidden for **Latest price mode**.   
     Unit purchase price for buyer (excl. VAT, incl. recycling/copyright fee).
     The fee is 0 if the `fee` and `priceWithFee` fields are not filled.
-+ fee (Money) 
++ **fee** (Money) 
     **Deprecated - replaced by attribute `countryPrices[].fees`**   
     Optional for **Legacy price mode**.   
     Forbidden for **Latest price mode**.   
     Recycling/copyright fee.   
     The fee is 0 if the `fee` and `priceWithFee` fields are not filled.
-+ vat (VAT)
++ **vat** (VAT)
     **Deprecated - replaced by attribute `countryPrices[].vat`**   
     Required for **Legacy price mode**.   
     Forbidden for **Latest price mode**.     
     Value added tax in percentage (10, 15, 21, ...)    
 
 ### ErrorProduct (object) {#data-structures--error-product}
-+ code (SupplierProductCode, required) - Supplier product code
-+ quantity (Number, optional) - Amount available in stock (default `0`). 
-+ limited (boolean, optional) - Amount in data is limited (default `false`)
-+ price (Money, optional) - 
++ **code** (SupplierProductCode, required) - Supplier product code
++ **quantity** (Number, optional) - Amount available in stock (default `0`). 
++ **limited** (boolean, optional) - Amount in data is limited (default `false`)
++ **price** (Money, optional) - 
     **Deprecated - It is no longer used. The price correction must be sent via Availability**.
     
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee; default `original price`)
 
 ### DeliveryAddress (object) {#data-structures--delivery-address}
-+ companyName (String100) - Company name / Branch name. Required if `addressName` is empty. 
-+ addressName (String100) - Customer name. Required if `companyName` is empty.
-+ streetWithNumber (String100, required) - Street address with number
-+ city (String100, required) - City
-+ country (Country, required) - Country code
-+ zip (String10, required) - Zip Code (normalized, without spaces)
-+ phone (String30, required) - Phone number
-+ email (String100, required) - Email address
-+ note (String500, optional) - Delivery note
++ **companyName** (String100) - Company name / Branch name. Required if `addressName` is empty. 
++ **addressName** (String100) - Customer name. Required if `companyName` is empty.
++ **streetWithNumber** (String100, required) - Street address with number
++ **city** (String100, required) - City
++ **country** (Country, required) - Country code
++ **zip** (String10, required) - Zip Code (normalized, without spaces)
++ **phone** (String30, required) - Phone number
++ **email** (String100, required) - Email address
++ **note** (String500, optional) - Delivery note
 
 ### CompanyAddress (object) {#data-structures--company-address}
-+ companyName (String100, required) - Company name 
-+ streetWithNumber (String100, required) - Street address with number
-+ city (String100, required) - City
-+ country (Country, required) - Country code
-+ zip (String10, required) - Zip Code (normalized, without spaces)
++ **companyName** (String100, required) - Company name 
++ **streetWithNumber** (String100, required) - Street address with number
++ **city** (String100, required) - City
++ **country** (Country, required) - Country code
++ **zip** (String10, required) - Zip Code (normalized, without spaces)
 
 ### ShipmentAddress (object) {#data-structures--shipment-address}
-+ companyName (String100) - Company name / Branch name. Required if `addressName` is empty. 
-+ addressName (String100) - Customer name. Required if `companyName` is empty.
-+ streetWithNumber (String100, required) - Street address with number
-+ city (String100, required) - City
-+ country (Country, required) - Country code
-+ zip (String10, required) - Zip Code (normalized, without spaces)
++ **companyName** (String100) - Company name / Branch name. Required if `addressName` is empty. 
++ **addressName** (String100) - Customer name. Required if `companyName` is empty.
++ **streetWithNumber** (String100, required) - Street address with number
++ **city** (String100, required) - City
++ **country** (Country, required) - Country code
++ **zip** (String10, required) - Zip Code (normalized, without spaces)
 
 ### ShipmentDeliveryServices (object) {#data-structures--shipment-delivery-services}
-+ oldApplianceRemoval (boolean, optional) - Removal of old appliance
-+ carryIn (boolean, optional) - Delivery to your apartment. Service may vary depending on the carrier.
-+ basicInstallation (boolean, optional) - Basic installation. Service may vary by carrier.
++ **oldApplianceRemoval** (boolean, optional) - Removal of old appliance
++ **carryIn** (boolean, optional) - Delivery to your apartment. Service may vary depending on the carrier.
++ **basicInstallation** (boolean, optional) - Basic installation. Service may vary by carrier.
 
 ### GLNList (object) {#data-structures--gln-list}
-+ buyerGln (GLN) - GLN of the buying company
-+ orderedByGln (GLN) - GLN of the ordering company
-+ invoiceeGln (GLN) - GLN of the invoicing company
-+ shipmentDeliveryGln (GLN) - GLN of the place where the shipment is delivered by the supplier
++ **buyerGln** (GLN) - GLN of the buying company
++ **orderedByGln** (GLN) - GLN of the ordering company
++ **invoiceeGln** (GLN) - GLN of the invoicing company
++ **shipmentDeliveryGln** (GLN) - GLN of the place where the shipment is delivered by the supplier
 
 ### CreatedShipment (object) {#data-structures--created-shipment}
-+ shipmentNumber (String50, required) - Shipment identification
-+ packages (array[CreatedPackage], required) - List of created packages
-+ pdf (String500, required) - Downloadable PDF with all carrier stickers for whole shipment
++ **shipmentNumber** (String50, required) - Shipment identification
++ **packages** (array[CreatedPackage], required) - List of created packages
++ **pdf** (String500, required) - Downloadable PDF with all carrier stickers for whole shipment
 
 ### CreatedPackage (object) {#data-structures--created-package}
-+ packageId (Id64, optional) - `packageId` from request if contains
-+ number (String100, required) - Created package number
-+ fullNumber (String100, optional) - Created full package number
-+ pdf (String500, required) - Downloadable PDF with carrier sticker
++ **packageId** (Id64, optional) - `packageId` from request if contains
++ **number** (String100, required) - Created package number
++ **fullNumber** (String100, optional) - Created full package number
++ **pdf** (String500, required) - Downloadable PDF with carrier sticker
 
 ### ShipmentCreatePackage (object) {#data-structures--shipment-create-package}
-+ packageId (Id64, required) - Identification of the package. Used to identify package in response.
-+ weight (Weight, required) - Weight (in kg)
-+ volume (Volume, optional) - Volume (in cm3)
++ **packageId** (Id64, required) - Identification of the package. Used to identify package in response.
++ **weight** (Weight, required) - Weight (in kg)
++ **volume** (Volume, optional) - Volume (in cm3)
 
 ### ShipmentCreateItem (object) {#data-structures--shipment-create-item}
-+ order (OrderNumber, required) - Order number.
-+ orderItemId (Id64) - Unique *Order item ID*. **Preferred** item identification. 
++ **order** (OrderNumber, required) - Order number.
++ **orderItemId** (Id64) - Unique *Order item ID*. **Preferred** item identification. 
   For **Branch delivery** is this attribute required.
-+ code (SupplierProductCode)
++ **code** (SupplierProductCode)
     Supplier product code.   
     Required for cases when you can't supply `orderItemId`.
-+ packageId (Id64, required) - Identification of the package. Used to bond with `packages.packageId`.
-+ quantity (Number, required) - Quantity.
++ **packageId** (Id64, required) - Identification of the package. Used to bond with `packages.packageId`.
++ **quantity** (Number, required) - Quantity.
 
 ### DeparturedShipment (object) {#data-structures--departured-shipment}
-+ departureTime (Timestamp, optional) - Shipment departure time in CET
-+ shippingList (ShippingList, required) - Shipping list
-+ shippingListGroup (ShippingListGroup, optional) - Shipping list group
++ **departureTime** (Timestamp, optional) - Shipment departure time in CET
++ **shippingList** (ShippingList, required) - Shipping list
++ **shippingListGroup** (ShippingListGroup, optional) - Shipping list group
 
 ### ShippingList (object) {#data-structures--shipping-list}
-+ shippingListId (Id, required) - Shipping list ID
-+ pdf (String500, required) - Downloadable PDF with shipping list
++ **shippingListId** (Id, required) - Shipping list ID
++ **pdf** (String500, required) - Downloadable PDF with shipping list
 
 ### ShippingListGroup (object) {#data-structures--shipping-list-group}
-+ shippingListGroupId (Id, required) - Shipping list group ID
-+ pdf (String500, required) - Downloadable PDF with shipping list group
++ **shippingListGroupId** (Id, required) - Shipping list group ID
++ **pdf** (String500, required) - Downloadable PDF with shipping list group
 
 ### ShipmentDeparturePackage (object) {#data-structures--shipment-departure-package}
-+ number (String100, required) - Package number (short, internal)
-+ fullNumber (String100, optional) - Full package number (identical to the package sticker. Substring is usually 
++ **number** (String100, required) - Package number (short, internal)
++ **fullNumber** (String100, optional) - Full package number (identical to the package sticker. Substring is usually 
   used as tracking number for track and trace)
-+ ttUrl (String500, optional) - Track and Trace URL (prefered way to provide correct Track and Trace)
-+ weight (Weight, required) - Weight (in kg)
-+ volume (Volume, optional) - Volume (in cm3)
-+ value (Money, optional) - Package value
-+ valueCurrency (Currency, optional) - Package value currency code
++ **ttUrl** (String500, optional) - Track and Trace URL (prefered way to provide correct Track and Trace)
++ **weight** (Weight, required) - Weight (in kg)
++ **volume** (Volume, optional) - Volume (in cm3)
++ **value** (Money, optional) - Package value
++ **valueCurrency** (Currency, optional) - Package value currency code
 
 ### ShipmentDepartureItem (object) {#data-structures--shipment-departure-item}
-+ order (OrderNumber, required) - Order number
-+ orderItemId (Id64)
++ **order** (OrderNumber, required) - Order number
++ **orderItemId** (Id64)
     Unique *Order item ID*. Preferred item identification.   
     For *Branch delivery* is this attribute required.
-+ code (SupplierProductCode)
++ **code** (SupplierProductCode)
     Supplier product code.   
     Required for cases when you can't supply `orderItemId`.
-+ packageNumber (String100, required) - Related package number.
-+ quantity (Number, required) - Quantity. 
-+ serials (array[String50]) - Serial numbers. Required if `serialNumbersRequired` is `true` in *Order Inser* API message.
++ **packageNumber** (String100, required) - Related package number.
++ **quantity** (Number, required) - Quantity. 
++ **serials** (array[String50]) - Serial numbers. Required if `serialNumbersRequired` is `true` in *Order Inser* API message.
 
 ### OrderItem (object) {#data-structures--order-item}
-+ orderItemId (Id64, required) - Unique `Order Item ID`. This value is used for items identification
-+ code (SupplierProductCode, required) - Supplier product code
-+ quantity (Number, required) - Required quantity
-+ unitPrice (Money, optional)
++ **orderItemId** (Id64, required) - Unique `Order Item ID`. This value is used for items identification
++ **code** (SupplierProductCode, required) - Supplier product code
++ **quantity** (Number, required) - Required quantity
++ **unitPrice** (Money, optional)
     **Deprecated - Replaced by `purchasePriceWithoutFees`**  
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee).  
     This is price from `productList[].price` or `productList[].countryPrices[].purchasePriceWithoutFees` 
     of Availability API message. If the purchase price was not provided from Supplier, it was calculated from the 
     `productList[].countryPrices[].sellingPriceWithoutVat` according to the commission of the product category.
-+ purchasePriceWithoutFees (Money, required)
++ **purchasePriceWithoutFees** (Money, required)
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee).  
     This is price from `productList[].price` or `productList[].countryPrices[].purchasePriceWithoutFees` 
     of Availability API message. If the purchase price was not provided from Supplier, it was calculated from the 
     `productList[].countryPrices[].sellingPriceWithoutVat` according to the commission of the product category.
-+ fees (CountryPriceFees, optional)  
++ **fees** (CountryPriceFees, optional)  
     Recycling and copyright unit fees. Filled only for **Latest price mode**.
-+ alzaBarCodes (array[String30], optional)
++ **alzaBarCodes** (array[String30], optional)
     Custom piece identification for **delivery to branch**.  
     Print these *barcodes* (`Code-128BC`) on each piece to identify each individual piece. 
     The barcode count will be equal to the quantity.
     
     Example: `BCX4809077792`
-+ serialNumbersExpected (boolean, optional)
++ **serialNumbersExpected** (boolean, optional)
     If `true` and `serialNumbersRequired` is `false` then serial numbers should be sent in `items[].serials` 
     in *Shipment departure* API message. 
     The case does not strictly require serial numbers, but the lack of serial numbers should be addressed in the future.
     
     Default value is `false`.  
-+ serialNumbersRequired (boolean, optional)
++ **serialNumbersRequired** (boolean, optional)
     If `true` then ignore `serialNumbersExpected` and serial numbers will be required in `items[].serials` 
     in *Shipment departure* API message.
     
     Default value is `false`.   
 
 ### GeneralResponse (object) {#data-structures--general-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500)
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.  
 
 ### Route (object) {#data-structures--route}
-+ routeName (String100, optional) - Route name
-+ routeStops (array[RouteStop], optional) - Route stops
-+ routeDeliveryOrder (Int16, optional) - Print following number to package sticker for easier delivery.
++ **routeName** (String100, optional) - Route name
++ **routeStops** (array[RouteStop], optional) - Route stops
++ **routeDeliveryOrder** (Int16, optional) - Print following number to package sticker for easier delivery.
   For Supplier shipping mode only.
 
 ### RouteStop (object) {#data-structures--route-stop}
-+ branchName (String30, optional) - Branch name
-+ ramp (String10, optional) - (un)loading ramp
++ **branchName** (String30, optional) - Branch name
++ **ramp** (String10, optional) - (un)loading ramp
 
 ### PackageSorting (object) {#data-structures--package-sorting}
-+ packageSortingGroup (PackageSortingGroup, required) - Package sorting group. 
++ **packageSortingGroup** (PackageSortingGroup, required) - Package sorting group. 
   Packages from different groups should not be physically mixed during shipping.
-+ packageSortingPrint (String10, optional) - Print following text to package sticker for better identification. 
++ **packageSortingPrint** (String10, optional) - Print following text to package sticker for better identification. 
   For Supplier shipping mode only.
 
 
 ### AvailabilityRequest (object) {#data-structures--availability-request}
-+ supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
-+ supplierBranchId (Id, required) - Supplier Branch Id (provided by the Buyer). 
++ **supplierId** (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
++ **supplierBranchId** (Id, required) - Supplier Branch Id (provided by the Buyer). 
     Suppliers can have multiple Branches with different stock availability. This identification is passed to **Insert order**
-+ timestamp (Timestamp, required) - Time of action in CET
-+ importType (ImportType, required) - Import type
-+ currency (Currency, required) - National currency of the country of the branch.
-+ productList (array[Product], required) - Product list
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **importType** (ImportType, required) - Import type
++ **currency** (Currency, required) - National currency of the country of the branch.
++ **productList** (array[Product], required) - Product list
 
 ### ShipmentCreateRequest (object) {#data-structures--shipment-create-request}
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
-+ supplierBranchId (Id, required) - Supplier Branch ID (provided by the Buyer). 
-+ timestamp (Timestamp, required) - Time of action in CET
-+ shippingCarrier (ShippingCarrierStrict, required) - Shipping carrier identification.
-+ parcelShop(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
-+ cashOnDeliveryValue (Money, required) - Cash on delivery
-+ cashOnDeliveryValueCurrency (Currency, required) - Cash on delivery Currency code
-+ shipmentValue (Money, optional) - Total shipment value. 
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
++ **supplierBranchId** (Id, required) - Supplier Branch ID (provided by the Buyer). 
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **shippingCarrier** (ShippingCarrierStrict, required) - Shipping carrier identification.
++ **parcelShop**(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
++ **cashOnDeliveryValue** (Money, required) - Cash on delivery
++ **cashOnDeliveryValueCurrency** (Currency, required) - Cash on delivery Currency code
++ **shipmentValue** (Money, optional) - Total shipment value. 
   The attribute is required if `shipmentValue` attribute is sent via `Confirm order`.
-+ shipmentValueCurrency (Currency, optional) - Total shipment value Currency code. 
++ **shipmentValueCurrency** (Currency, optional) - Total shipment value Currency code. 
   The attribute is required if `shipmentValue` attribute is filled.
-+ shipmentWeight (Weight, required) - Total weight in kg
-+ shipmentVolume (Volume, optional) - Total volume in cm3  
-+ packages (array[ShipmentCreatePackage], required) - Array of *Packages*
-+ items (array[ShipmentCreateItem], required) - Array of *Items*
++ **shipmentWeight** (Weight, required) - Total weight in kg
++ **shipmentVolume** (Volume, optional) - Total volume in cm3  
++ **packages** (array[ShipmentCreatePackage], required) - Array of *Packages*
++ **items** (array[ShipmentCreateItem], required) - Array of *Items*
 
 ### ShipmentCreateResponse (object) {#data-structures--shipment-create-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500)
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ shipment (CreatedShipment)
++ **shipment** (CreatedShipment)
     Required if `errorCode` = 0.
     Created shipment.
 
 ### ShipmentDeleteRequest (object) {#data-structures--shipment-delete-request}
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
-+ supplierBranchId (Id, required) - Supplier Branch ID (provided by the Buyer). 
-+ timestamp (Timestamp, required) - Time of action in CET
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
++ **supplierBranchId** (Id, required) - Supplier Branch ID (provided by the Buyer). 
++ **timestamp** (Timestamp, required) - Time of action in CET
 
 ### ShipmentDepartureRequest (object) {#data-structures--shipment-departure-request}
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
-+ supplierBranchId (Id) - Supplier Branch ID (provided by the Buyer). Required for multi-branch supplier. 
-+ timestamp (Timestamp, required) - Time of action in CET
-+ shippingCarrier (ShippingCarrier, required) - Used Shipping carrier. Required for new Suppliers.
-+ parcelShop(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
-+ expectedDeliveryDate (Date, optional) - Estimated delivery date
-+ cashOnDeliveryValue (Money, required) - Cash on delivery
-+ cashOnDeliveryValueCurrency (Currency, required) - Cash on delivery Currency code
-+ shipmentValue (Money, optional) - Total shipment value. 
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
++ **supplierBranchId** (Id) - Supplier Branch ID (provided by the Buyer). Required for multi-branch supplier. 
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **shippingCarrier** (ShippingCarrier, required) - Used Shipping carrier. Required for new Suppliers.
++ **parcelShop**(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
++ **expectedDeliveryDate** (Date, optional) - Estimated delivery date
++ **cashOnDeliveryValue** (Money, required) - Cash on delivery
++ **cashOnDeliveryValueCurrency** (Currency, required) - Cash on delivery Currency code
++ **shipmentValue** (Money, optional) - Total shipment value. 
   The attribute is required if `shipmentValue` attribute is sent via `Confirm order`.
-+ shipmentValueCurrency (Currency, optional) - Total shipment value Currency code. 
++ **shipmentValueCurrency** (Currency, optional) - Total shipment value Currency code. 
   The attribute is required if `shipmentValue` attribute is filled.
-+ shipmentWeight (Weight, required) - Total weight in kg
-+ shipmentVolume (Volume, optional) - Total volume in cm3
-+ deliveryAddress (DeliveryAddress, optional) - Delivery address where the shipment will be delivered
-+ packages (array[ShipmentDeparturePackage], required) - Array of *Packages*.  
-+ items (array[ShipmentDepartureItem], required) - Array of *Items*.
++ **shipmentWeight** (Weight, required) - Total weight in kg
++ **shipmentVolume** (Volume, optional) - Total volume in cm3
++ **deliveryAddress** (DeliveryAddress, optional) - Delivery address where the shipment will be delivered
++ **packages** (array[ShipmentDeparturePackage], required) - Array of *Packages*.  
++ **items** (array[ShipmentDepartureItem], required) - Array of *Items*.
 
 ### ShipmentDepartureResponse (object) {#data-structures--shipment-departure-response}
-+ errorCode (ErrorCode, required)
++ **errorCode** (ErrorCode, required)
     Error Code
-+ errorMessage (String500)
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ shipment (DeparturedShipment)
++ **shipment** (DeparturedShipment)
     Required for `errorCode` = 0 and **Buyer shipping mode**.  
     Departured shipment
 
 ### TrackAndTraceRequest (object) {#data-structures--track-and-trace-request}
-+ supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
-+ order (OrderNumber) - Order number (our indentification). Conditionally required.
-+ shipment (String50) - Shipment number (your identifaction used in *Shipment departure*). Conditionally required.
-+ package (String100) - Package number. Conditionally required.
-+ fullPackageNumber (String100) - Full package number. Conditionally required.
-+ timestamp (Timestamp, required) - Time of action in CET
-+ status (TrackAndTraceStatus, required) - Delivery state
-+ statusTimestamp (Timestamp, required) - Status time in CET
++ **supplierId** (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
++ **order** (OrderNumber) - Order number (our indentification). Conditionally required.
++ **shipment** (String50) - Shipment number (your identifaction used in *Shipment departure*). Conditionally required.
++ **package** (String100) - Package number. Conditionally required.
++ **fullPackageNumber** (String100) - Full package number. Conditionally required.
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **status** (TrackAndTraceStatus, required) - Delivery state
++ **statusTimestamp** (Timestamp, required) - Status time in CET
 
 ### DeliveryResultRequest (object) {#data-structures--delivery-result-request}
-+ supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
-+ timestamp (Timestamp, required) - Time of action in CET
-+ status (DeliveryResultStatus, required) - Delivery information
-+ statusTimestamp (Timestamp, required) - Status time in CET
-+ errorReason (String500, optional) - Reason for Canceled or Rejected
-+ paymentVS (String30, optional) - Actual Payment Variable Symbol
-+ errorProducts (array[ErrorProduct], optional) - Optional array of invalid products for Canceled status
++ **supplierId** (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **status** (DeliveryResultStatus, required) - Delivery information
++ **statusTimestamp** (Timestamp, required) - Status time in CET
++ **errorReason** (String500, optional) - Reason for Canceled or Rejected
++ **paymentVS** (String30, optional) - Actual Payment Variable Symbol
++ **errorProducts** (array[ErrorProduct], optional) - Optional array of invalid products for Canceled status
 
 ### OrderInsertRequest (object) {#data-structures--order-insert-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer). 
-+ regNo (String30, optional) - Buyer Registration Identification Number.
-+ vatNo (String30, optional) - Buyer VAT Identification Number.
-+ supplierBranchId (Id, required) - Supplier Branch ID (same value as in Availability method). 
-+ itemsPriceCurrency (Currency, required) - Item Currency code (from Availability import)
-+ itemsPriceCountry (Country, optional) - Target country of prices (from Availability import)
-+ orderItems (array[OrderItem], required)
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer). 
++ **regNo** (String30, optional) - Buyer Registration Identification Number.
++ **vatNo** (String30, optional) - Buyer VAT Identification Number.
++ **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method). 
++ **itemsPriceCurrency** (Currency, required) - Item Currency code (from Availability import)
++ **itemsPriceCountry** (Country, optional) - Target country of prices (from Availability import)
++ **orderItems** (array[OrderItem], required)
 
 ### OrderInsertResponse (object) {#data-structures--order-insert-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500)
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ supplierOrder (String30, optional) - Ignored for `errorCode` < 0. Internal supplier order number.
-+ validUntil (Timestamp, optional)
++ **supplierOrder** (String30, optional) - Ignored for `errorCode` < 0. Internal supplier order number.
++ **validUntil** (Timestamp, optional)
     Ignored for `errorCode` < 0.  
     Validity period of a reservation in CET. Default value is `Today` + 30 days. 
     Required value is at least `Today` + 1 day. Optimal value is `Today` + days of minimum guaranteed reservation from contract.
-+ errorProducts (array[ErrorProduct], optional)
++ **errorProducts** (array[ErrorProduct], optional)
     Ignored for `errorCode` = 0.  
     Array of invalid products for unsuccessful reservation.
 
 ### OrderCancelRequest (object) {#data-structures--order-cancel-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer).
-+ supplierBranchId (Id, required) - Supplier Branch ID (same value as in Availability method).
-+ regNo (String30, optional) - Buyer Registration Identification Number.
-+ vatNo (String30, optional) - Buyer VAT Identification Number.
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
++ **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
++ **regNo** (String30, optional) - Buyer Registration Identification Number.
++ **vatNo** (String30, optional) - Buyer VAT Identification Number.
 
 ### OrderExtendRequest (object) {#data-structures--order-extend-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer).
-+ supplierBranchId (Id, required) - Supplier Branch ID (same value as in Availability method).
-+ regNo (String30, optional) - Buyer Registration Identification Number.
-+ vatNo (String30, optional) - Buyer VAT Identification Number.
-+ validUntil (Timestamp, optional) - Recommanded validUntil in CET
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
++ **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
++ **regNo** (String30, optional) - Buyer Registration Identification Number.
++ **vatNo** (String30, optional) - Buyer VAT Identification Number.
++ **validUntil** (Timestamp, optional) - Recommanded validUntil in CET
 
 ### OrderExtendResponse (object) {#data-structures--order-extend-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500)
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ validUntil (Timestamp)
++ **validUntil** (Timestamp)
     Required for `errorCode` = 0.  
     Validity period of a reservation in CET. Required value is at least `Now` + 12 hours.
 
 ### OrderConfirmRequest (object) {#data-structures--order-confirm-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer).
-+ supplierBranchId (Id, required) - Supplier Branch ID (same value as in Availability method).
-+ regNo (String30, optional) - Buyer Registration Identification Number.
-+ vatNo (String30, optional) - Buyer VAT Identification Number.
-+ taxNo (String30, optional) - Byuer Tax Identification Number. **Upcoming feature**
-+ shippingCarrier (ShippingCarrierConfirm, required) - Shipping carrier.
-+ parcelShop(ParcelShop) - Parcel shop detail. Required with `ParcelShop` value 
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
++ **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
++ **regNo** (String30, optional) - Buyer Registration Identification Number.
++ **vatNo** (String30, optional) - Buyer VAT Identification Number.
++ **taxNo** (String30, optional) - Byuer Tax Identification Number. **Upcoming feature**
++ **shippingCarrier** (ShippingCarrierConfirm, required) - Shipping carrier.
++ **parcelShop**(ParcelShop) - Parcel shop detail. Required with `ParcelShop` value 
     of `shipmentDeliveryType` attribute
-+ route (Route, optional) - Route information for custom shipping sticker
-+ shipmentDeliveryType (ShipmentDeliveryType, required) - Delivery type. Information is passed to 
++ **route** (Route, optional) - Route information for custom shipping sticker
++ **shipmentDeliveryType** (ShipmentDeliveryType, required) - Delivery type. Information is passed to 
     shipment carrier
-+ shipmentShippingMode (ShipmentShippingMode, required) - Defines who handles *shipment number*, 
++ **shipmentShippingMode** (ShipmentShippingMode, required) - Defines who handles *shipment number*, 
     *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
-+ shipmentDeliveryServices (ShipmentDeliveryServices, optional) - Delivery services of shipment by carrier.  **Upcoming feature**
-+ shipmentValue (Money, optional) - Total shipment value
-+ shipmentValueCurrency (Currency, optional) - Total shipment value Currency code
-+ packageSorting (PackageSorting, optional) - Package sorting
-+ demandedExpeditionDate (Date, optional) 
++ **shipmentDeliveryServices** (ShipmentDeliveryServices, optional) - Delivery services of shipment by carrier.  **Upcoming feature**
++ **shipmentValue** (Money, optional) - Total shipment value
++ **shipmentValueCurrency** (Currency, optional) - Total shipment value Currency code
++ **packageSorting** (PackageSorting, optional) - Package sorting
++ **demandedExpeditionDate** (Date, optional) 
     **Deprecated - Replaced by `shipmentDepartureTime`**. It is necessary remove time part.
 
     Requested date of dispatch.
-+ shipmentDepartureTime (Timestamp, required) - Requested shipment departure time in CET.
-+ cashOnDeliveryValue (Money, required) - Cash on delivery to collect
-+ cashOnDeliveryValueCurrency (Currency, required) - Cash on delivery Currency code
-+ paymentVS (String30, required) - Cash on delivery payment Variable Symbol
-+ deliveryBranchId (Id, optional) - Contains Buyer branch ID if *Branch* delivery type is filled.
-+ shipmentExternalOrderNumber (String50, optional)
++ **shipmentDepartureTime** (Timestamp, required) - Requested shipment departure time in CET.
++ **cashOnDeliveryValue** (Money, required) - Cash on delivery to collect
++ **cashOnDeliveryValueCurrency** (Currency, required) - Cash on delivery Currency code
++ **paymentVS** (String30, required) - Cash on delivery payment Variable Symbol
++ **deliveryBranchId** (Id, optional) - Contains Buyer branch ID if *Branch* delivery type is filled.
++ **shipmentExternalOrderNumber** (String50, optional)
     External order number assigned to the shipment, used to identify the order in external systems. Required for label printing.
-+ deliveryAddress (DeliveryAddress, required) - The delivery address where the shipment will be finally delivered
-+ glnList (GLNList) - **Upcoming feature**
-+ buyerAddress (CompanyAddress) - Buyer company address for invoicing. **Upcoming feature**
-+ shipmentDeliveryAddress (ShipmentAddress) - The address where the supplier delivers the shipment. May be different from `deliveryAddress`.
-  **Upcoming feature**
-
++ **deliveryAddress** (DeliveryAddress, required) - The delivery address where the shipment will be finally delivered
++ **glnList** (GLNList) - **Upcoming feature**
++ **buyerAddress** (CompanyAddress) - Buyer company address for invoicing. **Upcoming feature**
++ **shipmentDeliveryAddress** (ShipmentAddress) - The address where the supplier delivers the shipment. May be different from `deliveryAddress`. **Upcoming feature**
+ 
 ### InvokerSimpleRequest (object) {#data-structures--invoker-simple-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ supplierId (Id, required) - Supplier identification (provided by the Buyer). Used for authentication token calculation.
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **supplierId** (Id, required) - Supplier identification (provided by the Buyer). Used for authentication token calculation.
 
 ### InvokerOrderInsertRequest {#data-structures--invoker-order-insert-request}
-+ timestamp (Timestamp, required) - Time of action in CET
-+ customerId (CustomerId, required) - Buyer ID used for communication with Supplier API. Default is 1.
-+ supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation.
-+ supplierBranchId (Id, required) - Supplier Branch Id (same value as in Availability method). 
-+ codes (array[SupplierProductCode], required) - Supplier product codes
++ **timestamp** (Timestamp, required) - Time of action in CET
++ **customerId** (CustomerId, required) - Buyer ID used for communication with Supplier API. Default is 1.
++ **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation.
++ **supplierBranchId** (Id, required) - Supplier Branch Id (same value as in Availability method). 
++ **codes** (array[SupplierProductCode], required) - Supplier product codes
 
 ### InvokerOrderInsertResponse {#data-structures--invoker-order-insert-response}
-+ errorCode (ErrorCode, required)
++ **errorCode** (ErrorCode, required)
     Error Code
-+ errorMessage (String500)
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ responseHTTPStatusCode (Int32, optional)
++ **responseHTTPStatusCode** (Int32, optional)
     HTTP statu code from Supplier API
-+ responseObject (OrderInsertResponse, optional)
++ **responseObject** (OrderInsertResponse, optional)
     Filled with Supplier API response when it's valid
 
 ### InvokerOrderCancelResponse {#data-structures--invoker-order-cancel-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500) - Error message. Required for `errorCode` < 0.
-+ responseHTTPStatusCode (Int32, optional) - HTTP statu code from Supplier API
-+ responseObject (GeneralResponse, optional) - Filled with Supplier API response when it's valid
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500) - Error message. Required for `errorCode` < 0.
++ **responseHTTPStatusCode** (Int32, optional) - HTTP statu code from Supplier API
++ **responseObject** (GeneralResponse, optional) - Filled with Supplier API response when it's valid
 
 ### InvokerOrderExtendResponse {#data-structures--invoker-order-extend-response}
-+ errorCode (ErrorCode, required)
++ **errorCode** (ErrorCode, required)
     Error Code
-+ errorMessage (String500)
++ **errorMessage** (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ responseHTTPStatusCode (Int32, optional)
++ **responseHTTPStatusCode** (Int32, optional)
     HTTP statu code from Supplier API
-+ responseObject (OrderExtendResponse, optional)
++ **responseObject** (OrderExtendResponse, optional)
     Filled with Supplier API response when it's valid
 
 ### InvokerOrderConfirmResponse {#data-structures--invoker-order-confirm-response}
-+ errorCode (ErrorCode, required) - Error Code
-+ errorMessage (String500) - Error message. Required for `errorCode` < 0.
-+ responseHTTPStatusCode (Int32, optional) - HTTP statu code from Supplier API
-+ responseObject (GeneralResponse, optional) - Filled with Supplier API response when it's valid
++ **errorCode** (ErrorCode, required) - Error Code
++ **errorMessage** (String500) - Error message. Required for `errorCode` < 0.
++ **responseHTTPStatusCode** (Int32, optional) - HTTP statu code from Supplier API
++ **responseObject** (GeneralResponse, optional) - Filled with Supplier API response when it's valid
 
 
 [introduction]:                         #introduction
