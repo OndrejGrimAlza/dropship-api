@@ -2,6 +2,7 @@
 # Introduction
 {: .no_toc }
 
+1. TOC
 {:toc}
 
 This documentation describes the features and capabilities of the **Dropshipment API**, which is intended for suppliers who want to
