@@ -5,6 +5,12 @@ title: Dropshipment API
 permalink: /
 mermaid:
   theme: dark
+  themeVariables:
+    primaryTextColor: '#fff'
+    primaryBorderColor: '#fff'
+    lineColor: '#fff'
+    secondBkgColor: '#1e1e1e'
+    tertiaryTextColor: '#fff'
 ---
 
 # Dropshipment API
@@ -126,7 +132,7 @@ S->>A: API Delivery Result Delivered
 Deactivate S
 ```
 
-![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg)
+<!-- ![schema](https://cdn.alza.cz/Foto/Dropship/dropship-api-v1-mermaid-03.svg) -->
 
 ## Upcoming features {#introduction--upcoming-features}
 
