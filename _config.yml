@@ -4,7 +4,6 @@ title: Dropshipment API
 
 # Just the docs theme settings
 color_scheme: light
-search_enabled: false
 heading_anchors: true
 nav_enabled: false
 #nav_sort: case_insensitive
@@ -56,5 +55,5 @@ search.preview_words_before: 5
 search.preview_words_after: 10
 search.tokenizer_separator: /[\s/]+/
 search.rel_url: false
-earch.button: false
+search.button: true
 
