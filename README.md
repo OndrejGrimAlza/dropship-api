@@ -1675,7 +1675,9 @@ Response ([GeneralResponse][ds-general-response])
                 "errorMessage": "Unknown shipment!"
             }
 
-## Shipment departure [/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
+## Shipment departure 
+
+[/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
 
 ***Required method***
 
