@@ -1,3 +1,7 @@
+---
+layout: default
+title: Dropshipment API
+---
 
 ## Table of contents
 {: .no_toc }
