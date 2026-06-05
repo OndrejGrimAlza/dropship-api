@@ -1084,7 +1084,7 @@ would look like this:
 API on buyer side.
 
 
-## Availability 
+## Availability {#reference-buyer-api--availability}
 
 [/dropship-validator/v1/availability?token={token}]
 
@@ -1147,7 +1147,9 @@ Each mode uses own set of attributes and these attributes are not compatible. Co
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
 
-### Availability request [POST]
+### Availability request {#reference-buyer-api--availability--availability-request}
+
+[POST]
 
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -1412,7 +1414,7 @@ Response ([GeneralResponse][ds-general-response])
                  "errorMessage": "productList[0].code missing"
             }
 
-## Create shipment 
+## Create shipment {#reference-buyer-api--create-shipment}
 
 [/dropship-validator/v1/shipment?token={token}]
 
@@ -1444,7 +1446,9 @@ Method may be provided in the case of limited capabilities of the supplier.
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Create shipment request [POST]
+### Create shipment request {#reference-buyer-api--create-shipment--create-shipment-request}
+
+[POST]
 
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
@@ -1586,7 +1590,7 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 
 
-## Delete shipment 
+## Delete shipment {#reference-buyer-api--delete-shipment}
 
 [/dropship-validator/v1/shipment/{shipment}?token={token}]
 
@@ -1594,8 +1598,6 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 Deletes shipment created by *[Create shipment][create-shipment]* API message before *[Shipment departure][shipment-departure]*.
 
-[create-shipment]: #reference/buyer-api/create-shipment
-[shipment-departure]: #reference/buyer-api/shipment-departure
 
 #### Rules for HTTP response status codes
  - **200** - OK status code. Message successfully processed. `errorCode` must be also `0`.
@@ -1606,7 +1608,7 @@ Deletes shipment created by *[Create shipment][create-shipment]* API message bef
     + shipment: SHIP123456789 (String50, required) - Shipment Number to delete
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Delete shipment request [DELETE]
+### Delete shipment request [DELETE] {#reference-buyer-api--delete-shipment--delete-shipment-request-delete}
 
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -1650,7 +1652,7 @@ Response ([GeneralResponse][ds-general-response])
                 "errorMessage": "Unknown shipment!"
             }
 
-## Shipment departure 
+## Shipment departure {#reference-buyer-api--shipment-departure}
 
 [/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
 
@@ -1679,7 +1681,9 @@ It is also required to send the entire order in one shipment.
     + shipment: SHIP12345678 (String50, required) - Shipment Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Shipment departure request [POST]
+### Shipment departure request {#reference-buyer-api--shipment-departure--shipment-departure-request}
+
+[POST]
 
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])   
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
@@ -1880,7 +1884,7 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
             }
 
 
-## Track and Trace 
+## Track and Trace {#reference-buyer-api--track-and-trace}
 
 [/dropship-validator/v1/track?token={token}]
 
@@ -1904,12 +1908,12 @@ For shipments with `shipmentDeliveryType` ParcelShop sent in *[Confirm order][co
  - **400** - Bad request status code. Error ocured on application layer. See more in `errorCode` and `errorMessage`.
  - Any other status code is considered invalid and the request must be sent again according to the resend rules.
 
-[confirm-order]: #reference/supplier-api/confirm-order
-
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     
-### Track and Trace request [POST]
+### Track and Trace request  {#reference-buyer-api--track-and-trace--track-and-trace-request}
+
+[POST]
 
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2054,7 +2058,7 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-## Delivery result 
+## Delivery result {#reference-buyer-api--delivery-result}
 
 [/dropship-validator/v1/order/{order}/delivery?token={token}]
 
@@ -2077,7 +2081,9 @@ Method is used in case of these situations:
     + order: DD12345678 (OrderNumber, required) - Order Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Delivery result request [POST]
+### Delivery result request {#reference-buyer-api--delivery-result--delivery-result-request}
+
+[POST]
 
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2184,13 +2190,13 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-# Supplier API
+# Supplier API {#reference-supplier-api}
 
 API on supplier side.
 
 
 
-## Insert order 
+## Insert order {#reference-supplier-api--insert-order}
 
 [/dropship-validator/v1/order/{order}?token={token}]
 
@@ -2210,7 +2216,6 @@ Currency of `purchasePriceWithoutFees` is in `itemsPriceCurrency`. This price is
  - default *availability* is `0`, so the end customers can't order product again until next *[Availability][availability]*
  - you can ignore *errorProducts*, availability of all products in order will be set to `0`
 
-[availability]: #reference/buyer-api/availability
 
 #### Rules for HTTP response status codes
  - **201** - Created status code. Response successfully processed with `errorCode` `0`.
@@ -2226,7 +2231,9 @@ Currency of `purchasePriceWithoutFees` is in `itemsPriceCurrency`. This price is
     + order: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Insert order request [POST]
+### Insert order request {#reference-supplier-api--insert-order--insert-order-request}
+
+[POST]
 
 Request ([OrderInsertRequest][ds-order-insert-request])  
 Response ([OrderInsertResponse][ds-order-insert-response])
@@ -2438,7 +2445,7 @@ Response ([OrderInsertResponse][ds-order-insert-response])
             }
 
 
-## Cancel order 
+## Cancel order {#reference-supplier-api--cancel-order}
 
 [/dropship-validator/v1/order/{cancelOrder}?token={token}]
 
@@ -2470,15 +2477,12 @@ After **[Shipment departure][shipment-departure]** is not possible to cancel ord
     The error must be corrected and the request sent again.
  - Any other status code is considered invalid and the request must be sent again.
 
-[confirm-order]:       #reference/supplier-api/confirm-order
-[shipment-departure]:  #reference/buyer-api/shipment-departure
-[delivery-result]:     #reference/buyer-api/delivery-result
 
 + Parameters
     + cancelOrder: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Cancel order request [DELETE]
+### Cancel order request [DELETE] {#reference-supplier-api--cancel-order--cancel-order-request-delete}
 
 Request ([OrderCancelRequest][ds-order-cancel-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2552,7 +2556,7 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-## Confirm order 
+## Confirm order {#reference-supplier-api--confirm-order}
 
 [/dropship-validator/v1/order/{order}/confirm?token={token}]
 
@@ -2574,7 +2578,9 @@ It is not allowed to send the shipment earlier or later. The shipment is planned
     + order: DD12345678 (OrderNumber, required) - Order Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Confirm order request [POST]
+### Confirm order request  {#reference-supplier-api--confirm-order--confirm-order-request}
+
+[POST]
 
 Request ([OrderConfirmRequest][ds-order-confirm-request])  
 Response ([GeneralResponse][ds-general-response])
@@ -2887,7 +2893,7 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-## Extend order 
+## Extend order {#reference-supplier-api--extend-order}
 
 [/dropship-validator/v1/order/{order}/extend?token={token}]
 
@@ -2908,13 +2914,13 @@ In case of refusal to extend the reservation of the order, a [Order Cancel][canc
     The error must be corrected and the request sent again.
  - Any other status code is considered invalid and the request must be sent again.
 
-[cancel-order]:       #reference/supplier-api/cancel-order
-
 + Parameters
     + order: DD12345678 (OrderNumber, required) - Order Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Extend order request [POST]
+### Extend order request {#reference-supplier-api--extend-order--extend-order-request}
+
+[POST]
 
 Request ([OrderExtendRequest][ds-order-extend-request])  
 Response ([OrderExtendResponse][ds-order-extend-response])
@@ -2993,14 +2999,12 @@ Response ([OrderExtendResponse][ds-order-extend-response])
 
 
 
-# Testing Buyer API
+# Testing Buyer API {#reference-testing-buyer-api}
 
 The Testing Buyer API has the same structure as *[production Buyer API][buyer-api]* but `test` variable is added to the URL. 
 API is implemented on buyer side.
 
-[buyer-api]: #reference/buyer-api
-
-## Availability 
+## Availability {#reference-testing-buyer-api--availability}
 
 [/dropship-test/v2/availability?token={token}&test={test}]
 
@@ -3008,13 +3012,13 @@ A testing endpoint for buyer *[Availability][availability]* method. See *[Availa
 
 A testing endpoint accepts a maximum of 100 products.
 
-[availability]: #reference/buyer-api/availability
-
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Availability request [POST]
+### Test Availability request {#reference-testing-buyer-api--availability--test-availability-request}
+
+[POST]
 
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -3246,19 +3250,19 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-## Create shipment 
+## Create shipment {#reference-testing-buyer-api--create-shipment}
 
 [/dropship-test/v2/shipment?token={token}&test={test}]
 
 A testing endpoint for buyer *[Create shipment][create-shipment]* method. See *[Create shipment][create-shipment]* for more details.
 
-[create-shipment]: #reference/buyer-api/create-shipment
-
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Create shipment request [POST]
+### Test Create shipment request {#reference-testing-buyer-api--create-shipment--test-create-shipment-request}
+
+[POST]
 
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
@@ -3401,20 +3405,18 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 
 
-## Delete shipment 
+## Delete shipment {#reference-testing-buyer-api--delete-shipment}
 
 [/dropship-test/v2/shipment/{shipment}?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delete shipment][delete-shipment]* method. See *[Delete shipment][delete-shipment]* for more details.
-
-[delete-shipment]: #reference/buyer-api/delete-shipment
 
 + Parameters
     + shipment: SHIP12345678 (String50, required) - Shipment Number to delete
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Delete shipment request [DELETE]
+### Test Delete shipment request [DELETE] {#reference-testing-buyer-api--delete-shipment--test-delete-shipment-request-delete}
 
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response]) 
@@ -3459,21 +3461,21 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-## Shipment departure 
+## Shipment departure {#reference-testing-buyer-api--shipment-departure}
 
 [/dropship-test/v2/shipment/{shipment}/departure?token={token}&test={test}]
 
 A testing endpoint for buyer *[Shipment departure][shipment-departure]* method. 
 See *[Shipment departure][shipment-departure]* for more details.
 
-[shipment-departure]: #reference/buyer-api/shipment-departure
-
 + Parameters
     + shipment: SHIP12345678 (String50, required) - Shipment Number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Shipment departure request [POST]
+### Test Shipment departure request {#reference-testing-buyer-api--shipment-departure--test-shipment-departure-request}
+
+[POST]
 
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])  
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
@@ -3674,20 +3676,20 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
 
 
-## Track and Trace 
+## Track and Trace {#reference-testing-buyer-api--track-and-trace}
 
 [/dropship-test/v2/track?token={token}&test={test}]
 
 A testing endpoint for buyer *[Track and Trace][track-and-trace]* method. 
 See *[Track and Trace][track-and-trace]* for more details.
 
-[track-and-trace]: #reference/buyer-api/track-and-trace
-
 + Parameters
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Track and Trace request [POST]
+### Test Track and Trace request {#reference-testing-buyer-api--track-and-trace--test-track-and-trace-request}
+
+[POST]
 
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response]) 
@@ -3832,21 +3834,21 @@ Response ([GeneralResponse][ds-general-response])
             }
 
 
-## Delivery result 
+## Delivery result {#reference-testing-buyer-api--delivery-result}
 
 [/dropship-test/v2/order/{order}/delivery?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delivery result][delivery-result]* method. 
 See *[Delivery result][delivery-result]* for more details.
 
-[delivery-result]: #reference/buyer-api/delivery-result
-
 + Parameters
     + order: DD12345678 (OrderNumber, required) - Order Number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
     + test: T001 (String30, required) - Test number 
 
-### Test Delivery result request [POST]
+### Test Delivery result request {#reference-testing-buyer-api--delivery-result--test-delivery-result-request}
+
+[POST]
 
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])  
@@ -3952,18 +3954,13 @@ Response ([GeneralResponse][ds-general-response])
 
 
 
-# Testing Supplier API
+# Testing Supplier API {#reference-testing-supplier-api}
 
 The Testing Supplier API is consists of endpoints that invokes requests to *[Supplier API][supplier-api]*.
 API is implemented on buyer side.
 
-[supplier-api]: #reference/supplier-api
-[buyer-api]: #reference/buyer-api
-[testing-api]: #reference/testing-api
 
-
-
-## Insert order 
+## Insert order {#reference-testing-supplier-api--insert-order}
 
 [/dropship-test/v2/order/insert/{test}?token={token}]
 
@@ -3971,13 +3968,13 @@ A testing endpoint to invoke *[Insert order][insert-order]* request to Supplier 
 
 Also initiate new test and deactivate previous one.
 
-[insert-order]: #reference/supplier-api/insert-order
-
 + Parameters
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Invoke Insert order request [POST]
+### Invoke Insert order request {#reference-testing-supplier-api--insert-order--invoke-insert-order-request}
+
+[POST]
 
 Request ([InvokerOrderInsertRequest][ds-invoker-order-insert-request])  
 Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])  
@@ -4111,19 +4108,19 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
 
 
 
-## Extend order 
+## Extend order {#reference-testing-supplier-api--extend-order}
 
 [/dropship-test/v2/order/extend/{test}?token={token}]
 
 A testing endpoint to invoke *[Extend order][extend-order]* request to Supplier API
 
-[extend-order]: #reference/supplier-api/extend-order
-
 + Parameters
     + test: T001 (String30, required) - Test number
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Invoke Extend order request [POST]
+### Invoke Extend order request {#reference-testing-supplier-api--extend-order--invoke-extend-order-request}
+
+[POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])  
@@ -4201,19 +4198,19 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
 
 
 
-## Cancel order 
+## Cancel order {#reference-testing-supplier-api--cancel-order}
 
 [/dropship-test/v2/order/cancel/{test}?token={token}]
 
 A testing endpoint to invoke *[Cancel order][cancel-order]* request to Supplier API
 
-[cancel-order]: #reference/supplier-api/cancel-order
-
 + Parameters
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Invoke Cancel order request [POST]
+### Invoke Cancel order request {#reference-testing-supplier-api--cancel-order--invoke-cancel-order-request}
+
+[POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])  
@@ -4266,19 +4263,19 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
 
 
 
-## Confirm order 
+## Confirm order {#reference-testing-supplier-api--confirm-order}
 
 [/dropship-test/v2/order/confirm/{test}?token={token}]
 
 Provides ability to invoke *[Confirm order][confirm-order]* request to Supplier API
 
-[confirm-order]: #reference/supplier-api/confirm-order
-
 + Parameters
     + test: T001 (String30, required) - Test number 
     + token: jDGARg+SaXMa8Ib++O92+ZX3ITQ= (HmacToken, required) - HMAC Authentication token
 
-### Invoke Confirm order request [POST]
+### Invoke Confirm order request {#reference-testing-supplier-api--confirm-order--invoke-confirm-order-request}
+
+[POST]
 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])  
@@ -4332,67 +4329,67 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
 
 
 
-# Data Structures
+# Data Structures {#data-structures}
 
-### Timestamp (string)
+### Timestamp (string) {#data-structures--timestamp}
 Date + time format in [CET (Central European Time)](https://time.is/cs/CET) (`YYYY-MM-DDThh:mm:ss.nnn`).
 
 Example: `2025-06-01T19:33:43.513`
 
-### TimestampUtc (string)
+### TimestampUtc (string) {#data-structures--timestamputc}
 Date + time format in [UTC (Coordinated Universal Time)](https://time.is/cs/UTC) (`YYYY-MM-DDThh:mm:ss.nnn`).
 
 Example: `2025-06-01T18:33:43.513`
 
-### Date (string)
+### Date (string) {#data-structures--date}
 Simple date format (`YYYY-MM-DD`).
 
 Example: `2025-06-01`
 
-### Int16 (number)
+### Int16 (number) {#data-structures--int-16}
 16-bit signed integer number.
 
 Example: `1234`
 
-### Int32 (number)
+### Int32 (number) {#data-structures--int-32}
 32-bit signed integer number.
 
 Example: `-123456` `123456`
 
-### Int64 (number)
+### Int64 (number) {#data-structures--int-64}
 64-bit signed integer number.
 
 Example: `12345678901`
 
-### Float (number)
+### Float (number) {#data-structures--float}
 Approximate floating-point numeric
 
 Example: `1.123456`
 
-### String10 (string)
+### String10 (string) {#data-structures--string-10}
 A string with a maximum length of 10 characters.
 
-### String20 (string)
+### String20 (string) {#data-structures--string-20}
 A string with a maximum length of 20 characters.
 
-### String30 (string)
+### String30 (string) {#data-structures--string-30}
 A string with a maximum length of 30 characters.
 
-### String50 (string)
+### String50 (string) {#data-structures--string-50}
 A string with a maximum length of 50 characters.
 
-### String100 (string)
+### String100 (string) {#data-structures--string-100}
 A string with a maximum length of 100 characters.
 
-### String500 (string)
+### String500 (string) {#data-structures--string-500}
 A string with a maximum length of 500 characters.
 
-### CustomerId (Int32)
+### CustomerId (Int32) {#data-structures--customer-id}
 32-bit signed integer number.
 
 It can be set for each branch of the supplier separately or it can be the same for all branches.
 
-### OrderNumber (String30)
+### OrderNumber (String30) {#data-structures--order-number}
 A string with a maximum length of 30 characters. 
 Currently, two formats are possible.
 The old one has about 10 digits.
@@ -4403,17 +4400,17 @@ Old format example: `5478519223`
 
 New format example: `DD14298199`
 
-### GUID (string)
+### GUID (string) {#data-structures--guid}
 Globally Unique IDentifier in 4-dashed lowercase format [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122)
 
 Example: `a20dc9c1-e0d6-4c17-97bc-3d87438307db`
 
-### GLN (string)
+### GLN (string) {#data-structures--gln}
 Global Location Number. A string with a length of 13 characters according to **ISO 6523**.
 
 Example: `9506000140445`
 
-### SupplierProductCode (String50)
+### SupplierProductCode (String50) {#data-structures--supplier-product-code}
 A case insensitive string with a maximum length of 50.
 
 A character ruleset:
@@ -4424,62 +4421,62 @@ A character ruleset:
 
 • Whitespace at the beginning and end of the string is ignored.
 
-### Weight (number)
+### Weight (number) {#data-structures--weight}
 Decimal numeric with precision 9 and scale 4.
 
 Min value: `0.0` Max value: `99999.9999`
 
 Example: `5.2468`
 
-### Volume (number)
+### Volume (number) {#data-structures--volume}
 Decimal numeric with precision 15 and scale 4.
 
 Min value: `0.0` Max value: `9999999999.9999`
 
 Example: `100000`
 
-### Money (number)
+### Money (number) {#data-structures--money}
 Decimal numeric with precision 15 and scale 2.
 
 Min value: `0.0` Max value: `9999999999.99`
 
 Example: `149.99`
 
-### VAT (number)
+### VAT (number) {#data-structures--vat}
 Decimal numeric with precision 9 and scale 2.
 
 Min value: `0.0` Max value: `99.99`
 
 Example: `15.55`
 
-### Number (Int32)
+### Number (Int32) {#data-structures--number}
 32-bit signed integer number.
 
 Min value: `0` Max value: `2147483647`
 
 Example: `15`
 
-### Id (Int32)
+### Id (Int32) {#data-structures--id}
 32-bit signed integer number.
 
 Min value: `1` Max value: `2147483647`
 
 Example: `15`
 
-### Id64 (Int64)
+### Id64 (Int64) {#data-structures--id-64}
 64-bit signed integer number.
 
 Min value: `1` Max value: `9223372036854775807`
 
 Example: `372036854775807`
 
-### HmacToken (string)
+### HmacToken (string) {#data-structures--hmac-token}
 HMAC Authentication token
 
 Example: `jDGARg+SaXMa8Ib++O92+ZX3ITQ=`
 
 
-### Country (enum[string])
+### Country (enum[string]) {#data-structures--country}
 2 letter country code according to **ISO 3166-1 Alpha-2**. 
 See *[Wiki][wiki-country-code]* or *[ISO][iso-country-code]* for more information.
 
@@ -4488,10 +4485,7 @@ Examples
 + `SK`
 + `DE`
 
-[wiki-country-code]: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-[iso-country-code]: https://www.iso.org/iso-3166-country-codes.html
-
-### Currency (enum[string])
+### Currency (enum[string]) {#data-structures--currency}
 3 letter currency code code according to **ISO 4217**. 
 See *[Wiki][wiki-currency-code]* or *[ISO][iso-currency-code]* for more information.
 
@@ -4500,11 +4494,7 @@ Examples
 + `EUR`
 + `USD`
 
-[wiki-currency-code]: https://en.wikipedia.org/wiki/ISO_4217
-[iso-currency-code]: https://www.iso.org/iso-4217-currency-codes.html
-
-
-### ErrorCode (enum[number])
+### ErrorCode (enum[number]) {#data-structures--error-code}
 +  `0` - Success.
 + `-1` - Generic error (more info in `errorMessage`). 
 + `-2` - Invalid input data.                          
@@ -4513,49 +4503,49 @@ Examples
 + `-5` - Operation rejected.                           
 + `-6` - Bad response.   
 
-### SuccessErrorCode (enum[number])
+### SuccessErrorCode (enum[number]) {#data-structures--success-error-code}
 +  `0` - Success (No error / Warning message).  
 
-### FailErrorCode (enum[number])                          
-+ `-1` - Generic error (more info in `errorMessage`). 
+### FailErrorCode (enum[number]) {#data-structures--fail-error-code}
++ `-1` - Generic error(more info in `errorMessage`). 
 + `-2` - Invalid input data.                          
 + `-3` - Out of stock.                                
 + `-4` - Invalid price.                               
 + `-5` - Operation rejected.                            
 + `-6` - Bad response.  
 
-### ImportType (enum[string])
+### ImportType (enum[string]) {#data-structures--import-type}
 + PartialFull - Update only provided items. Used for nightly batch import.
 + Update - Update only provided items
 + Full - Missing items in Full import are considered as unavailable. **Deprecated**
 
-### TrackAndTraceStatus (enum[string])
+### TrackAndTraceStatus (enum[string]) {#data-structures--track-and-trace-status}
 + Depot - The shipment was delivered to carrier depot.
 + Delivery - The shipment is being delivered to the recipient from depot.
 + Stored - The shipment was stored at parcel shop for pickup by the end customer.
 + Delivered - The shipment was delivered to the end customer or buyer branch.
 + Rejected - The shipment was rejected.
 
-### DeliveryResultStatus (enum[string])
+### DeliveryResultStatus (enum[string]) {#data-structures--delivery-result-status}
 + Canceled - Canceled by supplier (issues with goods)
 + Delivered - Sucessfully delivered to the end customer or buyer branch
 + Rejected - Rejected by the end customer or buyer, returned back to supplier
 
-### ShipmentDeliveryType (enum[string])
+### ShipmentDeliveryType (enum[string]) {#data-structures--shipment-delivery-type}
 + B2C - End customer client (carrier will contact customer)
 + B2B - Business client
 + Branch - Delivery to branch
 + ParcelShop - Delivery to parcel shop
 
-### ShipmentShippingMode (enum[string])
+### ShipmentShippingMode (enum[string]) {#data-structures--shipment-shipping-mode}
 + Buyer - Buyer handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
 + Supplier - Supplier handles *shipment number*, *package numbers*, *shipping list*, *shipping sticker* and *carrier data*
 
-### ShipmentTrackingMode (enum[string])
+### ShipmentTrackingMode (enum[string]) {#data-structures--shipment-tracking-mode}
 + Buyer - Buyer handles *shipment track and trace*
 + Supplier - Supplier handles *shipment track and trace*
 
-### ShippingCarrierCode (enum[string])
+### ShippingCarrierCode (enum[string]) {#data-structures--shipping-carrier-code}
 + ALZA - Alza
 + CZPOST - Czech Post
 + DHL - DHL
@@ -4581,7 +4571,7 @@ Examples
 + ZASILKOVNA - Packeta
 + ZavolejSiKuryra - Zavolejsikurýra.cz
 
-### ShippingCarrierDeliveryType (enum[string])
+### ShippingCarrierDeliveryType (enum[string]) {#data-structures--shipping-carrier-delivery-type}
 + Supplier
     For Confirm order message, it means that the supplier is choosing the best delivery type.
     For other messages, it means than the supplier is shipping carrier.
@@ -4624,7 +4614,7 @@ Examples
 + ZASILKOVNA - For shipping carrier code `ZASILKOVNA`
 + ZavolejSiKuryra - For shipping carrier code `ZavolejSiKuryra`
 
-### ParcelShopIdentification (enum[string])
+### ParcelShopIdentification (enum[string]) {#data-structures--parcel-shop-identification}
 + ALZABOX - AlzaBox delivery for shipping carrier code `ALZA`
 + CZPOSTB - Balíkovna for shipping carrier code `CZPOST`
 + CZPOSTP - Post office delivery for shipping carrier code `CZPOST`
@@ -4635,29 +4625,29 @@ Examples
 + PPLPARCELSHOP - Parcelshop delivery for shipping carrier code `PPL` 
 + ZASILKOVNA - For shipping carrier code `ZASILKOVNA`
 
-### PackageSortingGroup (enum[string])
+### PackageSortingGroup (enum[string]) {#data-structures--package-sorting-group}
 + RegularDirect - Default group
 + Linehaul - Linehaul group
 + CrossLC - CrossLC group
 
-### ParcelShop (object)
+### ParcelShop (object) {#data-structures--parcel-shop}
 + parcelShopIdentification (ParcelShopIdentification, required) - Parcel shop identification
 + parcelShopBranchCode (String50, required) - Parcel shop branch identification
 
-### ShippingCarrierConfirm (object)
+### ShippingCarrierConfirm (object) {#data-structures--shipping-carrier-confirm}
 + shippingCarrierCode (ShippingCarrierCode, optional) - Shipping carrier code. For `Supplier` delivery type could be 
     attribute empty. 
 + shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
-### ShippingCarrier (object)
+### ShippingCarrier (object) {#data-structures--shipping-carrier}
 + shippingCarrierCode (ShippingCarrierCode, optional) - Required same Shipping carrier code as sent in Confirm order.
 + shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
-### ShippingCarrierStrict (object)
+### ShippingCarrierStrict (object) {#data-structures--shipping-carrier-strict}
 + shippingCarrierCode (ShippingCarrierCode, required) - Shipping carrier code.
 + shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
-### CountryPrice (object)
+### CountryPrice (object) {#data-structures--country-price}
 + country (Country)
     Optional if the country is the same as the branch country. Otherwise required.  
     Target country.
@@ -4677,13 +4667,13 @@ Examples
 + fees (CountryPriceFees, optional)
     Recycling and copyright unit fees. If it is not filled in, it means that the fees are 0.
 
-### CountryPriceFees (object)
+### CountryPriceFees (object) {#data-structures--country-price-fees}
 + copyright (Money, optional) 
     Copyright unit fee. If it is not filled in, it means that the fee is 0.
 + recycling (Money, optional) 
     Recycling unit fee. If it is not filled in, it means that the fee is 0.
 
-### Product (object)
+### Product (object) {#data-structures--product}
 + code (SupplierProductCode, required) - Supplier product code
 + name (String500, optional) - Product name
 + ean (String20, required) - Product EAN code
@@ -4743,7 +4733,7 @@ Examples
     Forbidden for **Latest price mode**.     
     Value added tax in percentage (10, 15, 21, ...)    
 
-### ErrorProduct (object)
+### ErrorProduct (object) {#data-structures--error-product}
 + code (SupplierProductCode, required) - Supplier product code
 + quantity (Number, optional) - Amount available in stock (default `0`). 
 + limited (boolean, optional) - Amount in data is limited (default `false`)
@@ -4752,7 +4742,7 @@ Examples
     
     Unit purchase price for buyer (excl. VAT, excl. recycling/copyright fee; default `original price`)
 
-### DeliveryAddress (object)
+### DeliveryAddress (object) {#data-structures--delivery-address}
 + companyName (String100) - Company name / Branch name. Required if `addressName` is empty. 
 + addressName (String100) - Customer name. Required if `companyName` is empty.
 + streetWithNumber (String100, required) - Street address with number
@@ -4763,14 +4753,14 @@ Examples
 + email (String100, required) - Email address
 + note (String500, optional) - Delivery note
 
-### CompanyAddress (object)
+### CompanyAddress (object) {#data-structures--company-address}
 + companyName (String100, required) - Company name 
 + streetWithNumber (String100, required) - Street address with number
 + city (String100, required) - City
 + country (Country, required) - Country code
 + zip (String10, required) - Zip Code (normalized, without spaces)
 
-### ShipmentAddress (object)
+### ShipmentAddress (object) {#data-structures--shipment-address}
 + companyName (String100) - Company name / Branch name. Required if `addressName` is empty. 
 + addressName (String100) - Customer name. Required if `companyName` is empty.
 + streetWithNumber (String100, required) - Street address with number
@@ -4778,34 +4768,34 @@ Examples
 + country (Country, required) - Country code
 + zip (String10, required) - Zip Code (normalized, without spaces)
 
-### ShipmentDeliveryServices (object)
+### ShipmentDeliveryServices (object) {#data-structures--shipment-delivery-services}
 + oldApplianceRemoval (boolean, optional) - Removal of old appliance
 + carryIn (boolean, optional) - Delivery to your apartment. Service may vary depending on the carrier.
 + basicInstallation (boolean, optional) - Basic installation. Service may vary by carrier.
 
-### GLNList (object)
+### GLNList (object) {#data-structures--gln-list}
 + buyerGln (GLN) - GLN of the buying company
 + orderedByGln (GLN) - GLN of the ordering company
 + invoiceeGln (GLN) - GLN of the invoicing company
 + shipmentDeliveryGln (GLN) - GLN of the place where the shipment is delivered by the supplier
 
-### CreatedShipment (object)
+### CreatedShipment (object) {#data-structures--created-shipment}
 + shipmentNumber (String50, required) - Shipment identification
 + packages (array[CreatedPackage], required) - List of created packages
 + pdf (String500, required) - Downloadable PDF with all carrier stickers for whole shipment
 
-### CreatedPackage (object)
+### CreatedPackage (object) {#data-structures--created-package}
 + packageId (Id64, optional) - `packageId` from request if contains
 + number (String100, required) - Created package number
 + fullNumber (String100, optional) - Created full package number
 + pdf (String500, required) - Downloadable PDF with carrier sticker
 
-### ShipmentCreatePackage (object)
+### ShipmentCreatePackage (object) {#data-structures--shipment-create-package}
 + packageId (Id64, required) - Identification of the package. Used to identify package in response.
 + weight (Weight, required) - Weight (in kg)
 + volume (Volume, optional) - Volume (in cm3)
 
-### ShipmentCreateItem (object)
+### ShipmentCreateItem (object) {#data-structures--shipment-create-item}
 + order (OrderNumber, required) - Order number.
 + orderItemId (Id64) - Unique *Order item ID*. **Preferred** item identification. 
   For **Branch delivery** is this attribute required.
@@ -4815,20 +4805,20 @@ Examples
 + packageId (Id64, required) - Identification of the package. Used to bond with `packages.packageId`.
 + quantity (Number, required) - Quantity.
 
-### DeparturedShipment (object)
+### DeparturedShipment (object) {#data-structures--departured-shipment}
 + departureTime (Timestamp, optional) - Shipment departure time in CET
 + shippingList (ShippingList, required) - Shipping list
 + shippingListGroup (ShippingListGroup, optional) - Shipping list group
 
-### ShippingList (object)
+### ShippingList (object) {#data-structures--shipping-list}
 + shippingListId (Id, required) - Shipping list ID
 + pdf (String500, required) - Downloadable PDF with shipping list
 
-### ShippingListGroup (object)
+### ShippingListGroup (object) {#data-structures--shipping-list-group}
 + shippingListGroupId (Id, required) - Shipping list group ID
 + pdf (String500, required) - Downloadable PDF with shipping list group
 
-### ShipmentDeparturePackage (object)
+### ShipmentDeparturePackage (object) {#data-structures--shipment-departure-package}
 + number (String100, required) - Package number (short, internal)
 + fullNumber (String100, optional) - Full package number (identical to the package sticker. Substring is usually 
   used as tracking number for track and trace)
@@ -4838,7 +4828,7 @@ Examples
 + value (Money, optional) - Package value
 + valueCurrency (Currency, optional) - Package value currency code
 
-### ShipmentDepartureItem (object)
+### ShipmentDepartureItem (object) {#data-structures--shipment-departure-item}
 + order (OrderNumber, required) - Order number
 + orderItemId (Id64)
     Unique *Order item ID*. Preferred item identification.   
@@ -4850,7 +4840,7 @@ Examples
 + quantity (Number, required) - Quantity. 
 + serials (array[String50]) - Serial numbers. Required if `serialNumbersRequired` is `true` in *Order Inser* API message.
 
-### OrderItem (object)
+### OrderItem (object) {#data-structures--order-item}
 + orderItemId (Id64, required) - Unique `Order Item ID`. This value is used for items identification
 + code (SupplierProductCode, required) - Supplier product code
 + quantity (Number, required) - Required quantity
@@ -4885,31 +4875,31 @@ Examples
     
     Default value is `false`.   
 
-### GeneralResponse (object)    
+### GeneralResponse (object) {#data-structures--general-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500)
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.  
 
-### Route (object)
+### Route (object) {#data-structures--route}
 + routeName (String100, optional) - Route name
 + routeStops (array[RouteStop], optional) - Route stops
 + routeDeliveryOrder (Int16, optional) - Print following number to package sticker for easier delivery.
   For Supplier shipping mode only.
 
-### RouteStop (object)
+### RouteStop (object) {#data-structures--route-stop}
 + branchName (String30, optional) - Branch name
 + ramp (String10, optional) - (un)loading ramp
 
-### PackageSorting (object)
+### PackageSorting (object) {#data-structures--package-sorting}
 + packageSortingGroup (PackageSortingGroup, required) - Package sorting group. 
   Packages from different groups should not be physically mixed during shipping.
 + packageSortingPrint (String10, optional) - Print following text to package sticker for better identification. 
   For Supplier shipping mode only.
 
 
-### AvailabilityRequest (object)    
+### AvailabilityRequest (object) {#data-structures--availability-request}
 + supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
 + supplierBranchId (Id, required) - Supplier Branch Id (provided by the Buyer). 
     Suppliers can have multiple Branches with different stock availability. This identification is passed to **Insert order**
@@ -4918,7 +4908,7 @@ Examples
 + currency (Currency, required) - National currency of the country of the branch.
 + productList (array[Product], required) - Product list
 
-### ShipmentCreateRequest (object)
+### ShipmentCreateRequest (object) {#data-structures--shipment-create-request}
 + supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + supplierBranchId (Id, required) - Supplier Branch ID (provided by the Buyer). 
 + timestamp (Timestamp, required) - Time of action in CET
@@ -4935,7 +4925,7 @@ Examples
 + packages (array[ShipmentCreatePackage], required) - Array of *Packages*
 + items (array[ShipmentCreateItem], required) - Array of *Items*
 
-### ShipmentCreateResponse (object)    
+### ShipmentCreateResponse (object) {#data-structures--shipment-create-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500)
     Required for `errorCode` < 0.  
@@ -4945,12 +4935,12 @@ Examples
     Required if `errorCode` = 0.
     Created shipment.
 
-### ShipmentDeleteRequest (object)
+### ShipmentDeleteRequest (object) {#data-structures--shipment-delete-request}
 + supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + supplierBranchId (Id, required) - Supplier Branch ID (provided by the Buyer). 
 + timestamp (Timestamp, required) - Time of action in CET
 
-### ShipmentDepartureRequest (object)
+### ShipmentDepartureRequest (object) {#data-structures--shipment-departure-request}
 + supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + supplierBranchId (Id) - Supplier Branch ID (provided by the Buyer). Required for multi-branch supplier. 
 + timestamp (Timestamp, required) - Time of action in CET
@@ -4969,7 +4959,7 @@ Examples
 + packages (array[ShipmentDeparturePackage], required) - Array of *Packages*.  
 + items (array[ShipmentDepartureItem], required) - Array of *Items*.
 
-### ShipmentDepartureResponse (object)    
+### ShipmentDepartureResponse (object) {#data-structures--shipment-departure-response}
 + errorCode (ErrorCode, required)
     Error Code
 + errorMessage (String500)
@@ -4980,7 +4970,7 @@ Examples
     Required for `errorCode` = 0 and **Buyer shipping mode**.  
     Departured shipment
 
-### TrackAndTraceRequest (object)
+### TrackAndTraceRequest (object) {#data-structures--track-and-trace-request}
 + supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
 + order (OrderNumber) - Order number (our indentification). Conditionally required.
 + shipment (String50) - Shipment number (your identifaction used in *Shipment departure*). Conditionally required.
@@ -4990,7 +4980,7 @@ Examples
 + status (TrackAndTraceStatus, required) - Delivery state
 + statusTimestamp (Timestamp, required) - Status time in CET
 
-### DeliveryResultRequest (object)
+### DeliveryResultRequest (object) {#data-structures--delivery-result-request}
 + supplierId (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
 + timestamp (Timestamp, required) - Time of action in CET
 + status (DeliveryResultStatus, required) - Delivery information
@@ -4999,7 +4989,7 @@ Examples
 + paymentVS (String30, optional) - Actual Payment Variable Symbol
 + errorProducts (array[ErrorProduct], optional) - Optional array of invalid products for Canceled status
 
-### OrderInsertRequest (object)
+### OrderInsertRequest (object) {#data-structures--order-insert-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
 + supplierId (Id, required) - Supplier ID (provided by the Buyer). 
@@ -5010,7 +5000,7 @@ Examples
 + itemsPriceCountry (Country, optional) - Target country of prices (from Availability import)
 + orderItems (array[OrderItem], required)
 
-### OrderInsertResponse (object)
+### OrderInsertResponse (object) {#data-structures--order-insert-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500)
     Required for `errorCode` < 0.  
@@ -5025,7 +5015,7 @@ Examples
     Ignored for `errorCode` = 0.  
     Array of invalid products for unsuccessful reservation.
 
-### OrderCancelRequest (object)
+### OrderCancelRequest (object) {#data-structures--order-cancel-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
 + supplierId (Id, required) - Supplier ID (provided by the Buyer).
@@ -5033,7 +5023,7 @@ Examples
 + regNo (String30, optional) - Buyer Registration Identification Number.
 + vatNo (String30, optional) - Buyer VAT Identification Number.
 
-### OrderExtendRequest (object)
+### OrderExtendRequest (object) {#data-structures--order-extend-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
 + supplierId (Id, required) - Supplier ID (provided by the Buyer).
@@ -5042,7 +5032,7 @@ Examples
 + vatNo (String30, optional) - Buyer VAT Identification Number.
 + validUntil (Timestamp, optional) - Recommanded validUntil in CET
 
-### OrderExtendResponse (object)
+### OrderExtendResponse (object) {#data-structures--order-extend-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500)
     Required for `errorCode` < 0.  
@@ -5052,7 +5042,7 @@ Examples
     Required for `errorCode` = 0.  
     Validity period of a reservation in CET. Required value is at least `Now` + 12 hours.
 
-### OrderConfirmRequest (object)
+### OrderConfirmRequest (object) {#data-structures--order-confirm-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + customerId (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
 + supplierId (Id, required) - Supplier ID (provided by the Buyer).
@@ -5089,18 +5079,18 @@ Examples
 + shipmentDeliveryAddress (ShipmentAddress) - The address where the supplier delivers the shipment. May be different from `deliveryAddress`.
   **Upcoming feature**
 
-### InvokerSimpleRequest (object) 
+### InvokerSimpleRequest (object) {#data-structures--invoker-simple-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + supplierId (Id, required) - Supplier identification (provided by the Buyer). Used for authentication token calculation.
 
-### InvokerOrderInsertRequest
+### InvokerOrderInsertRequest {#data-structures--invoker-order-insert-request}
 + timestamp (Timestamp, required) - Time of action in CET
 + customerId (CustomerId, required) - Buyer ID used for communication with Supplier API. Default is 1.
 + supplierId (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation.
 + supplierBranchId (Id, required) - Supplier Branch Id (same value as in Availability method). 
 + codes (array[SupplierProductCode], required) - Supplier product codes
 
-### InvokerOrderInsertResponse
+### InvokerOrderInsertResponse {#data-structures--invoker-order-insert-response}
 + errorCode (ErrorCode, required)
     Error Code
 + errorMessage (String500)
@@ -5112,13 +5102,13 @@ Examples
 + responseObject (OrderInsertResponse, optional)
     Filled with Supplier API response when it's valid
 
-### InvokerOrderCancelResponse
+### InvokerOrderCancelResponse {#data-structures--invoker-order-cancel-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500) - Error message. Required for `errorCode` < 0.
 + responseHTTPStatusCode (Int32, optional) - HTTP statu code from Supplier API
 + responseObject (GeneralResponse, optional) - Filled with Supplier API response when it's valid
 
-### InvokerOrderExtendResponse
+### InvokerOrderExtendResponse {#data-structures--invoker-order-extend-response}
 + errorCode (ErrorCode, required)
     Error Code
 + errorMessage (String500)
@@ -5130,7 +5120,7 @@ Examples
 + responseObject (OrderExtendResponse, optional)
     Filled with Supplier API response when it's valid
 
-### InvokerOrderConfirmResponse
+### InvokerOrderConfirmResponse {#data-structures--invoker-order-confirm-response}
 + errorCode (ErrorCode, required) - Error Code
 + errorMessage (String500) - Error message. Required for `errorCode` < 0.
 + responseHTTPStatusCode (Int32, optional) - HTTP statu code from Supplier API
@@ -5155,24 +5145,24 @@ Examples
 [buyer-product-pricing]:            #introduction--product-pricing--buyer-product-pricing
 [faq]:                              #introduction--faq
 
-[supplier-api]:                     #reference/supplier-api
-[insert-order]:                     #reference/supplier-api/insert-order
-[cancel-order]:                     #reference/supplier-api/cancel-order
-[extend-order]:                     #reference/supplier-api/extend-order
-[confirm-order]:                    #reference/supplier-api/confirm-order
+[supplier-api]:                     #reference-supplier-api
+[insert-order]:                     #reference-supplier-api--insert-order
+[cancel-order]:                     #reference-supplier-api--cancel-order
+[extend-order]:                     #reference-supplier-api--extend-order
+[confirm-order]:                    #reference-supplier-api--confirm-order
+
+[buyer-api]:                        #reference-buyer-api
+[availability]:                     #reference-buyer-api--availability
+[create-shipment]:                  #reference-buyer-api--create-shipment
+[delete-shipment]:                  #reference-buyer-api--delete-shipment
+[shipment-departure]:               #reference-buyer-api--shipment-departure
+[track-and-trace]:                  #reference-buyer-api--track-and-trace
+[delivery-result]:                  #reference-buyer-api--delivery-result
     
-[buyer-api]:                        #reference/buyer-api
-[availability]:                     #reference/buyer-api/availability
-[create-shipment]:                  #reference/buyer-api/create-shipment
-[delete-shipment]:                  #reference/buyer-api/delete-shipment
-[shipment-departure]:               #reference/buyer-api/shipment-departure
-[track-and-trace]:                  #reference/buyer-api/track-and-trace
-[delivery-result]:                  #reference/buyer-api/delivery-result
-    
-[testing-supplier-api]:             #reference/testing-supplier-api
-[testing-insert-order-request]:     #reference/testing-supplier-api/insert-order/invoke-insert-order-request
-[testing-buyer-api]:                #reference/testing-buyer-api
-[testing-availability]:             #reference/testing-buyer-api/availability
+[testing-supplier-api]:             #reference-testing-supplier-api
+[testing-insert-order-request]:     #reference-testing-supplier-api--insert-order--invoke-insert-order-request
+[testing-buyer-api]:                #reference-testing-buyer-api
+[testing-availability]:             #reference-testing-buyer-api--availability
 
 [data-structures]:                      #data-structures
 [ds-timestamp]:                         #data-structures--timestamp
@@ -5260,3 +5250,7 @@ Examples
 [base64]:               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
 [percent-encoding]:     https://en.wikipedia.org/wiki/Percent-encoding
 
+[wiki-country-code]:    https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+[wiki-currency-code]:   https://en.wikipedia.org/wiki/ISO_4217
+[iso-country-code]:     https://www.iso.org/iso-3166-country-codes.html
+[iso-currency-code]:    https://www.iso.org/iso-4217-currency-codes.html
