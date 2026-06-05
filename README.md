@@ -1208,15 +1208,18 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request PartialFull import for Buyer product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1259,20 +1262,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request Invalid PartialFull import (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1293,21 +1300,25 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": -1,
                  "errorMessage": "productList[0].code missing"
             }
+        ```
 
 
 + Request Update import for Supplier product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1332,21 +1343,25 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 
 + Request Update import for Buyer product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1371,20 +1386,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request Invalid Update import (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1404,15 +1423,18 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": -1,
                  "errorMessage": "productList[0].code missing"
             }
+        ```
 
 ## Create shipment {#reference-buyer-api--create-shipment}
 
@@ -1457,6 +1479,7 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -1502,11 +1525,13 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     }
                 ]
             }
+        ```
 
 + Response 201 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "",
@@ -1529,11 +1554,13 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
                 }
             }
+        ```
 
 + Request Invalid creation (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -1578,15 +1605,18 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
               "errorCode": -2,
               "errorMessage": "Missing packageId in packages!"
             }
+        ```
 
 
 
@@ -1618,39 +1648,47 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
                 "timestamp": "2025-06-01T19:33:43.513"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Failed deletion (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
                 "timestamp": "2025-06-01T19:33:43.513"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "Unknown shipment!"
             }
+        ```
 
 ## Shipment departure {#reference-buyer-api--shipment-departure}
 
@@ -1693,6 +1731,7 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -1747,21 +1786,25 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 
 + Request Buyer shipping mode (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -1816,11 +1859,13 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "",
@@ -1836,11 +1881,13 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 }
             }
+        ```
 
 + Request Invalid shipment departure (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -1873,15 +1920,18 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "Order items missing"
             }
+        ```
 
 
 ## Track and Trace {#reference-buyer-api--track-and-trace}
@@ -1923,6 +1973,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -1932,20 +1983,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Depot",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Final delivery (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -1955,20 +2010,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivery",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Delivered to the end customer or buyer's branch (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -1978,20 +2037,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivered",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Stored at parcel shop (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2001,20 +2064,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Stored",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Rejected by the end customer or buyer's branch (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2024,20 +2091,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Rejected",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request Invalid update (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2047,15 +2118,18 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivered",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "Invalid order number"
             }
+        ```
 
 
 ## Delivery result {#reference-buyer-api--delivery-result}
@@ -2093,6 +2167,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2100,20 +2175,24 @@ Response ([GeneralResponse][ds-general-response])
                 "statusTimestamp": "2025-06-01T19:30:00.000",
                 "paymentVS": "123456781"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request Delivery result Rejected (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2122,20 +2201,24 @@ Response ([GeneralResponse][ds-general-response])
                 "errorReason": "Rejected by the end customer or buyer",
                 "paymentVS": "123456781"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request Delivery result Canceled (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2150,20 +2233,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Invalid update (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -2178,15 +2265,18 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "Can't cancel delivered order"
             }
+        ```
 
 
 
@@ -2243,6 +2333,7 @@ Response ([OrderInsertResponse][ds-order-insert-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2279,22 +2370,26 @@ Response ([OrderInsertResponse][ds-order-insert-response])
                     }
                 ]
             }
+        ```
 
 + Response 201 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "",
                 "supplierOrder": "A56789123456",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Request Successful reservation to the branch (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2338,22 +2433,26 @@ Response ([OrderInsertResponse][ds-order-insert-response])
                     }
                 ]
             }
+        ```
 
 + Response 201 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "",
                 "supplierOrder": "A56789123456",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Request Out of stock (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2390,11 +2489,13 @@ Response ([OrderInsertResponse][ds-order-insert-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": -3,
                  "errorMessage": "Out of stock",
@@ -2405,11 +2506,13 @@ Response ([OrderInsertResponse][ds-order-insert-response])
                     }
                 ]
             }
+        ```
 
 + Request Invalid product (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2434,15 +2537,18 @@ Response ([OrderInsertResponse][ds-order-insert-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": -2,
                  "errorMessage": "Uknown product AXO001_XXX"
             }
+        ```
 
 
 ## Cancel order {#reference-supplier-api--cancel-order}
@@ -2492,6 +2598,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2500,20 +2607,24 @@ Response ([GeneralResponse][ds-general-response])
                 "regNo": "5445454",
                 "vatNo": "CZ123456"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Unsuccessful Cancel order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2522,20 +2633,24 @@ Response ([GeneralResponse][ds-general-response])
                 "regNo": "5445454",
                 "vatNo": "CZ123456"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -5,
                 "errorMessage": "The order could not be canceled in the departure state."
             }
+        ```
 
 + Request Failed Cancel order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2544,15 +2659,18 @@ Response ([GeneralResponse][ds-general-response])
                 "regNo": "5445454",
                 "vatNo": "CZ123456"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "Unknown order."
             }
+        ```
 
 
 
@@ -2590,6 +2708,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2631,20 +2750,24 @@ Response ([GeneralResponse][ds-general-response])
                     "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
  
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Failed Confirm order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2683,21 +2806,25 @@ Response ([GeneralResponse][ds-general-response])
                     "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -1,
                 "errorMessage": "Unknown error"
             }
+        ```
 
 
 + Request Confirm order with route (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2751,21 +2878,25 @@ Response ([GeneralResponse][ds-general-response])
                     "note": "Pozor na Barbara (kocour), kouĹˇe"
                 }
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
  
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
             
 
 + Request Upcoming feature: Confirm order with GLN list (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2830,21 +2961,25 @@ Response ([GeneralResponse][ds-general-response])
                     "zip": "10000"
                 }
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
  
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
             
 
 + Request Upcoming feature: Delivery services (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2026-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2880,15 +3015,18 @@ Response ([GeneralResponse][ds-general-response])
                     "email": "franta@veverka.cz"
                 }
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
  
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 
 
@@ -2930,6 +3068,7 @@ Response ([OrderExtendResponse][ds-order-extend-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2939,21 +3078,25 @@ Response ([OrderExtendResponse][ds-order-extend-response])
                 "vatNo": "CZ123456",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Request Unsuccessful Extend order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2963,20 +3106,24 @@ Response ([OrderExtendResponse][ds-order-extend-response])
                 "vatNo": "CZ123456",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -5,
                 "errorMessage": "Reservation expired."
             }
+        ```
 
 + Request Failed Extend Order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -2986,15 +3133,18 @@ Response ([OrderExtendResponse][ds-order-extend-response])
                 "vatNo": "CZ123456",
                 "validUntil": "2025-07-01T00:00:00.000"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -1,
                 "errorMessage": "Uknown order."
             }
+        ```
 
 
 
@@ -3030,6 +3180,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -3072,20 +3223,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": ""
             }
+        ```
 
 + Request PartialFull import for Buyer product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -3128,20 +3283,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 + Request Update import for Supplier product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -3166,21 +3325,25 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 
 + Request Update import for Buyer product pricing  (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -3205,21 +3368,25 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": ""
             }
+        ```
 
 
 + Request Invalid request (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -3239,15 +3406,18 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -1,
                 "errorMessage": "productList[0].code missing"
             }
+        ```
 
 
 ## Create shipment {#reference-testing-buyer-api--create-shipment}
@@ -3272,6 +3442,7 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -3317,11 +3488,13 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress.",
@@ -3344,11 +3517,13 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
                 }
             }
+        ```
 
 + Request Invalid creation (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -3393,15 +3568,18 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
  
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "The test case failed. Missing packageId in packages!"
             }
+        ```
 
 
 
@@ -3426,39 +3604,47 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
                 "timestamp": "2025-06-01T19:33:43.513"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully."
             }
+        ```
 
 + Request Failed Delete shipment (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
                 "timestamp": "2025-06-01T19:33:43.513"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "The test case failed. Unknown shipment!"
             }
+        ```
 
 
 ## Shipment departure {#reference-testing-buyer-api--shipment-departure}
@@ -3485,6 +3671,7 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -3539,20 +3726,24 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Buyer shipping mode (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -3607,11 +3798,13 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress.",
@@ -3627,11 +3820,13 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 }
             }
+        ```
 
 + Request Invalid shipment departure (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 212,
@@ -3664,15 +3859,18 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "The test case failed. Order items missing"
             }
+        ```
 
 
 
@@ -3699,6 +3897,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3708,20 +3907,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Depot",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Final delivery (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3731,20 +3934,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivery",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Delivered to the end customer or buyer's branch (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3754,20 +3961,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivered",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Stored at parcel shop (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3777,20 +3988,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Stored",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Rejected by the end customer or buyer's branch (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3800,20 +4015,24 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Rejected",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                  "errorCode": 0,
                  "errorMessage": "The test case is still in progress."
             }
+        ```
 
 + Request Invalid update (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3823,15 +4042,18 @@ Response ([GeneralResponse][ds-general-response])
                 "status": "Delivered",
                 "statusTimestamp": "2025-06-01T19:30:00.000"
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "The test case failed. Invalid order number"
             }
+        ```
 
 
 ## Delivery result {#reference-testing-buyer-api--delivery-result}
@@ -3857,6 +4079,7 @@ Response ([GeneralResponse][ds-general-response])
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3864,20 +4087,24 @@ Response ([GeneralResponse][ds-general-response])
                 "statusTimestamp": "2025-06-01T19:30:00.000",
                 "paymentVS": "123456781"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully."
             }
+        ```
 
 + Request Rejected (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3886,20 +4113,24 @@ Response ([GeneralResponse][ds-general-response])
                 "errorReason": "Rejected by the end customer or buyer",
                 "paymentVS": "123456781"
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully."
             }
+        ```
 
 + Request Canceled (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3914,20 +4145,24 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully."
             }
+        ```
 
 + Request Invalid update (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "supplierId": 123456,
                 "timestamp": "2025-06-01T19:33:43.513",
@@ -3942,15 +4177,18 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -2,
                 "errorMessage": "The test case failed. Can't cancel delivered order"
             }
+        ```
 
 
 
@@ -3984,6 +4222,7 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -3994,11 +4233,13 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     "AXO002"
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress.",
@@ -4010,12 +4251,14 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     "validUntil": "2025-07-01T00:00:00.000"
                 }
             }
+        ```
 
 
 + Request Intended Out of stock (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -4026,11 +4269,13 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     "AXO002"
                 ]
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully.",
@@ -4046,11 +4291,13 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     ]
                 }
             }
+        ```
 
 + Request Unintended Out of stock (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -4061,11 +4308,13 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     "AXO002"
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -6,
                 "errorMessage": "The test case failed. Unexpected response errorCode. Expects 0. Receive -3",
@@ -4081,11 +4330,13 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     ]
                 }
             }
+        ```
 
 + Request Invalid Supplier Testing URL (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "customerId": 1,
@@ -4096,15 +4347,18 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
                     "AXO002"
                 ]
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -1,
                 "errorMessage": "Problem with send request to Dropshipper!"
             }
+        ```
 
 
 
@@ -4130,15 +4384,18 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress.",
@@ -4149,20 +4406,24 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
                     "validUntil": "2025-07-01T00:00:00.000"
                 }
             }
+        ```
 
 + Request Intended failed reservation (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully.",
@@ -4172,20 +4433,24 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
                     "errorMessage": "Rejected"
                 }
             }
+        ```
 
 + Request Unintended failed reservation (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -6,
                 "errorMessage": "The test case failed. Unexpected response errorCode. Expects 0. Receive -5",
@@ -4195,6 +4460,7 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
                     "errorMessage": "Rejected"
                 }
             }
+        ```
 
 
 
@@ -4219,15 +4485,18 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
     
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is completed successfully.",
@@ -4237,20 +4506,24 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
                     "errorMessage": ""
                 }
             }
+        ```
 
 + Request Failed Cancel order (application/json; charset=utf-8)
     
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -6,
                 "errorMessage": "The test case failed. Unexpected response errorCode. Expects 0. Receive -5",
@@ -4260,6 +4533,7 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
                     "errorMessage": "Rejected"
                 }
             }
+        ```
 
 
 
@@ -4285,15 +4559,18 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 200 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": 0,
                 "errorMessage": "The test case is still in progress.",
@@ -4303,20 +4580,24 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
                     "errorMessage": ""
                 }
             }
+        ```
 
 + Request Failed Confirm order (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "timestamp": "2025-06-01T19:33:43.513",
                 "supplierId": 1
             }
+        ```
 
 + Response 400 (application/json; charset=utf-8)
 
     + Body
 
+        ```json
             {
                 "errorCode": -6,
                 "errorMessage": "The test case failed. Unexpected response errorCode. Expects 0. Receive -5",
@@ -4326,6 +4607,7 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
                     "errorMessage": "Rejected"
                 }
             }
+        ```
 
 
 
