@@ -1152,10 +1152,6 @@ Each mode uses own set of attributes and these attributes are not compatible. Co
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
 
-[ds-availability-request]:  #data-structures/0/availability-request
-[ds-general-response]:      #data-structures/0/general-response
-
- 
 + Request PartialFull import for Supplier product pricing  (application/json; charset=utf-8)
 
     + Body
@@ -1452,9 +1448,6 @@ Method may be provided in the case of limited capabilities of the supplier.
 
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
-
-[ds-shipment-create-request]:   #data-structures/0/shipment-create-request
-[ds-shipment-create-response]:  #data-structures/0/shipment-create-response
  
 + Request Successful creation (application/json; charset=utf-8)
 
@@ -1618,10 +1611,7 @@ Deletes shipment created by *[Create shipment][create-shipment]* API message bef
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response])
 
-[ds-shipment-delete-request]:   #data-structures/0/shipment-delete-request
-[ds-general-response]:          #data-structures/0/general-response
 
- 
 + Request Successful deletion (application/json; charset=utf-8)
 
     + Body
@@ -1694,9 +1684,7 @@ It is also required to send the entire order in one shipment.
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])   
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
 
-[ds-shipment-departure-request]:  #data-structures/0/shipment-departure-request
-[ds-shipment-departure-response]: #data-structures/0/shipment-departure-response
- 
+
 + Request Supplier shipping mode (application/json; charset=utf-8)
 
     + Body
@@ -1926,9 +1914,7 @@ For shipments with `shipmentDeliveryType` ParcelShop sent in *[Confirm order][co
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response])
 
-[ds-track-and-trace-request]: #data-structures/0/track-and-trace-request
-[ds-general-response]:        #data-structures/0/general-response
- 
+
 + Request Delivered to the depot (application/json; charset=utf-8)
 
     + Body
@@ -2096,10 +2082,7 @@ Method is used in case of these situations:
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])
 
-[ds-delivery-result-request]: #data-structures/0/delivery-result-request
-[ds-general-response]:        #data-structures/0/general-response
 
- 
 + Request Delivery result Delivered (application/json; charset=utf-8)
 
     + Body
@@ -2248,9 +2231,7 @@ Currency of `purchasePriceWithoutFees` is in `itemsPriceCurrency`. This price is
 Request ([OrderInsertRequest][ds-order-insert-request])  
 Response ([OrderInsertResponse][ds-order-insert-response])
 
-[ds-order-insert-request]:  #data-structures/0/order-insert-request
-[ds-order-insert-response]: #data-structures/0/order-insert-response
- 
+
 + Request Successful reservation to the address (application/json; charset=utf-8)
 
     + Body
@@ -2502,9 +2483,6 @@ After **[Shipment departure][shipment-departure]** is not possible to cancel ord
 Request ([OrderCancelRequest][ds-order-cancel-request])  
 Response ([GeneralResponse][ds-general-response])
 
-[ds-order-cancel-request]:  #data-structures/0/order-cancel-request
-[ds-general-response]:      #data-structures/0/general-response
-
  
 + Request Successful Cancel order (application/json; charset=utf-8)
 
@@ -2601,8 +2579,6 @@ It is not allowed to send the shipment earlier or later. The shipment is planned
 Request ([OrderConfirmRequest][ds-order-confirm-request])  
 Response ([GeneralResponse][ds-general-response])
 
-[ds-order-confirm-request]: #data-structures/0/order-confirm-request
-[ds-general-response]:      #data-structures/0/general-response
  
 + Request Successful Confirm order (application/json; charset=utf-8)
 
@@ -2943,8 +2919,6 @@ In case of refusal to extend the reservation of the order, a [Order Cancel][canc
 Request ([OrderExtendRequest][ds-order-extend-request])  
 Response ([OrderExtendResponse][ds-order-extend-response])
 
-[ds-order-extend-request]:  #data-structures/0/order-extend-request
-[ds-order-extend-response]: #data-structures/0/order-extend-response
 
 + Request Successful Extend order (application/json; charset=utf-8)
 
@@ -3045,8 +3019,6 @@ A testing endpoint accepts a maximum of 100 products.
 Request ([AvailabilityRequest][ds-availability-request])  
 Response ([GeneralResponse][ds-general-response])  
 
-[ds-availability-request]:  #data-structures/0/availability-request
-[ds-general-response]:      #data-structures/0/general-response
 
 + Request PartialFull import for Supplier product pricing  (application/json; charset=utf-8)
 
@@ -3291,8 +3263,6 @@ A testing endpoint for buyer *[Create shipment][create-shipment]* method. See *[
 Request ([ShipmentCreateRequest][ds-shipment-create-request])  
 Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
-[ds-shipment-create-request]:   #data-structures/0/shipment-create-request
-[ds-shipment-create-response]:  #data-structures/0/shipment-create-response
 
 + Request Successful creation (application/json; charset=utf-8)
 
@@ -3449,8 +3419,6 @@ A testing endpoint for buyer *[Delete shipment][delete-shipment]* method. See *[
 Request ([ShipmentDeleteRequest][ds-shipment-delete-request])  
 Response ([GeneralResponse][ds-general-response]) 
 
-[ds-shipment-delete-request]:   #data-structures/0/shipment-delete-request
-[ds-general-response]:        #data-structures/0/general-response
  
 + Request Successful Delete shipment (application/json; charset=utf-8)
 
@@ -3510,8 +3478,6 @@ See *[Shipment departure][shipment-departure]* for more details.
 Request ([ShipmentDepartureRequest][ds-shipment-departure-request])  
 Response ([ShipmentDepartureResponse][ds-shipment-departure-response])  
 
-[ds-shipment-departure-request]:    #data-structures/0/shipment-departure-request
-[ds-shipment-departure-response]:   #data-structures/0/shipment-departure-response
  
 + Request Supplier shipping mode (application/json; charset=utf-8)
 
@@ -3726,8 +3692,6 @@ See *[Track and Trace][track-and-trace]* for more details.
 Request ([TrackAndTraceRequest][ds-track-and-trace-request])  
 Response ([GeneralResponse][ds-general-response]) 
 
-[ds-track-and-trace-request]: #data-structures/0/track-and-trace-request
-[ds-general-response]:        #data-structures/0/general-response
  
 + Request Delivered to the depot (application/json; charset=utf-8)
 
@@ -3887,9 +3851,6 @@ See *[Delivery result][delivery-result]* for more details.
 Request ([DeliveryResultRequest][ds-delivery-result-request])  
 Response ([GeneralResponse][ds-general-response])  
 
-[ds-delivery-result-request]: #data-structures/0/delivery-result-request
-[ds-general-response]:        #data-structures/0/general-response
-
 + Request Delivered (application/json; charset=utf-8)
 
     + Body
@@ -4021,8 +3982,6 @@ Also initiate new test and deactivate previous one.
 Request ([InvokerOrderInsertRequest][ds-invoker-order-insert-request])  
 Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])  
 
-[ds-invoker-order-insert-request]:          #data-structures/0/invoker-order-insert-request
-[ds-invoker-order-insert-response]: #data-structures/0/invoker-order-insert-response
 
 + Request Successful reservation (application/json; charset=utf-8)
 
@@ -4169,8 +4128,6 @@ A testing endpoint to invoke *[Extend order][extend-order]* request to Supplier 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])  
 
-[ds-invoker-simple-request]:        #data-structures/0/invoker-simple-request
-[ds-invoker-order-extend-response]: #data-structures/0/invoker-order-extend-response
 
 + Request Successful extension of the reservation (application/json; charset=utf-8)
 
@@ -4261,9 +4218,6 @@ A testing endpoint to invoke *[Cancel order][cancel-order]* request to Supplier 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])  
 
-[ds-invoker-simple-request]:            #data-structures/0/invoker-simple-request
-[ds-invoker-order-cancel-response]:     #data-structures/0/invoker-order-cancel-response
-
 + Request Successful Cancel order (application/json; charset=utf-8)
     
     + Body
@@ -4329,8 +4283,6 @@ Provides ability to invoke *[Confirm order][confirm-order]* request to Supplier 
 Request ([InvokerSimpleRequest][ds-invoker-simple-request])  
 Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])  
 
-[ds-invoker-simple-request]:            #data-structures/0/invoker-simple-request
-[ds-invoker-order-confirm-response]:     #data-structures/0/invoker-order-confirm-response
 
 + Request Successful Confirm order (application/json; charset=utf-8)
 
@@ -5223,66 +5175,86 @@ Examples
 [testing-availability]:             #reference/testing-buyer-api/availability
 
 [data-structures]:                      #data-structures
-[ds-timestamp]:                         #data-structures/0/timestamp
-[ds-timestamputc]:                      #data-structures/0/timestamputc
-[ds-date]:                              #data-structures/0/date
-[ds-int-16]:                            #data-structures/0/int-16
-[ds-int-32]:                            #data-structures/0/int-32
-[ds-int-64]:                            #data-structures/0/int-64
-[ds-float]:                             #data-structures/0/float
-[ds-string-10]:                         #data-structures/0/string-10
-[ds-string-20]:                         #data-structures/0/string-20
-[ds-string-30]:                         #data-structures/0/string-30
-[ds-string-50]:                         #data-structures/0/string-50
-[ds-string-100]:                        #data-structures/0/string-100
-[ds-string-500]:                        #data-structures/0/string-500
-[ds-customer-id]:                       #data-structures/0/customer-id
-[ds-supplier-product-code]:             #data-structures/0/supplier-product-code
-[ds-weight]:                            #data-structures/0/weight
-[ds-volume]:                            #data-structures/0/volume
-[ds-money]:                             #data-structures/0/money
-[ds-vat]:                               #data-structures/0/vat
-[ds-hmac-token]:                        #data-structures/0/hmac-token
-[ds-country]:                           #data-structures/0/country
-[ds-currency]:                          #data-structures/0/currency
-[ds-guid]:                              #data-structures/0/guid
-[ds-number]:                            #data-structures/0/number
-[ds-order-number]:                      #data-structures/0/order-number
-[ds-id]:                                #data-structures/0/id
-[ds-id-64]:                             #data-structures/0/id-64
+[ds-timestamp]:                         #data-structures--timestamp
+[ds-timestamputc]:                      #data-structures--timestamputc
+[ds-date]:                              #data-structures--date
+[ds-int-16]:                            #data-structures--int-16
+[ds-int-32]:                            #data-structures--int-32
+[ds-int-64]:                            #data-structures--int-64
+[ds-float]:                             #data-structures--float
+[ds-string-10]:                         #data-structures--string-10
+[ds-string-20]:                         #data-structures--string-20
+[ds-string-30]:                         #data-structures--string-30
+[ds-string-50]:                         #data-structures--string-50
+[ds-string-100]:                        #data-structures--string-100
+[ds-string-500]:                        #data-structures--string-500
+[ds-customer-id]:                       #data-structures--customer-id
+[ds-supplier-product-code]:             #data-structures--supplier-product-code
+[ds-weight]:                            #data-structures--weight
+[ds-volume]:                            #data-structures--volume
+[ds-money]:                             #data-structures--money
+[ds-vat]:                               #data-structures--vat
+[ds-hmac-token]:                        #data-structures--hmac-token
+[ds-country]:                           #data-structures--country
+[ds-currency]:                          #data-structures--currency
+[ds-guid]:                              #data-structures--guid
+[ds-number]:                            #data-structures--number
+[ds-order-number]:                      #data-structures--order-number
+[ds-id]:                                #data-structures--id
+[ds-id-64]:                             #data-structures--id-64
 
-[ds-error-code]:                        #data-structures/0/error-code
-[ds-success-error-code]:                #data-structures/0/success-error-code
-[ds-fail-error-code]:                   #data-structures/0/fail-error-code
-[ds-import-type]:                       #data-structures/0/import-type
-[ds-track-and-trace-status]:            #data-structures/0/track-and-trace-status
-[ds-delivery-result-status]:            #data-structures/0/delivery-result-status
-[ds-shipment-delivery-type]:            #data-structures/0/shipment-delivery-type
-[ds-shipment-shipping-mode]:            #data-structures/0/shipment-shipping-mode
-[ds-shipment-delivery-services]:        #data-structures/0/shipment-delivery-services
-[ds-shipping-carrier-code]:             #data-structures/0/shipping-carrier-code
-[ds-shipping-carrier-delivery-type]:    #data-structures/0/shipping-carrier-delivery-type
-[ds-parcel-shop-identification]:        #data-structures/0/parcel-shop-identification
-[ds-route]:                             #data-structures/0/route
-[ds-route-stop]:                        #data-structures/0/route-stop
-[ds-delivery-address]:                  #data-structures/0/delivery-address
-[ds-company-address]:                   #data-structures/0/company-address
-[ds-shipment-address]:                  #data-structures/0/shipment-address
-[ds-package-sorting-group]:             #data-structures/0/package-sorting-group
+[ds-error-code]:                        #data-structures--error-code
+[ds-success-error-code]:                #data-structures--success-error-code
+[ds-fail-error-code]:                   #data-structures--fail-error-code
+[ds-import-type]:                       #data-structures--import-type
+[ds-track-and-trace-status]:            #data-structures--track-and-trace-status
+[ds-delivery-result-status]:            #data-structures--delivery-result-status
+[ds-shipment-delivery-type]:            #data-structures--shipment-delivery-type
+[ds-shipment-shipping-mode]:            #data-structures--shipment-shipping-mode
+[ds-shipment-delivery-services]:        #data-structures--shipment-delivery-services
+[ds-shipping-carrier-code]:             #data-structures--shipping-carrier-code
+[ds-shipping-carrier-delivery-type]:    #data-structures--shipping-carrier-delivery-type
+[ds-parcel-shop-identification]:        #data-structures--parcel-shop-identification
+[ds-route]:                             #data-structures--route
+[ds-route-stop]:                        #data-structures--route-stop
+[ds-delivery-address]:                  #data-structures--delivery-address
+[ds-company-address]:                   #data-structures--company-address
+[ds-shipment-address]:                  #data-structures--shipment-address
+[ds-package-sorting-group]:             #data-structures--package-sorting-group
 
-[ds-shipping-list-group]:               #data-structures/0/shipping-list-group
-[ds-departured-shipment]:               #data-structures/0/departured-shipment
-[ds-error-product]:                     #data-structures/0/error-product
-[ds-country-price]:                     #data-structures/0/country-price
-[ds-country-price-fees]:                #data-structures/0/country-price-fees
-[ds-created-package]:                   #data-structures/0/created-package
-[ds-shipment-create-item]:              #data-structures/0/shipment-create-item
-[ds-shipment-create-package]:           #data-structures/0/shipment-create-package
-[ds-order-item]:                        #data-structures/0/order-item
+[ds-shipping-list-group]:               #data-structures--shipping-list-group
+[ds-departured-shipment]:               #data-structures--departured-shipment
+[ds-error-product]:                     #data-structures--error-product
+[ds-country-price]:                     #data-structures--country-price
+[ds-country-price-fees]:                #data-structures--country-price-fees
+[ds-created-package]:                   #data-structures--created-package
+[ds-shipment-create-item]:              #data-structures--shipment-create-item
+[ds-shipment-create-package]:           #data-structures--shipment-create-package
+[ds-order-item]:                        #data-structures--order-item
 
-[ds-order-confirm-request]:             #data-structures/0/order-confirm-request
-[ds-shipment-departure-request]:        #data-structures/0/shipment-departure-request
-[ds-track-and-trace-request]:           #data-structures/0/track-and-trace-request
+[ds-availability-request]:              #data-structures--availability-request
+[ds-order-insert-request]:              #data-structures--order-insert-request
+[ds-order-insert-response]:             #data-structures--order-insert-response
+[ds-order-extend-request]:              #data-structures--order-extend-request
+[ds-order-extend-response]:             #data-structures--order-extend-response
+[ds-order-cancel-request]:              #data-structures--order-cancel-request
+[ds-order-confirm-request]:             #data-structures--order-confirm-request
+[ds-shipment-create-request]:           #data-structures--shipment-create-request
+[ds-shipment-create-response]:          #data-structures--shipment-create-response
+[ds-shipment-delete-request]:           #data-structures--shipment-delete-request
+[ds-shipment-departure-request]:        #data-structures--shipment-departure-request
+[ds-shipment-departure-response]:       #data-structures--shipment-departure-response
+[ds-track-and-trace-request]:           #data-structures--track-and-trace-request
+[ds-delivery-result-request]:           #data-structures--delivery-result-request
+[ds-general-response]:                  #data-structures--general-response
+
+[ds-invoker-simple-request]:            #data-structures--invoker-simple-request
+[ds-invoker-order-insert-request]:      #data-structures--invoker-order-insert-request
+[ds-invoker-order-insert-response]:     #data-structures--invoker-order-insert-response
+[ds-invoker-order-extend-response]:     #data-structures--invoker-order-extend-response
+[ds-invoker-order-confirm-response]:    #data-structures--invoker-order-confirm-response
+[ds-invoker-order-cancel-response]:     #data-structures--invoker-order-cancel-response
+
 
 [hmac]:                 https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
 [base64]:               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
