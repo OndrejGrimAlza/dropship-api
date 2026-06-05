@@ -1170,7 +1170,7 @@ Response ([GeneralResponse][ds-general-response])
 + Request PartialFull import for Supplier product pricing  (application/json; charset=utf-8)
 
     + Body
-
+´´´json
             {
                 "supplierId": 12345,
                 "supplierBranchId": 123,
@@ -1213,7 +1213,7 @@ Response ([GeneralResponse][ds-general-response])
                     }
                 ]
             }
-
+´´´
 
 
 + Response 200 (application/json; charset=utf-8)
