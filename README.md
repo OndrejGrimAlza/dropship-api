@@ -4460,7 +4460,7 @@ Min value: `1` Max value: `2147483647`
 
 Example: `15`
 
-### Id64 (Int64) {#data-structures--id-64}
+### Id64 ([Int64][ds-int-64]) {#data-structures--id-64}
 64-bit signed integer number.
 
 Min value: `1` Max value: `9223372036854775807`
@@ -4802,7 +4802,7 @@ Examples
 + **quantity** (Number, required) - Quantity.
 
 ### DeparturedShipment (object) {#data-structures--departured-shipment}
-+ **departureTime** (Timestamp, optional) - Shipment departure time in CET
++ **departureTime** ([Timestamp][ds-timestamp], optional) - Shipment departure time in CET
 + **shippingList** (ShippingList, required) - Shipping list
 + **shippingListGroup** (ShippingListGroup, optional) - Shipping list group
 
@@ -4899,7 +4899,7 @@ Examples
 + **supplierId** (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
 + **supplierBranchId** (Id, required) - Supplier Branch Id (provided by the Buyer). 
     Suppliers can have multiple Branches with different stock availability. This identification is passed to **Insert order**
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **importType** (ImportType, required) - Import type
 + **currency** (Currency, required) - National currency of the country of the branch.
 + **productList** (array[Product], required) - Product list
@@ -4907,7 +4907,7 @@ Examples
 ### ShipmentCreateRequest (object) {#data-structures--shipment-create-request}
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + **supplierBranchId** (Id, required) - Supplier Branch ID (provided by the Buyer). 
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **shippingCarrier** (ShippingCarrierStrict, required) - Shipping carrier identification.
 + **parcelShop**(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
 + **cashOnDeliveryValue** (Money, required) - Cash on delivery
@@ -4934,12 +4934,12 @@ Examples
 ### ShipmentDeleteRequest (object) {#data-structures--shipment-delete-request}
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + **supplierBranchId** (Id, required) - Supplier Branch ID (provided by the Buyer). 
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 
 ### ShipmentDepartureRequest (object) {#data-structures--shipment-departure-request}
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation. 
 + **supplierBranchId** (Id) - Supplier Branch ID (provided by the Buyer). Required for multi-branch supplier. 
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **shippingCarrier** (ShippingCarrier, required) - Used Shipping carrier. Required for new Suppliers.
 + **parcelShop**(ParcelShop) - Parcel shop detail. Required if `parcelShop` object is contained in Confirm order
 + **expectedDeliveryDate** (Date, optional) - Estimated delivery date
@@ -4972,21 +4972,21 @@ Examples
 + **shipment** (String50) - Shipment number (your identifaction used in *Shipment departure*). Conditionally required.
 + **package** (String100) - Package number. Conditionally required.
 + **fullPackageNumber** (String100) - Full package number. Conditionally required.
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **status** (TrackAndTraceStatus, required) - Delivery state
-+ **statusTimestamp** (Timestamp, required) - Status time in CET
++ **statusTimestamp** ([Timestamp][ds-timestamp], required) - Status time in CET
 
 ### DeliveryResultRequest (object) {#data-structures--delivery-result-request}
 + **supplierId** (Id, required) - Supplier Id (provided by the Buyer). Used for authentication token calculation. 
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **status** (DeliveryResultStatus, required) - Delivery information
-+ **statusTimestamp** (Timestamp, required) - Status time in CET
++ **statusTimestamp** ([Timestamp][ds-timestamp], required) - Status time in CET
 + **errorReason** (String500, optional) - Reason for Canceled or Rejected
 + **paymentVS** (String30, optional) - Actual Payment Variable Symbol
 + **errorProducts** (array[ErrorProduct], optional) - Optional array of invalid products for Canceled status
 
 ### OrderInsertRequest (object) {#data-structures--order-insert-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer). 
 + **regNo** (String30, optional) - Buyer Registration Identification Number.
@@ -5003,7 +5003,7 @@ Examples
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
 + **supplierOrder** (String30, optional) - Ignored for `errorCode` < 0. Internal supplier order number.
-+ **validUntil** (Timestamp, optional)
++ **validUntil** ([Timestamp][ds-timestamp], optional)
     Ignored for `errorCode` < 0.  
     Validity period of a reservation in CET. Default value is `Today` + 30 days. 
     Required value is at least `Today` + 1 day. Optimal value is `Today` + days of minimum guaranteed reservation from contract.
@@ -5012,7 +5012,7 @@ Examples
     Array of invalid products for unsuccessful reservation.
 
 ### OrderCancelRequest (object) {#data-structures--order-cancel-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
 + **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
@@ -5020,13 +5020,13 @@ Examples
 + **vatNo** (String30, optional) - Buyer VAT Identification Number.
 
 ### OrderExtendRequest (object) {#data-structures--order-extend-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation. 
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
 + **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
 + **regNo** (String30, optional) - Buyer Registration Identification Number.
 + **vatNo** (String30, optional) - Buyer VAT Identification Number.
-+ **validUntil** (Timestamp, optional) - Recommanded validUntil in CET
++ **validUntil** ([Timestamp][ds-timestamp], optional) - Recommanded validUntil in CET
 
 ### OrderExtendResponse (object) {#data-structures--order-extend-response}
 + **errorCode** (ErrorCode, required) - Error Code
@@ -5034,12 +5034,12 @@ Examples
     Required for `errorCode` < 0.  
     Error message for `errorCode` < 0.  
     Warning message for `errorCode` = 0.
-+ **validUntil** (Timestamp)
++ **validUntil** ([Timestamp][ds-timestamp])
     Required for `errorCode` = 0.  
     Validity period of a reservation in CET. Required value is at least `Now` + 12 hours.
 
 ### OrderConfirmRequest (object) {#data-structures--order-confirm-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **customerId** (CustomerId, required) - Buyer ID (provided by the Supplier). Used for authentication token calculation.
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer).
 + **supplierBranchId** (Id, required) - Supplier Branch ID (same value as in Availability method).
@@ -5062,7 +5062,7 @@ Examples
     **Deprecated - Replaced by `shipmentDepartureTime`**. It is necessary remove time part.
 
     Requested date of dispatch.
-+ **shipmentDepartureTime** (Timestamp, required) - Requested shipment departure time in CET.
++ **shipmentDepartureTime** ([Timestamp][ds-timestamp], required) - Requested shipment departure time in CET.
 + **cashOnDeliveryValue** (Money, required) - Cash on delivery to collect
 + **cashOnDeliveryValueCurrency** (Currency, required) - Cash on delivery Currency code
 + **paymentVS** (String30, required) - Cash on delivery payment Variable Symbol
@@ -5075,11 +5075,11 @@ Examples
 + **shipmentDeliveryAddress** (ShipmentAddress) - The address where the supplier delivers the shipment. May be different from `deliveryAddress`. **Upcoming feature**
  
 ### InvokerSimpleRequest (object) {#data-structures--invoker-simple-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **supplierId** (Id, required) - Supplier identification (provided by the Buyer). Used for authentication token calculation.
 
 ### InvokerOrderInsertRequest {#data-structures--invoker-order-insert-request}
-+ **timestamp** (Timestamp, required) - Time of action in CET
++ **timestamp** ([Timestamp][ds-timestamp], required) - Time of action in CET
 + **customerId** (CustomerId, required) - Buyer ID used for communication with Supplier API. Default is 1.
 + **supplierId** (Id, required) - Supplier ID (provided by the Buyer). Used for authentication token calculation.
 + **supplierBranchId** (Id, required) - Supplier Branch Id (same value as in Availability method). 
