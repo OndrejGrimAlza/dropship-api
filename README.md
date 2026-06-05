@@ -3,6 +3,8 @@ layout: home
 nav_order: 1
 title: Dropshipment API
 permalink: /
+mermaid:
+  theme: dark
 ---
 
 # Dropshipment API
