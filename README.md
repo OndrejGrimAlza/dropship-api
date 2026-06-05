@@ -742,7 +742,7 @@ If message data is not accepted, message have to be resend until the problem is 
 Error code `-3` and `-5` is accepted in specific methods.
 
 
-### Resend intervals {#introduction--error-handling--Resend-intervals}
+### Resend intervals {#introduction--error-handling--resend-intervals}
 
 ***Required behavior.***
 
