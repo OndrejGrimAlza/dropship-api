@@ -581,7 +581,7 @@ POST https://services.server.cz/rest/api/v1/order/DD12345678/delivery?token=jDGA
 
 Data types are simple types and are part of *[Data Structures][data-structures]*.
 
-### Basic data types {#introduction--data-types-basic-data-types}
+### Basic data types {#introduction--data-types--basic-data-types}
 
 Basic types are based on `string` and `number`.
 
@@ -616,7 +616,7 @@ Specific types
 
 
 
-### Enumerated data types {#introduction--data-types-enumerated-data-types}
+### Enumerated data types {#introduction--data-types--enumerated-data-types}
 
 Enumerated types are based on `enum`.
 
@@ -722,7 +722,7 @@ See *[ParcelShopIdentification][ds-parcel-shop-identification]* data structrure 
  - Resent messages has to be send in specified intervals. See *[Resend intervals][resend-intervals]*
 
 
-### Common error codes {#introduction--error-handling-common-error-codes}
+### Common error codes {#introduction--error-handling--common-error-codes}
 
 ***Required behavior.***
 
@@ -742,7 +742,7 @@ If message data is not accepted, message have to be resend until the problem is 
 Error code `-3` and `-5` is accepted in specific methods.
 
 
-### Resend intervals {#introduction--error-handling-Resend-intervals}
+### Resend intervals {#introduction--error-handling--Resend-intervals}
 
 ***Required behavior.***
 
@@ -781,7 +781,7 @@ Interval units are in minutes.
 Increasing the interval to prevent massive API overload is desirable.
 
 
-### Timeout settings {#introduction--error-handling-timeout-settings}
+### Timeout settings {#introduction--error-handling--timeout-settings}
 
 ***Required behavior.***
 
@@ -801,7 +801,7 @@ Timeout should be set higher on sender side
 | *[Delivery result][delivery-result]*                 | 60                | 80                   |
 
 
-### Rate limits {#introduction--error-handling-rate-limits}
+### Rate limits {#introduction--error-handling--rate-limits}
 
 Rate limits set rules for how an API should behave when processing a large number of parallel incoming requests from a single supplier.
 
@@ -826,7 +826,7 @@ The identification of which mode is used for the current order is defined in the
 attribute in the *[Confirm order][confirm-order]*.
 
 
-### Supplier shipping mode {#introduction--shipping-modes-supplier-shipping-mode}
+### Supplier shipping mode {#introduction--shipping-modes--supplier-shipping-mode}
 
 For suppliers who have already implemented or want to implement specific shipping carriers.
 
@@ -837,7 +837,7 @@ This mode is also known as **DSM**. More specificly :
 * **DSMD** when supplier's transport contract is used.
 
 
-### Buyer shipping mode {#introduction--shipping-modes-buyer-shipping-mode}
+### Buyer shipping mode {#introduction--shipping-modes--buyer-shipping-mode}
 
 For suppliers who do not have implemented or are not able to implement specific shipping carriers.
 
@@ -860,7 +860,7 @@ Product pricing defines who can affect the final price for the end customer.
 The following product pricing variants cannot be combined with each other.
 
 
-### Supplier product pricing {#introduction--product-pricing-supplier-product-pricing}
+### Supplier product pricing {#introduction--product-pricing--supplier-product-pricing}
 
 Supplier product pricing allows the supplier to potentially influence the price at which the end customer buys the product.
 The purchase price of the product is calculated according to the commission level of the product category provided by the buyer.
@@ -875,7 +875,7 @@ of **Latest price mode** of *[Availability][availability]* API message .
 For more information see *[Availability][availability]* API message.
 
 
-### Buyer product pricing {#introduction--product-pricing-buyer-product-pricing}
+### Buyer product pricing {#introduction--product-pricing--buyer-product-pricing}
 
 Buyer product pricing does not allow influence the price at which the end customer buys the product.
 
@@ -986,112 +986,6 @@ would look like this:
 ```
 
 
-
-[introduction]:                     #introduction--introduction
-[communication-basics]:             #introduction--communication-basics
-[api-basics]:                       #introduction--api-basics
-[maintenance-free-design]:          #introduction--maintenance-free-design
-[authentication-token]:             #introduction--authentication-token
-[data-types]:                       #introduction--data-types
-[enumerated-data-types]:            #introduction--data-types-enumerated-data-types
-[error-handling]:                   #introduction--error-handling
-[common-error-codes]:               #introduction--error-handling-common-error-codes
-[resend-intervals]:                 #introduction--error-handling-resend-intervals
-[timeout-settings]:                 #introduction--error-handling-timeout-settings
-[rate-limits]:                      #introduction--error-handling-rate-limits
-[shipping-modes]:                   #introduction--shipping-modes
-[product-pricing]:                  #introduction--product-pricing
-[supplier-product-pricing]:         #introduction--product-pricing-supplier-product-pricing
-[buyer-product-pricing]:            #introduction--product-pricing-buyer-product-pricing
-[faq]:                              #introduction--faq
-
-[supplier-api]:                     #reference/supplier-api
-[insert-order]:                     #reference/supplier-api/insert-order
-[cancel-order]:                     #reference/supplier-api/cancel-order
-[extend-order]:                     #reference/supplier-api/extend-order
-[confirm-order]:                    #reference/supplier-api/confirm-order
-    
-[buyer-api]:                        #reference/buyer-api
-[availability]:                     #reference/buyer-api/availability
-[create-shipment]:                  #reference/buyer-api/create-shipment
-[delete-shipment]:                  #reference/buyer-api/delete-shipment
-[shipment-departure]:               #reference/buyer-api/shipment-departure
-[track-and-trace]:                  #reference/buyer-api/track-and-trace
-[delivery-result]:                  #reference/buyer-api/delivery-result
-    
-[testing-supplier-api]:             #reference/testing-supplier-api
-[testing-insert-order-request]:     #reference/testing-supplier-api/insert-order/invoke-insert-order-request
-[testing-buyer-api]:                #reference/testing-buyer-api
-[testing-availability]:             #reference/testing-buyer-api/availability
-
-[data-structures]:                      #data-structures
-[ds-timestamp]:                         #data-structures/0/timestamp
-[ds-timestamputc]:                      #data-structures/0/timestamputc
-[ds-date]:                              #data-structures/0/date
-[ds-int-16]:                            #data-structures/0/int-16
-[ds-int-32]:                            #data-structures/0/int-32
-[ds-int-64]:                            #data-structures/0/int-64
-[ds-float]:                             #data-structures/0/float
-[ds-string-10]:                         #data-structures/0/string-10
-[ds-string-20]:                         #data-structures/0/string-20
-[ds-string-30]:                         #data-structures/0/string-30
-[ds-string-50]:                         #data-structures/0/string-50
-[ds-string-100]:                        #data-structures/0/string-100
-[ds-string-500]:                        #data-structures/0/string-500
-[ds-customer-id]:                       #data-structures/0/customer-id
-[ds-supplier-product-code]:             #data-structures/0/supplier-product-code
-[ds-weight]:                            #data-structures/0/weight
-[ds-volume]:                            #data-structures/0/volume
-[ds-money]:                             #data-structures/0/money
-[ds-vat]:                               #data-structures/0/vat
-[ds-hmac-token]:                        #data-structures/0/hmac-token
-[ds-country]:                           #data-structures/0/country
-[ds-currency]:                          #data-structures/0/currency
-[ds-guid]:                              #data-structures/0/guid
-[ds-number]:                            #data-structures/0/number
-[ds-order-number]:                      #data-structures/0/order-number
-[ds-id]:                                #data-structures/0/id
-[ds-id-64]:                             #data-structures/0/id-64
-
-[ds-error-code]:                        #data-structures/0/error-code
-[ds-success-error-code]:                #data-structures/0/success-error-code
-[ds-fail-error-code]:                   #data-structures/0/fail-error-code
-[ds-import-type]:                       #data-structures/0/import-type
-[ds-track-and-trace-status]:            #data-structures/0/track-and-trace-status
-[ds-delivery-result-status]:            #data-structures/0/delivery-result-status
-[ds-shipment-delivery-type]:            #data-structures/0/shipment-delivery-type
-[ds-shipment-shipping-mode]:            #data-structures/0/shipment-shipping-mode
-[ds-shipment-delivery-services]:        #data-structures/0/shipment-delivery-services
-[ds-shipping-carrier-code]:             #data-structures/0/shipping-carrier-code
-[ds-shipping-carrier-delivery-type]:    #data-structures/0/shipping-carrier-delivery-type
-[ds-parcel-shop-identification]:        #data-structures/0/parcel-shop-identification
-[ds-route]:                             #data-structures/0/route
-[ds-route-stop]:                        #data-structures/0/route-stop
-[ds-delivery-address]:                  #data-structures/0/delivery-address
-[ds-company-address]:                   #data-structures/0/company-address
-[ds-shipment-address]:                  #data-structures/0/shipment-address
-[ds-package-sorting-group]:             #data-structures/0/package-sorting-group
-
-[ds-shipping-list-group]:               #data-structures/0/shipping-list-group
-[ds-departured-shipment]:               #data-structures/0/departured-shipment
-[ds-error-product]:                     #data-structures/0/error-product
-[ds-country-price]:                     #data-structures/0/country-price
-[ds-country-price-fees]:                #data-structures/0/country-price-fees
-[ds-created-package]:                   #data-structures/0/created-package
-[ds-shipment-create-item]:              #data-structures/0/shipment-create-item
-[ds-shipment-create-package]:           #data-structures/0/shipment-create-package
-[ds-order-item]:                        #data-structures/0/order-item
-
-[ds-order-confirm-request]:             #data-structures/0/order-confirm-request
-[ds-shipment-departure-request]:        #data-structures/0/shipment-departure-request
-[ds-track-and-trace-request]:           #data-structures/0/track-and-trace-request
-
-[hmac]:                 https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
-[base64]:               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
-[percent-encoding]:     https://en.wikipedia.org/wiki/Percent-encoding
-
-
-
 # Buyer API {#reference-buyer-api}
 
 API on buyer side.
@@ -1136,8 +1030,6 @@ It mainly updates *store* **availability** and *product* **price**.
  - Products that are missing in `Full` import are considered as unavailable.
  - It is required to **not** send *dimensions* and *weight* attribute. They will be removed in the future.
  - It is restricted to one successful request per day. Further requests by prior arrangement only.
-
-[resend-intervals]: #introduction--error-handling-resend-intervals
 
 #### Product price modes
 
@@ -5198,3 +5090,108 @@ Examples
 + errorMessage (String500) - Error message. Required for `errorCode` < 0.
 + responseHTTPStatusCode (Int32, optional) - HTTP statu code from Supplier API
 + responseObject (GeneralResponse, optional) - Filled with Supplier API response when it's valid
+
+
+[introduction]:                     #introduction--introduction
+[communication-basics]:             #introduction--communication-basics
+[api-basics]:                       #introduction--api-basics
+[maintenance-free-design]:          #introduction--maintenance-free-design
+[authentication-token]:             #introduction--authentication-token
+[data-types]:                       #introduction--data-types
+[enumerated-data-types]:            #introduction--data-types--enumerated-data-types
+[error-handling]:                   #introduction--error-handling
+[common-error-codes]:               #introduction--error-handling--common-error-codes
+[resend-intervals]:                 #introduction--error-handling--resend-intervals
+[timeout-settings]:                 #introduction--error-handling--timeout-settings
+[rate-limits]:                      #introduction--error-handling--rate-limits
+[shipping-modes]:                   #introduction--shipping-modes
+[product-pricing]:                  #introduction--product-pricing
+[supplier-product-pricing]:         #introduction--product-pricing--supplier-product-pricing
+[buyer-product-pricing]:            #introduction--product-pricing--buyer-product-pricing
+[faq]:                              #introduction--faq
+
+[supplier-api]:                     #reference/supplier-api
+[insert-order]:                     #reference/supplier-api/insert-order
+[cancel-order]:                     #reference/supplier-api/cancel-order
+[extend-order]:                     #reference/supplier-api/extend-order
+[confirm-order]:                    #reference/supplier-api/confirm-order
+    
+[buyer-api]:                        #reference/buyer-api
+[availability]:                     #reference/buyer-api/availability
+[create-shipment]:                  #reference/buyer-api/create-shipment
+[delete-shipment]:                  #reference/buyer-api/delete-shipment
+[shipment-departure]:               #reference/buyer-api/shipment-departure
+[track-and-trace]:                  #reference/buyer-api/track-and-trace
+[delivery-result]:                  #reference/buyer-api/delivery-result
+    
+[testing-supplier-api]:             #reference/testing-supplier-api
+[testing-insert-order-request]:     #reference/testing-supplier-api/insert-order/invoke-insert-order-request
+[testing-buyer-api]:                #reference/testing-buyer-api
+[testing-availability]:             #reference/testing-buyer-api/availability
+
+[data-structures]:                      #data-structures
+[ds-timestamp]:                         #data-structures/0/timestamp
+[ds-timestamputc]:                      #data-structures/0/timestamputc
+[ds-date]:                              #data-structures/0/date
+[ds-int-16]:                            #data-structures/0/int-16
+[ds-int-32]:                            #data-structures/0/int-32
+[ds-int-64]:                            #data-structures/0/int-64
+[ds-float]:                             #data-structures/0/float
+[ds-string-10]:                         #data-structures/0/string-10
+[ds-string-20]:                         #data-structures/0/string-20
+[ds-string-30]:                         #data-structures/0/string-30
+[ds-string-50]:                         #data-structures/0/string-50
+[ds-string-100]:                        #data-structures/0/string-100
+[ds-string-500]:                        #data-structures/0/string-500
+[ds-customer-id]:                       #data-structures/0/customer-id
+[ds-supplier-product-code]:             #data-structures/0/supplier-product-code
+[ds-weight]:                            #data-structures/0/weight
+[ds-volume]:                            #data-structures/0/volume
+[ds-money]:                             #data-structures/0/money
+[ds-vat]:                               #data-structures/0/vat
+[ds-hmac-token]:                        #data-structures/0/hmac-token
+[ds-country]:                           #data-structures/0/country
+[ds-currency]:                          #data-structures/0/currency
+[ds-guid]:                              #data-structures/0/guid
+[ds-number]:                            #data-structures/0/number
+[ds-order-number]:                      #data-structures/0/order-number
+[ds-id]:                                #data-structures/0/id
+[ds-id-64]:                             #data-structures/0/id-64
+
+[ds-error-code]:                        #data-structures/0/error-code
+[ds-success-error-code]:                #data-structures/0/success-error-code
+[ds-fail-error-code]:                   #data-structures/0/fail-error-code
+[ds-import-type]:                       #data-structures/0/import-type
+[ds-track-and-trace-status]:            #data-structures/0/track-and-trace-status
+[ds-delivery-result-status]:            #data-structures/0/delivery-result-status
+[ds-shipment-delivery-type]:            #data-structures/0/shipment-delivery-type
+[ds-shipment-shipping-mode]:            #data-structures/0/shipment-shipping-mode
+[ds-shipment-delivery-services]:        #data-structures/0/shipment-delivery-services
+[ds-shipping-carrier-code]:             #data-structures/0/shipping-carrier-code
+[ds-shipping-carrier-delivery-type]:    #data-structures/0/shipping-carrier-delivery-type
+[ds-parcel-shop-identification]:        #data-structures/0/parcel-shop-identification
+[ds-route]:                             #data-structures/0/route
+[ds-route-stop]:                        #data-structures/0/route-stop
+[ds-delivery-address]:                  #data-structures/0/delivery-address
+[ds-company-address]:                   #data-structures/0/company-address
+[ds-shipment-address]:                  #data-structures/0/shipment-address
+[ds-package-sorting-group]:             #data-structures/0/package-sorting-group
+
+[ds-shipping-list-group]:               #data-structures/0/shipping-list-group
+[ds-departured-shipment]:               #data-structures/0/departured-shipment
+[ds-error-product]:                     #data-structures/0/error-product
+[ds-country-price]:                     #data-structures/0/country-price
+[ds-country-price-fees]:                #data-structures/0/country-price-fees
+[ds-created-package]:                   #data-structures/0/created-package
+[ds-shipment-create-item]:              #data-structures/0/shipment-create-item
+[ds-shipment-create-package]:           #data-structures/0/shipment-create-package
+[ds-order-item]:                        #data-structures/0/order-item
+
+[ds-order-confirm-request]:             #data-structures/0/order-confirm-request
+[ds-shipment-departure-request]:        #data-structures/0/shipment-departure-request
+[ds-track-and-trace-request]:           #data-structures/0/track-and-trace-request
+
+[hmac]:                 https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
+[base64]:               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
+[percent-encoding]:     https://en.wikipedia.org/wiki/Percent-encoding
+
