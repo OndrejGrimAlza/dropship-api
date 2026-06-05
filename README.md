@@ -4414,12 +4414,9 @@ Example: `9506000140445`
 A case insensitive string with a maximum length of 50.
 
 A character ruleset:
-
-â€˘ Allows alphanumeric characters and diacritics.
-
-â€˘ Allows special characters: `_` `-` `:` `/` `.` `#` `,` `(` `)` `+` `*` 
-
-â€˘ Whitespace at the beginning and end of the string is ignored.
+• Allows alphanumeric characters and diacritics.
+• Allows special characters: `_` `-` `:` `/` `.` `#` `,` `(` `)` `+` `*` 
+• Whitespace at the beginning and end of the string is ignored.
 
 ### Weight (number) {#data-structures--weight}
 Decimal numeric with precision 9 and scale 4.
@@ -4572,72 +4569,71 @@ Examples
 + `ZavolejSiKuryra` - ZavolejsikurĂ˝ra.cz
 
 ### ShippingCarrierDeliveryType (enum[string]) {#data-structures--shipping-carrier-delivery-type}
-+ Supplier
++ `Supplier`
     For Confirm order message, it means that the supplier is choosing the best delivery type.
     For other messages, it means than the supplier is shipping carrier.
-+ COURIER 
++ `COURIER` 
     Universal courier delivery type. At this time just for Shipping carrier code `Najbert`
-+ ALZABRANCH - Alza branch delivery for shipping carrier code `ALZA`
-+ ALZABOX - AlzaBox delivery for shipping carrier code `ALZA`
-+ CZPOSTD - Address delivery for shipping carrier code `CZPOST`
-+ CZPOSTP - Post office delivery for shipping carrier code `CZPOST`
-+ CZPOSTB - BalĂ­kovna delivery for shipping carrier code `CZPOST`
-+ DHL - For shipping carrier code `DHL`
-+ DPD - Address delivery for shipping carrier code `DPD`
-+ DPDSK - Address delivery for shipping carrier code `DPDSK`
-+ DPDHU - Address delivery for shipping carrier code `DPDHU`
-+ DPDALZABOX - AlzaBox delivery for shipping carrier code `DPD`
-+ DPDBOX - DPDBox delivery for shipping carrier code `DPD`
-+ DPDPARCELSHOP - ParcelShop delivery for shipping carrier code `DPD`
-+ FOFRSTD - For shipping carrier code `FOFR`
-+ GebruderWeissStandard - For shipping carrier code `GebruderWeiss`
-+ GEIS - Address delivery for shipping carrier code `GEISPARCEL`
-+ GEISPOINT - Geis Point delivery for shipping carrier code  `GEISPARCEL`
-+ GEISCARGO - For shipping carrier code `GEISCARGO`
-+ GLS - For shipping carrier code `GLS`
-+ GO - For shipping carrier code `GO`
-+ HELICARSTD - Standard delivery for shipping carrier code `HELICAR`
-+ HELICARUP - Upstairs delivery for shipping carrier code `HELICAR` 
-+ MagyarPOSTHD - Address delivery for shipping carrier code `MagyarPOST`
-+ MagyarPOSTPO - Post office delivery for shipping carrier code `MagyarPOST`
-+ MagyarPOSTPP - Post Point delivery for shipping carrier code `MagyarPOST`
-+ MagyarPOSTPT - Parcel Terminal delivery for shipping carrier code `MagyarPOST`
-+ PPL - Address delivery for shipping carrier code `PPL`
-+ PPLPARCELSHOP - Parcelshop delivery for shipping carrier code `PPL` 
-+ RHENUS - For shipping carrier code `RHENUS`
-+ SKPOSTD - Address delivery for shipping carrier code `SKPOST`
-+ SKPOSTP - Post office delivery for shipping carrier code `SKPOST`
-+ SKYNET - For shipping carrier code `SKYNET`
-+ TOPTRANS - For shipping carrier code `TOPTRANS`
-+ UPS - For shipping carrier code `UPS`
-+ WEDOHD - Home delivery `WEDO`
-+ ZASILKOVNA - For shipping carrier code `ZASILKOVNA`
-+ ZavolejSiKuryra - For shipping carrier code `ZavolejSiKuryra`
++ `ALZABRANCH` - Alza branch delivery for shipping carrier code `ALZA`
++ `ALZABOX` - AlzaBox delivery for shipping carrier code `ALZA`
++ `CZPOSTD` - Address delivery for shipping carrier code `CZPOST`
++ `CZPOSTP` - Post office delivery for shipping carrier code `CZPOST`
++ `CZPOSTB` - BalĂ­kovna delivery for shipping carrier code `CZPOST`
++ `DHL` - For shipping carrier code `DHL`
++ `DPD` - Address delivery for shipping carrier code `DPD`
++ `DPDSK` - Address delivery for shipping carrier code `DPDSK`
++ `DPDHU` - Address delivery for shipping carrier code `DPDHU`
++ `DPDALZABOX` - AlzaBox delivery for shipping carrier code `DPD`
++ `DPDBOX` - DPDBox delivery for shipping carrier code `DPD`
++ `DPDPARCELSHOP` - ParcelShop delivery for shipping carrier code `DPD`
++ `FOFRSTD` - For shipping carrier code `FOFR`
++ `GebruderWeissStandard` - For shipping carrier code `GebruderWeiss`
++ `GEIS` - Address delivery for shipping carrier code `GEISPARCEL`
++ `GEISPOINT` - Geis Point delivery for shipping carrier code  `GEISPARCEL`
++ `GEISCARGO` - For shipping carrier code `GEISCARGO`
++ `GLS` - For shipping carrier code `GLS`
++ `GO` - For shipping carrier code `GO`
++ `HELICARSTD` - Standard delivery for shipping carrier code `HELICAR`
++ `HELICARUP` - Upstairs delivery for shipping carrier code `HELICAR` 
++ `MagyarPOSTHD` - Address delivery for shipping carrier code `MagyarPOST`
++ `MagyarPOSTPO` - Post office delivery for shipping carrier code `MagyarPOST`
++ `MagyarPOSTPP` - Post Point delivery for shipping carrier code `MagyarPOST`
++ `MagyarPOSTPT` - Parcel Terminal delivery for shipping carrier code `MagyarPOST`
++ `PPL` - Address delivery for shipping carrier code `PPL`
++ `PPLPARCELSHOP` - Parcelshop delivery for shipping carrier code `PPL` 
++ `RHENUS` - For shipping carrier code `RHENUS`
++ `SKPOSTD` - Address delivery for shipping carrier code `SKPOST`
++ `SKPOSTP` - Post office delivery for shipping carrier code `SKPOST`
++ `SKYNET` - For shipping carrier code `SKYNET`
++ `TOPTRANS` - For shipping carrier code `TOPTRANS`
++ `UPS` - For shipping carrier code `UPS`
++ `WEDOHD` - Home delivery `WEDO`
++ `ZASILKOVNA` - For shipping carrier code `ZASILKOVNA`
++ `ZavolejSiKuryra` - For shipping carrier code `ZavolejSiKuryra`
 
 ### ParcelShopIdentification (enum[string]) {#data-structures--parcel-shop-identification}
-+ ALZABOX - AlzaBox delivery for shipping carrier code `ALZA`
-+ CZPOSTB - BalĂ­kovna for shipping carrier code `CZPOST`
-+ CZPOSTP - Post office delivery for shipping carrier code `CZPOST`
-+ DPDALZABOX - AlzaBox delivery for shipping carrier code `DPD`
-+ DPDBOX - DPDBox delivery for shipping carrier code `DPD`
-+ DPDPARCELSHOP - ParcelShop delivery for shipping carrier code `DPD`
-+ GEISPOINT - Geis Point delivery for shipping carrier code  `GEISPARCEL`
-+ PPLPARCELSHOP - Parcelshop delivery for shipping carrier code `PPL` 
-+ ZASILKOVNA - For shipping carrier code `ZASILKOVNA`
++ `ALZABOX` - AlzaBox delivery for shipping carrier code `ALZA`
++ `CZPOSTB` - BalĂ­kovna for shipping carrier code `CZPOST`
++ `CZPOSTP` - Post office delivery for shipping carrier code `CZPOST`
++ `DPDALZABOX` - AlzaBox delivery for shipping carrier code `DPD`
++ `DPDBOX` - DPDBox delivery for shipping carrier code `DPD`
++ `DPDPARCELSHOP` - ParcelShop delivery for shipping carrier code `DPD`
++ `GEISPOINT` - Geis Point delivery for shipping carrier code  `GEISPARCEL`
++ `PPLPARCELSHOP` - Parcelshop delivery for shipping carrier code `PPL` 
++ `ZASILKOVNA` - For shipping carrier code `ZASILKOVNA`
 
 ### PackageSortingGroup (enum[string]) {#data-structures--package-sorting-group}
-+ RegularDirect - Default group
-+ Linehaul - Linehaul group
-+ CrossLC - CrossLC group
++ `RegularDirect` - Default group
++ `Linehaul` - Linehaul group
++ `CrossLC` - CrossLC group
 
 ### ParcelShop (object) {#data-structures--parcel-shop}
-+ parcelShopIdentification (ParcelShopIdentification, required) - Parcel shop identification
-+ parcelShopBranchCode (String50, required) - Parcel shop branch identification
++ **parcelShopIdentification** (ParcelShopIdentification, required) - Parcel shop identification
++ **parcelShopBranchCode** (String50, required) - Parcel shop branch identification
 
 ### ShippingCarrierConfirm (object) {#data-structures--shipping-carrier-confirm}
-+ shippingCarrierCode (ShippingCarrierCode, optional) - Shipping carrier code. For `Supplier` delivery type could be 
-    attribute empty. 
-+ shippingCarrierDeliveryType (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
++ **shippingCarrierCode** (ShippingCarrierCode, optional) - Shipping carrier code. For `Supplier` delivery type could be attribute empty. 
++ **shippingCarrierDeliveryType** (ShippingCarrierDeliveryType, required) - Shipping carrier delivery type
 
 ### ShippingCarrier (object) {#data-structures--shipping-carrier}
 + shippingCarrierCode (ShippingCarrierCode, optional) - Required same Shipping carrier code as sent in Confirm order.
