@@ -1092,7 +1092,7 @@ would look like this:
 
 
 
-# Buyer API
+# Buyer API {#reference/buyer-api}
 
 API on buyer side.
 
