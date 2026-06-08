@@ -18,7 +18,7 @@ API on buyer side.
 
 ## Availability {#reference-buyer-api--availability}
 
-[/dropship-validator/v1/availability?token={token}]
+[/api/v1/availability?token={token}]
 
 ***Required method.***
 
@@ -370,7 +370,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Create shipment {#reference-buyer-api--create-shipment}
 
-[/dropship-validator/v1/shipment?token={token}]
+[/api/v1/shipment?token={token}]
 
 ***Buyer shipping mode method***
 
@@ -474,16 +474,16 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                             "packageId": 1,
                             "number": "135NUM000B1",
                             "fullNumber": "700135NUM000B10000Q1",
-                            "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&i=1&x=27s40308532101134N2D17264233"
+                            "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&i=1&x=27s40308532101134N2D17264233"
                         },
                         {
                             "packageId": 2,
                             "number": "135NUM000B2",
                             "fullNumber": "700135NUM000B20000DW",
-                            "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&i=2&x=27s40308532105133N2D17264251"
+                            "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&i=2&x=27s40308532105133N2D17264251"
                         }
                     ],
-                    "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
+                    "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
                 }
             }
         ```
@@ -554,7 +554,7 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 ## Delete shipment {#reference-buyer-api--delete-shipment}
 
-[/dropship-validator/v1/shipment/{shipment}?token={token}]
+[/api/v1/shipment/{shipment}?token={token}]
 
 ***Buyer shipping mode method***
 
@@ -624,7 +624,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Shipment departure {#reference-buyer-api--shipment-departure}
 
-[/dropship-validator/v1/shipment/{shipment}/departure?token={token}]
+[/api/v1/shipment/{shipment}/departure?token={token}]
 
 ***Required method***
 
@@ -805,11 +805,11 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     "departureTime": "2025-06-02T08:00:00.000",
                     "shippingList": {
                         "shippingListId": 1234567,
-                        "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1234567AB&x=27s40308532105133N2D17264251"
+                        "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1234567AB&x=27s40308532105133N2D17264251"
                     },
                     "shippingListGroup": {
                         "shippingListGroupId": 12345,
-                        "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=12345CD&x=27sN2D1726425140308532105133"
+                        "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=12345CD&x=27sN2D1726425140308532105133"
                     }
                 }
             }
@@ -868,7 +868,7 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
 ## Track and Trace {#reference-buyer-api--track-and-trace}
 
-[/dropship-validator/v1/track?token={token}]
+[/api/v1/track?token={token}]
 
 ***Conditionally optional method.***
 
@@ -1066,7 +1066,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Delivery result {#reference-buyer-api--delivery-result}
 
-[/dropship-validator/v1/order/{order}/delivery?token={token}]
+[/api/v1/order/{order}/delivery?token={token}]
 
 ***Required method.***
 

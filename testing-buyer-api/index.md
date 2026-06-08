@@ -18,7 +18,7 @@ API is implemented on buyer side.
 
 ## Availability {#reference-testing-buyer-api--availability}
 
-[/dropship-test/v2/availability?token={token}&test={test}]
+[/api/v2/availability?token={token}&test={test}]
 
 A testing endpoint for buyer *[Availability][availability]* method. See *[Availability][availability]* for more details.
 
@@ -284,7 +284,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Create shipment {#reference-testing-buyer-api--create-shipment}
 
-[/dropship-test/v2/shipment?token={token}&test={test}]
+[/api/v2/shipment?token={token}&test={test}]
 
 A testing endpoint for buyer *[Create shipment][create-shipment]* method. See *[Create shipment][create-shipment]* for more details.
 
@@ -367,16 +367,16 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
                             "packageId": 1,
                             "number": "135NUM000B1",
                             "fullNumber": "700135NUM000B10000Q1",
-                            "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&i=1&x=27s40308532101134N2D17264233"
+                            "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&i=1&x=27s40308532101134N2D17264233"
                         },
                         {
                             "packageId": 2,
                             "number": "135NUM000B2",
                             "fullNumber": "700135NUM000B20000DW",
-                            "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&i=2&x=27s40308532105133N2D17264251"
+                            "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&i=2&x=27s40308532105133N2D17264251"
                         }
                     ],
-                    "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
+                    "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1112223344&x=27s40308532105133N2D17267704"
                 }
             }
         ```
@@ -447,7 +447,7 @@ Response ([ShipmentCreateResponse][ds-shipment-create-response])
 
 ## Delete shipment {#reference-testing-buyer-api--delete-shipment}
 
-[/dropship-test/v2/shipment/{shipment}?token={token}&test={test}]
+[/api/v2/shipment/{shipment}?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delete shipment][delete-shipment]* method. See *[Delete shipment][delete-shipment]* for more details.
 
@@ -511,7 +511,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Shipment departure {#reference-testing-buyer-api--shipment-departure}
 
-[/dropship-test/v2/shipment/{shipment}/departure?token={token}&test={test}]
+[/api/v2/shipment/{shipment}/departure?token={token}&test={test}]
 
 A testing endpoint for buyer *[Shipment departure][shipment-departure]* method. 
 See *[Shipment departure][shipment-departure]* for more details.
@@ -674,11 +674,11 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
                     "departureTime": "2025-06-02T08:00:00.000",
                     "shippingList": {
                         "shippingListId": 1234567,
-                        "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=1234567AB&x=27s40308532105133N2D17264251"
+                        "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=1234567AB&x=27s40308532105133N2D17264251"
                     },
                     "shippingListGroup": {
                         "shippingListGroupId": 12345,
-                        "pdf": "https://test.buyer.cz/dropship-validator/Apps/pdfdoc.asp?s=12345CD&x=27sN2D1726425140308532105133"
+                        "pdf": "https://test.buyer.cz/Apps/pdfdoc.asp?s=12345CD&x=27sN2D1726425140308532105133"
                     }
                 }
             }
@@ -738,7 +738,7 @@ Response ([ShipmentDepartureResponse][ds-shipment-departure-response])
 
 ## Track and Trace {#reference-testing-buyer-api--track-and-trace}
 
-[/dropship-test/v2/track?token={token}&test={test}]
+[/api/v2/track?token={token}&test={test}]
 
 A testing endpoint for buyer *[Track and Trace][track-and-trace]* method. 
 See *[Track and Trace][track-and-trace]* for more details.
@@ -920,7 +920,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Delivery result {#reference-testing-buyer-api--delivery-result}
 
-[/dropship-test/v2/order/{order}/delivery?token={token}&test={test}]
+[/api/v2/order/{order}/delivery?token={token}&test={test}]
 
 A testing endpoint for buyer *[Delivery result][delivery-result]* method. 
 See *[Delivery result][delivery-result]* for more details.

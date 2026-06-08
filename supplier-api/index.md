@@ -17,7 +17,7 @@ API on supplier side.
 
 ## Insert order {#reference-supplier-api--insert-order}
 
-[/dropship-validator/v1/order/{order}?token={token}]
+[/api/v1/order/{order}?token={token}]
 
 ***Required method.***
 
@@ -282,7 +282,7 @@ Response ([OrderInsertResponse][ds-order-insert-response])
 
 ## Cancel order {#reference-supplier-api--cancel-order}
 
-[/dropship-validator/v1/order/{cancelOrder}?token={token}]
+[/api/v1/order/{cancelOrder}?token={token}]
 
 ***Required method.***
 
@@ -405,7 +405,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Confirm order {#reference-supplier-api--confirm-order}
 
-[/dropship-validator/v1/order/{order}/confirm?token={token}]
+[/api/v1/order/{order}/confirm?token={token}]
 
 ***Required method.***
 
@@ -762,7 +762,7 @@ Response ([GeneralResponse][ds-general-response])
 
 ## Extend order {#reference-supplier-api--extend-order}
 
-[/dropship-validator/v1/order/{order}/extend?token={token}]
+[/api/v1/order/{order}/extend?token={token}]
 
 ***Required method.***
 

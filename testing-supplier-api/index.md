@@ -18,7 +18,7 @@ API is implemented on buyer side.
 
 ## Insert order {#reference-testing-supplier-api--insert-order}
 
-[/dropship-test/v2/order/insert/{test}?token={token}]
+[/api/v2/order/insert/{test}?token={token}]
 
 A testing endpoint to invoke *[Insert order][insert-order]* request to Supplier API
 
@@ -182,7 +182,7 @@ Response ([InvokerOrderInsertResponse][ds-invoker-order-insert-response])
 
 ## Extend order {#reference-testing-supplier-api--extend-order}
 
-[/dropship-test/v2/order/extend/{test}?token={token}]
+[/api/v2/order/extend/{test}?token={token}]
 
 A testing endpoint to invoke *[Extend order][extend-order]* request to Supplier API
 
@@ -284,7 +284,7 @@ Response ([InvokerOrderExtendResponse][ds-invoker-order-extend-response])
 
 ## Cancel order {#reference-testing-supplier-api--cancel-order}
 
-[/dropship-test/v2/order/cancel/{test}?token={token}]
+[/api/v2/order/cancel/{test}?token={token}]
 
 A testing endpoint to invoke *[Cancel order][cancel-order]* request to Supplier API
 
@@ -357,7 +357,7 @@ Response ([InvokerOrderCancelResponse][ds-invoker-order-cancel-response])
 
 ## Confirm order {#reference-testing-supplier-api--confirm-order}
 
-[/dropship-test/v2/order/confirm/{test}?token={token}]
+[/api/v2/order/confirm/{test}?token={token}]
 
 Provides ability to invoke *[Confirm order][confirm-order]* request to Supplier API
 
