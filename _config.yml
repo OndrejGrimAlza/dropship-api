@@ -2,6 +2,8 @@ remote_theme: pmarsceill/just-the-docs
 title: Dropshipment API
 #description: Dropshipment API Documentation
 
+logo: "/dropshipping.png"
+
 # Just the docs theme settings
 color_scheme: dropship
 heading_anchors: true
