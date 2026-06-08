@@ -4760,7 +4760,7 @@ Response ([InvokerOrderConfirmResponse][ds-invoker-order-confirm-response])
 [ds-general-response]:                  #data-structures--general-response
 
 
-[ds-invoker-simple-request]:            {% link dropship-api-draft/data-structures/index.md %}
+[ds-invoker-simple-request]:            {% link data-structures/index.md %}
 <!-- [ds-invoker-simple-request]:            #data-structures--invoker-simple-request -->
 [ds-invoker-order-insert-request]:      #data-structures--invoker-order-insert-request
 [ds-invoker-order-insert-response]:     #data-structures--invoker-order-insert-response
