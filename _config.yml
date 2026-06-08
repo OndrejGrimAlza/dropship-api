@@ -8,7 +8,7 @@ logo: "/dropshipping.png"
 color_scheme: dropship
 heading_anchors: true
 nav_enabled: true
-baseurl: ""
+baseurl: "/dropship-api-draft"
 #nav_sort: case_insensitive
 #aux_links:
 #  "GitHub": https://github.com/OndrejGrimAlza/dropship-api
