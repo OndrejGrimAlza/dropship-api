@@ -1,16 +1,9 @@
 ---
 layout: default
-nav_order: 2
+nav_order: 6
 title: Data Structuires
-mermaid:
-  theme: light
 ---
 
-## Table of contents
-{: .no_toc }
-
-1. TOC
-{:toc}
 
 # Data Structures {#data-structures}
 
@@ -894,7 +887,11 @@ Examples
 [ds-invoker-order-confirm-response]:    #data-structures--invoker-order-confirm-response
 [ds-invoker-order-cancel-response]:     #data-structures--invoker-order-cancel-response
 
-[wiki-country-code]:    https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-[wiki-currency-code]:   https://en.wikipedia.org/wiki/ISO_4217
-[iso-country-code]:     https://www.iso.org/iso-3166-country-codes.html
-[iso-currency-code]:    https://www.iso.org/iso-4217-currency-codes.html
+[hmac]:                                 https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
+[base64]:                               https://msdn.microsoft.com/library/system.convert.tobase64string.aspx
+[percent-encoding]:                     https://en.wikipedia.org/wiki/Percent-encoding
+
+[wiki-country-code]:                    https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+[wiki-currency-code]:                   https://en.wikipedia.org/wiki/ISO_4217
+[iso-country-code]:                     https://www.iso.org/iso-3166-country-codes.html
+[iso-currency-code]:                    https://www.iso.org/iso-4217-currency-codes.html
