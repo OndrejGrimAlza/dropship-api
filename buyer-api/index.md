@@ -1211,7 +1211,6 @@ Response ([GeneralResponse][ds-general-response])
         ```
 
 
-
 [introduction]:                         ../#introduction
 [upcoming-features]:                    ../#introduction--upcoming-features
 [versions]:                             ../#introduction--versions
@@ -1249,11 +1248,11 @@ Response ([GeneralResponse][ds-general-response])
 [buyer-product-pricing]:                ../#introduction--product-pricing--buyer-product-pricing
 [faq]:                                  ../#introduction--faq
 
-[supplier-api]:                         #reference-supplier-api
-[insert-order]:                         #reference-supplier-api--insert-order
-[cancel-order]:                         #reference-supplier-api--cancel-order
-[extend-order]:                         #reference-supplier-api--extend-order
-[confirm-order]:                        #reference-supplier-api--confirm-order
+[supplier-api]:                         ../supplier-api/#reference-supplier-api
+[insert-order]:                         ../supplier-api/#reference-supplier-api--insert-order
+[cancel-order]:                         ../supplier-api/#reference-supplier-api--cancel-order
+[extend-order]:                         ../supplier-api/#reference-supplier-api--extend-order
+[confirm-order]:                        ../supplier-api/#reference-supplier-api--confirm-order
 
 [buyer-api]:                            ../buyer-api/#reference-buyer-api
 [availability]:                         ../buyer-api/#reference-buyer-api--availability
