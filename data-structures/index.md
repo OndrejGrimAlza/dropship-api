@@ -6,7 +6,7 @@ title: Data Structures
 
 
 # Data Structures {#data-structures}
-
+{: .no_toc }
 
 ### Timestamp (string) {#data-structures--timestamp}
 Date + time format in [CET (Central European Time)](https://time.is/cs/CET) (`YYYY-MM-DDThh:mm:ss.nnn`).

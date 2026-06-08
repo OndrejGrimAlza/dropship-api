@@ -5,6 +5,7 @@ title: Supplier API
 ---
 
 # Supplier API {#reference-supplier-api}
+{: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
