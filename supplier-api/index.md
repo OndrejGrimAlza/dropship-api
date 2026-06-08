@@ -2,7 +2,6 @@
 layout: default
 nav_order: 3
 title: Supplier API
-permalink: /
 ---
 
 # Supplier API {#reference-supplier-api}

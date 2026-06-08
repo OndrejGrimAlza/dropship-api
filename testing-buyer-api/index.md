@@ -2,7 +2,6 @@
 layout: default
 nav_order: 4
 title: Testing Buyer API
-permalink: /
 ---
 
 # Testing Buyer API {#reference-testing-buyer-api}

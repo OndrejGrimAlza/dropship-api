@@ -2,7 +2,6 @@
 layout: default
 nav_order: 5
 title: Testing Supplier API
-permalink: /
 ---
 
 # Testing Supplier API {#reference-testing-supplier-api}
