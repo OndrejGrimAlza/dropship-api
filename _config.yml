@@ -7,10 +7,13 @@ logo: "/dropshipping.png"
 # Just the docs theme settings
 color_scheme: dropship
 heading_anchors: true
-nav_enabled: false
+nav_enabled: true
+baseurl: ""
 #nav_sort: case_insensitive
 #aux_links:
 #  "GitHub": https://github.com/OndrejGrimAlza/dropship-api
+
+permalink: pretty
 
 # Jekyll settings
 markdown: kramdown
