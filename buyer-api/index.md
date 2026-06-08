@@ -8,14 +8,13 @@ title: Buyer API
 # Buyer API {#reference-buyer-api}
 {: .no_toc }
 
-API on buyer side.
-
 ## Table of contents
-{: .no_toc }
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
+API on buyer side.
 
 ## Availability {#reference-buyer-api--availability}
 

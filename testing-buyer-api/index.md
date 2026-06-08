@@ -5,15 +5,16 @@ title: Testing Buyer API
 ---
 
 # Testing Buyer API {#reference-testing-buyer-api}
-
-The Testing Buyer API has the same structure as *[production Buyer API][buyer-api]* but `test` variable is added to the URL. 
-API is implemented on buyer side.
+{: .no_toc }
 
 ## Table of contents
-{: .no_toc }
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
+
+The Testing Buyer API has the same structure as *[production Buyer API][buyer-api]* but `test` variable is added to the URL. 
+API is implemented on buyer side.
 
 ## Availability {#reference-testing-buyer-api--availability}
 

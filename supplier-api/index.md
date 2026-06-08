@@ -6,13 +6,13 @@ title: Supplier API
 
 # Supplier API {#reference-supplier-api}
 
-API on supplier side.
-
 ## Table of contents
-{: .no_toc }
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
+
+API on supplier side.
 
 ## Insert order {#reference-supplier-api--insert-order}
 

@@ -5,17 +5,16 @@ title: Testing Supplier API
 ---
 
 # Testing Supplier API {#reference-testing-supplier-api}
-
-The Testing Supplier API is consists of endpoints that invokes requests to *[Supplier API][supplier-api]*.
-API is implemented on buyer side.
-
+{: .no_toc }
 
 ## Table of contents
-{: .no_toc }
+{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
 
+The Testing Supplier API is consists of endpoints that invokes requests to *[Supplier API][supplier-api]*.
+API is implemented on buyer side.
 
 ## Insert order {#reference-testing-supplier-api--insert-order}
 

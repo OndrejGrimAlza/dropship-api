@@ -1,11 +1,12 @@
 ---
 layout: default
 nav_order: 6
-title: Data Structuires
+title: Data Structures
 ---
 
 
 # Data Structures {#data-structures}
+
 
 ### Timestamp (string) {#data-structures--timestamp}
 Date + time format in [CET (Central European Time)](https://time.is/cs/CET) (`YYYY-MM-DDThh:mm:ss.nnn`).
