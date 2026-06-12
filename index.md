@@ -660,9 +660,8 @@ echo $token; // $token = jDGARg+SaXMa8Ib++O92+ZX3ITQ=
 
 All variants must be processable on the buyer and supplier side.
 ```
-POST https://services.server.cz/rest/api/v1/order/DD12345678/delivery?token=jDGARg%2BSaXMa8Ib%2B%2BO92%2BZX3ITQ=
-
-POST https://services.server.cz/rest/api/v1/order/DD12345678/delivery?token=jDGARg%2BSaXMa8Ib%2B%2BO92%2BZX3ITQ%3D
+POST https://server.cz/api/v1/order/DD12345678/delivery?token=jDGARg%2BSaXMa8Ib%2B%2BO92%2BZX3ITQ=
+POST https://server.cz/api/v1/order/DD12345678/delivery?token=jDGARg%2BSaXMa8Ib%2B%2BO92%2BZX3ITQ%3D
 ```
 
 
